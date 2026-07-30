@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import Rooms from './pages/Rooms'
+import RoomDetail from './pages/RoomDetail'
 import Booking from './pages/Booking'
 import Dining from './pages/Dining'
 import Events from './pages/Events'
@@ -40,6 +41,7 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="rooms" element={<Rooms />} />
+        <Route path="rooms/:id" element={<RoomDetail />} />
         <Route path="booking" element={<Booking />} />
         <Route path="dining" element={<Dining />} />
         <Route path="events" element={<Events />} />

@@ -108,6 +108,9 @@ export default function Rooms() {
                           <span className="text-xs text-gray-400"> / night</span>
                         </div>
                         <div className="flex gap-1.5">
+                          <Link to={`/rooms/${room.id}`} className="px-3 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white transition-all">
+                            Details
+                          </Link>
                           <Link to={`/booking?room=${room.id}`} className="px-3 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-navy-900 hover:text-gold-400 transition-all border-2 border-gold-500 hover:border-navy-900">
                             Book
                           </Link>

@@ -226,54 +226,25 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ROOMS.slice(0, 3).map((room, i) => (
-              <ScrollReveal key={room.id} delay={0.1 * (i + 1)}>
-                <motion.article
-                  className="bg-white rounded-sm overflow-hidden shadow-sm group"
-                  whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(0,0,0,0.12)' }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                >
-                  <div className="overflow-hidden relative aspect-[4/3]">
-                    <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
-                    {room.badge !== 'Standard' && (
-                      <span className={`absolute top-3 left-3 z-10 text-[0.65rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${
-                        room.badge === 'Most Popular' ? 'bg-gold-400 text-navy-900' : 'bg-navy-950 text-white'
-                      }`}>
-                        {room.badge}
-                      </span>
-                    )}
-                  </div>
-                  <div className="p-5">
-                    <span className="text-xs font-semibold tracking-widest uppercase text-gold-500 block mb-1">{room.type === 'standard' ? 'Standard' : room.type === 'deluxe' ? 'Deluxe' : room.type === 'suite' ? 'Suite' : 'Presidential'}</span>
-                    <h3 className="font-display text-xl text-navy-900 mb-2">{room.name}</h3>
-                    <div className="flex flex-wrap gap-3 mb-3">
-                        {room.amenities.slice(0, 4).map((a) => (
-                        <span key={a} className="flex items-center gap-1 text-xs text-gray-500">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold-500 shrink-0" aria-hidden="true">
-                            <path d="M5 13l4 4L19 7" />
-                          </svg>
-                          {a}
-                        </span>
-                        ))}
-                    </div>
-                    <p className="text-sm text-gray-500 leading-relaxed mb-3">{room.description}</p>
-                    <div className="flex items-baseline gap-1.5 mb-3">
-                      <span className="font-display text-xl font-semibold text-navy-900">&#8358;{room.price.toLocaleString('en-NG')}</span>
-                      <span className="text-xs text-gray-400">/ night</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <Link to={`/rooms#${room.id}`} className="flex-1 text-center px-3 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white transition-all">View Details</Link>
-                      <Link to={`/booking?room=${room.id}`} className="flex-1 text-center px-3 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all">Book Now</Link>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {ROOMS.map((room, i) => (
+              <ScrollReveal key={room.id} delay={0.08 * i}>
+                <Link to={`/rooms/${room.id}`} className="block group">
+                  <div className="relative overflow-hidden rounded-lg aspect-[4/5] shadow-sm">
+                    <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gold-400/0 group-hover:bg-gold-400/10 transition-colors duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <span className="text-xs font-semibold tracking-widest uppercase text-gold-400 block mb-1">{room.type}</span>
+                      <h3 className="font-display text-lg font-semibold text-white group-hover:text-gold-400 transition-colors duration-300">{room.name}</h3>
                     </div>
                   </div>
-                </motion.article>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-10">
             <Link to="/rooms" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white transition-all">
               View All Rooms &amp; Suites
             </Link>
@@ -407,7 +378,7 @@ export default function Home() {
           <ScrollReveal delay={0.1}>
             <div className="w-full h-[420px] rounded-lg overflow-hidden shadow-sm border border-gray-200">
               <iframe
-                src="https://maps.google.com/maps?q=1+Justice+Mosheshe+Close+Off+Aziza+Road+Effurun+Delta+Nigeria&t=k&z=16&output=embed"
+                src="https://maps.google.com/maps?q=JQ9H%2BJM%20Oharhe&t=k&z=16&output=embed"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
