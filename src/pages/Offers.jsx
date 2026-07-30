@@ -45,7 +45,7 @@ function CountdownTimer() {
           transition={{ type: 'spring', stiffness: 200, damping: 20 }}
           className="text-center"
         >
-          <span className="font-display text-3xl font-semibold text-navy-900 block leading-none min-w-[3ch] tabular-nums">{pad(unit.value)}</span>
+          <span className="font-display text-3xl font-semibold text-navy-900 block leading-none min-w-[3ch]">{pad(unit.value)}</span>
           <span className="text-xs tracking-widest uppercase text-gray-400">{unit.label}</span>
         </motion.div>
       ))}

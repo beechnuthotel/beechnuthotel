@@ -96,34 +96,6 @@ function TestimonialCarousel() {
   )
 }
 
-function GoldParticles() {
-  return (
-    <div className="absolute inset-0 pointer-events-none z-10" aria-hidden="true">
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 rounded-full bg-gold-400"
-          style={{
-            left: `${15 + i * 18}%`,
-            top: `${20 + (i % 3) * 30}%`,
-          }}
-          animate={{
-            opacity: [0, 0.8, 0],
-            y: [0, -20, 0],
-            scale: [0, 1.2, 0],
-          }}
-          transition={{
-            duration: 4 + i * 0.5,
-            repeat: Infinity,
-            delay: i * 0.8,
-            ease: 'easeInOut',
-          }}
-        />
-      ))}
-    </div>
-  )
-}
-
 const heroBgVariants = {
   enter: { opacity: 0, scale: 1.08 },
   center: { opacity: 1, scale: 1, transition: { duration: 1.2, ease: [0.25, 0.1, 0.25, 1] } },
@@ -162,12 +134,10 @@ export default function Home() {
               initial="enter"
               animate="center"
               exit="exit"
-              className="w-full h-full object-cover animate-ken-burns"
+              className="w-full h-full object-cover"
             />
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-950/80 via-navy-950/50 to-navy-950/75" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,162,42,0.06)_0%,_transparent_60%)]" />
-          <GoldParticles />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-950/70 via-navy-950/40 to-navy-950/65" />
         </div>
         <motion.div
           variants={heroContentVariants}
@@ -179,32 +149,17 @@ export default function Home() {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="font-body text-xs font-semibold tracking-[0.25em] uppercase gold-text-gradient block mb-3"
+            className="font-body text-xs font-semibold tracking-[0.25em] uppercase text-gold-400 block mb-3"
           >
             Welcome to Warri's Finest
           </motion.span>
           <h1 className="font-display text-[clamp(3rem,8vw,6.5rem)] font-normal text-white leading-none tracking-tight mb-4">
-            <motion.span
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-              className="block"
-            >
-              Beechnut
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-              className="block"
-            >
-              Hotel Warri
-            </motion.span>
+            Beechnut<br />Hotel Warri
           </h1>
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
             className="font-body text-lg text-white/80 font-light tracking-wider mb-8"
           >
             Where Nigerian warmth meets world-class luxury
@@ -275,24 +230,22 @@ export default function Home() {
             {ROOMS.slice(0, 3).map((room, i) => (
               <ScrollReveal key={room.id} delay={0.1 * (i + 1)}>
                 <motion.article
-                  className="bg-white rounded-sm overflow-hidden shadow-sm group premium-card"
-                  whileHover={{ y: -6, boxShadow: '0 24px 72px rgba(10,20,71,0.10), 0 0 0 1px rgba(212,162,42,0.12)' }}
+                  className="bg-white rounded-sm overflow-hidden shadow-sm group"
+                  whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(0,0,0,0.12)' }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 >
                   <div className="overflow-hidden relative aspect-[4/3]">
-                    <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-gold-400/0 via-transparent to-gold-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
                     {room.badge !== 'Standard' && (
                       <span className={`absolute top-3 left-3 z-10 text-[0.65rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${
-                        room.badge === 'Most Popular' ? 'bg-gold-400 text-navy-900' : 'bg-navy-950/80 text-white backdrop-blur-sm'
+                        room.badge === 'Most Popular' ? 'bg-gold-400 text-navy-900' : 'bg-navy-950 text-white'
                       }`}>
                         {room.badge}
                       </span>
                     )}
                   </div>
-                  <div className="p-5 relative">
-                    <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
+                  <div className="p-5">
                     <span className="text-xs font-semibold tracking-widest uppercase text-gold-500 block mb-1">{room.type === 'standard' ? 'Standard' : room.type === 'deluxe' ? 'Deluxe' : room.type === 'suite' ? 'Suite' : 'Presidential'}</span>
                     <h3 className="font-display text-xl text-navy-900 mb-2">{room.name}</h3>
                     <div className="flex flex-wrap gap-3 mb-3">
@@ -440,6 +393,31 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section>
+
+      <section className="py-16 lg:py-24 bg-surface" aria-labelledby="location-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <span className="eyebrow">Find Us</span>
+              <h2 id="location-heading" className="section-title">Our Location</h2>
+              <div className="w-12 h-0.5 bg-gold-400 mx-auto my-3" />
+              <p className="section-subtitle mx-auto">1 Justice Mosheshe Close, Off Aziza Road, Effurun/Sapele Road, Effurun, Delta, Nigeria</p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <div className="w-full h-[420px] rounded-lg overflow-hidden shadow-sm border border-gray-200">
+              <iframe
+                src="https://maps.google.com/maps?q=1+Justice+Mosheshe+Close+Off+Aziza+Road+Effurun+Delta+Nigeria&t=k&z=16&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Beechnut Hotel Location on Google Maps"
+                aria-label="Google Maps satellite view showing Beechnut Hotel at 1 Justice Mosheshe Close, Effurun, Delta State"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       <section className="py-16 lg:py-24 bg-surface-alt" id="testimonials" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

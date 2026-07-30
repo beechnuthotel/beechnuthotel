@@ -60,7 +60,7 @@ export default function Contact() {
             <ScrollReveal>
               <div className="space-y-6">
                 {[
-                  { icon: 'map', label: 'Address', value: 'Esisi Road, Warri, Delta State, Nigeria' },
+                  { icon: 'map', label: 'Address', value: '1 Justice Mosheshe Close, Off Aziza Road, Effurun, Delta, Nigeria' },
                   { icon: 'phone', label: 'Phone', value: '+234 805 500 0822', href: 'tel:+2348055000822' },
                   { icon: 'whatsapp', label: 'WhatsApp', value: '+234 805 500 0822', href: 'https://wa.me/2348055000822' },
                   { icon: 'mail', label: 'Email', value: 'info@beechnuthotelwarri.com', href: 'mailto:info@beechnuthotelwarri.com' },
@@ -150,8 +150,15 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="h-[400px] bg-navy-800/20 flex items-center justify-center text-white/20 text-lg uppercase tracking-widest">
-        Map Placeholder — Google Maps Integration
+      <section className="h-[400px] w-full overflow-hidden relative">
+        <iframe
+          src="https://maps.google.com/maps?q=1+Justice+Mosheshe+Close+Off+Aziza+Road+Effurun+Delta+Nigeria&t=k&z=16&output=embed&iwloc=near"
+          className="absolute inset-0 w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Beechnut Hotel Location on Google Maps"
+          aria-label="Google Maps satellite view showing Beechnut Hotel location"
+        />
       </section>
     </>
   )

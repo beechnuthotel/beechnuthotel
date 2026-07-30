@@ -22,9 +22,9 @@ function StepIndicator({ currentStep }) {
       {steps.map((s, i) => (
         <div key={s.num} className="flex items-center">
           <div className="flex flex-col items-center">
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-500 ${
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
               s.num === currentStep
-                ? 'bg-gradient-to-br from-gold-400 to-gold-600 text-navy-900 shadow-[0_0_0_4px_rgba(212,162,42,0.2),0_4px_16px_rgba(212,162,42,0.2)] scale-110'
+                ? 'bg-gold-500 text-navy-900 shadow-[0_0_0_4px_rgba(212,162,42,0.2)]'
                 : s.num < currentStep
                   ? 'bg-gold-400 text-navy-900'
                   : 'bg-gray-200 text-gray-400'
@@ -284,7 +284,7 @@ export default function Booking() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                             className={`bg-white border rounded-lg overflow-hidden shadow-sm flex flex-col transition-all duration-300 cursor-pointer ${
-                              isSelected ? 'ring-2 ring-gold-500 border-gold-500 shadow-[0_8px_32px_rgba(212,162,42,0.15)]' : 'border-gray-200 hover:shadow-lg hover:-translate-y-1'
+                              isSelected ? 'ring-2 ring-gold-500 border-gold-500' : 'border-gray-200 hover:shadow-md hover:-translate-y-1'
                             }`}
                             onClick={() => setSelectedRoom(isSelected ? null : room)}
                             role="radio"

@@ -13,9 +13,9 @@ export default function WhatsAppFloat() {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1, type: 'spring', stiffness: 300, damping: 20 }}
-      whileHover={{ scale: 1.08, y: -4, boxShadow: '0 12px 40px rgba(37,211,102,0.5)' }}
+      whileHover={{ scale: 1.08, y: -4 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-gradient-to-r from-[#25D366] to-[#20BD5A] text-white rounded-full px-5 py-3 shadow-[0_8px_32px_rgba(37,211,102,0.35)] text-sm font-medium no-underline animate-wa-pulse backdrop-blur-sm"
+      className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#25D366] text-white rounded-full px-4 py-2.5 shadow-[0_6px_28px_rgba(37,211,102,0.4)] text-sm font-medium no-underline animate-wa-pulse"
       aria-label="Chat with us on WhatsApp"
     >
       <svg viewBox="0 0 32 32" width="22" height="22" fill="white" aria-hidden="true">

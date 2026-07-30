@@ -65,12 +65,10 @@ export default function Footer() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="bg-navy-950 text-white/70 pt-24 relative overflow-hidden"
+      className="bg-navy-950 text-white/70 pt-24"
       role="contentinfo"
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-gold-400/3 via-transparent to-transparent pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -93,9 +91,8 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.15, borderColor: '#d4a22a', color: '#d4a22a', backgroundColor: 'rgba(212,162,42,0.12)' }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/60 transition-colors duration-300 hover:border-gold-400 hover:text-gold-400 hover:bg-gold-400/10"
+                  whileHover={{ scale: 1.1, borderColor: '#d4a22a', color: '#d4a22a' }}
+                  className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/60 transition-colors duration-300 hover:border-gold-400 hover:text-gold-400 hover:bg-gold-400/10"
                   aria-label={`Beechnut Hotel on ${label}`}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -139,7 +136,7 @@ export default function Footer() {
                 <svg className="mt-0.5 shrink-0 text-gold-400" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
                 </svg>
-                <span>Esisi Road, Warri, Delta State, Nigeria</span>
+                <span>1 Justice Mosheshe Close, Off Aziza Road, Effurun/Sapele Road, Effurun, Delta, Nigeria</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-white/55">
                 <svg className="mt-0.5 shrink-0 text-gold-400" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
