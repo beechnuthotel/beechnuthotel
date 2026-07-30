@@ -63,13 +63,13 @@ export default function Dining() {
           <div className="space-y-8">
             {DINING_VENUES.map((venue, i) => (
               <ScrollReveal key={venue.name} delay={0.1 * i}>
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[400px] overflow-hidden rounded-lg shadow-sm ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[400px] overflow-hidden rounded-lg shadow-sm`}>
                   <motion.div
                     initial={{ opacity: 0, scale: 1.05 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="min-h-[300px] lg:min-h-full overflow-hidden"
+                    className={`min-h-[300px] lg:min-h-full overflow-hidden ${i % 2 === 1 ? 'lg:order-2' : ''}`}
                   >
                     <img src={venue.image} alt={venue.name} className="w-full h-full object-cover" loading="lazy" />
                   </motion.div>
@@ -78,7 +78,7 @@ export default function Dining() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                    className={`p-8 lg:p-12 flex flex-col justify-center ${i % 2 === 1 ? 'bg-navy-950' : 'bg-white'}`}
+                    className={`p-8 lg:p-12 flex flex-col justify-center ${i % 2 === 1 ? 'bg-navy-950 lg:order-1' : 'bg-white'}`}
                   >
                     <span className={`text-xs font-semibold tracking-[0.18em] uppercase block mb-2 ${i % 2 === 1 ? 'text-gold-400' : 'text-gold-500'}`}>
                       {venue.tagline}

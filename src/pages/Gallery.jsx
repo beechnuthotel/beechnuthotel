@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
@@ -18,6 +18,19 @@ const GALLERY_ITEMS = [
 
 export default function Gallery() {
   const [filter, setFilter] = useState('all')
+  const [lightbox, setLightbox] = useState(null)
+
+  useEffect(() => {
+    if (lightbox) {
+      const onKey = (e) => { if (e.key === 'Escape') setLightbox(null) }
+      document.addEventListener('keydown', onKey)
+      document.body.style.overflow = 'hidden'
+      return () => {
+        document.removeEventListener('keydown', onKey)
+        document.body.style.overflow = ''
+      }
+    }
+  }, [lightbox])
 
   const filtered = filter === 'all' ? GALLERY_ITEMS : GALLERY_ITEMS.filter(item => item.category === filter)
 
@@ -90,16 +103,71 @@ export default function Gallery() {
                   transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                   className="group relative aspect-square bg-navy-800/10 overflow-hidden cursor-zoom-in rounded-sm"
                   whileHover={{ boxShadow: '0 12px 40px rgba(0,0,0,0.15)' }}
+                  onClick={() => setLightbox(item)}
+                  onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLightbox(item) } }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`View ${item.caption}`}
                 >
                   <img src={item.image} alt={item.caption} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   <div className="absolute inset-0 bg-gold-500/0 group-hover:bg-gold-500/60 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white" aria-hidden="true">
                       <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                     </svg>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
+          </AnimatePresence>
+
+          <AnimatePresence>
+            {lightbox && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 p-4"
+                onClick={() => setLightbox(null)}
+                onKeyDown={e => { if (e.key === 'Escape') setLightbox(null) }}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Image lightbox"
+                tabIndex={-1}
+              >
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                  onClick={() => setLightbox(null)}
+                  className="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                  aria-label="Close lightbox"
+                >
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                  </svg>
+                </motion.button>
+                <motion.img
+                  key={lightbox.id}
+                  src={lightbox.image}
+                  alt={lightbox.caption}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="max-w-full max-h-[85vh] object-contain rounded-sm shadow-2xl"
+                  onClick={e => e.stopPropagation()}
+                />
+                <motion.p
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.4 }}
+                  className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 text-sm"
+                >
+                  {lightbox.caption}
+                </motion.p>
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
       </section>

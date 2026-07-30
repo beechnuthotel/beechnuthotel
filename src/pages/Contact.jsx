@@ -60,8 +60,8 @@ export default function Contact() {
             <ScrollReveal>
               <div className="space-y-6">
                 {[
-                  { icon: 'map', label: 'Address', value: '[Street Address], Warri, Delta State, Nigeria' },
-                  { icon: 'phone', label: 'Phone', value: '+234 (0) 000 000 0000', href: 'tel:+2340000000000' },
+                  { icon: 'map', label: 'Address', value: 'Esisi Road, Warri, Delta State, Nigeria' },
+                  { icon: 'phone', label: 'Phone', value: '+234 805 500 0822', href: 'tel:+2348055000822' },
                   { icon: 'whatsapp', label: 'WhatsApp', value: '+234 805 500 0822', href: 'https://wa.me/2348055000822' },
                   { icon: 'mail', label: 'Email', value: 'info@beechnuthotelwarri.com', href: 'mailto:info@beechnuthotelwarri.com' },
                   { icon: 'clock', label: 'Reception', value: 'Open 24 hours — 7 days a week' },

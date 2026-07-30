@@ -22,9 +22,9 @@ function StepIndicator({ currentStep }) {
       {steps.map((s, i) => (
         <div key={s.num} className="flex items-center">
           <div className="flex flex-col items-center">
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-500 ${
               s.num === currentStep
-                ? 'bg-gold-500 text-navy-900 shadow-[0_0_0_4px_rgba(212,162,42,0.2)]'
+                ? 'bg-gradient-to-br from-gold-400 to-gold-600 text-navy-900 shadow-[0_0_0_4px_rgba(212,162,42,0.2),0_4px_16px_rgba(212,162,42,0.2)] scale-110'
                 : s.num < currentStep
                   ? 'bg-gold-400 text-navy-900'
                   : 'bg-gray-200 text-gray-400'
@@ -65,7 +65,7 @@ export default function Booking() {
   const [phone, setPhone] = useState('')
   const [specialRequests, setSpecialRequests] = useState('')
   const [confirmed, setConfirmed] = useState(false)
-  const [step1Error, setStep1Error] = useState('')
+  const [step1Error, setStep1Error] = useState({ dates: false, room: false })
   const [step2Error, setStep2Error] = useState('')
 
   const topRef = useRef(null)
@@ -103,14 +103,14 @@ export default function Booking() {
 
   const handleNextStep1 = () => {
     if (!checkIn || !checkOut) {
-      setStep1Error('Please select both check-in and check-out dates.')
+      setStep1Error({ dates: true, room: false })
       return
     }
     if (!selectedRoom) {
-      setStep1Error('Please select a room.')
+      setStep1Error({ dates: false, room: true })
       return
     }
-    setStep1Error('')
+    setStep1Error({ dates: false, room: false })
     goToStep(2)
   }
 
@@ -266,8 +266,8 @@ export default function Booking() {
                         </div>
                       </div>
                     </div>
-                    {step1Error && step1Error.includes('dates') && (
-                      <p className="text-red-600 text-sm mt-2" role="alert">{step1Error}</p>
+                    {step1Error.dates && (
+                      <p className="text-red-600 text-sm mt-2" role="alert">Please select both check-in and check-out dates.</p>
                     )}
                   </div>
 
@@ -284,7 +284,7 @@ export default function Booking() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                             className={`bg-white border rounded-lg overflow-hidden shadow-sm flex flex-col transition-all duration-300 cursor-pointer ${
-                              isSelected ? 'ring-2 ring-gold-500 border-gold-500' : 'border-gray-200 hover:shadow-md hover:-translate-y-1'
+                              isSelected ? 'ring-2 ring-gold-500 border-gold-500 shadow-[0_8px_32px_rgba(212,162,42,0.15)]' : 'border-gray-200 hover:shadow-lg hover:-translate-y-1'
                             }`}
                             onClick={() => setSelectedRoom(isSelected ? null : room)}
                             role="radio"
@@ -333,8 +333,8 @@ export default function Booking() {
                         )
                       })}
                     </div>
-                    {step1Error && step1Error.includes('room') && (
-                      <p className="text-red-600 text-sm mt-2" role="alert">{step1Error}</p>
+                    {step1Error.room && (
+                      <p className="text-red-600 text-sm mt-2" role="alert">Please select a room.</p>
                     )}
                   </div>
 
@@ -538,7 +538,7 @@ export default function Booking() {
                   We will confirm your reservation within 24 hours. <strong className="text-amber-700">Please await confirmation before making any payment.</strong>
                 </p>
                 <p className="text-xs text-gray-400">
-                  A confirmation message has also been sent to <strong className="text-navy-900">{email}</strong>.
+                  Our reservations team will respond via <strong className="text-navy-900">{email}</strong> within 24 hours.
                 </p>
               </div>
 

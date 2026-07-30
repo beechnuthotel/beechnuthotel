@@ -53,8 +53,8 @@ export default function Navbar() {
 
   const navLinkClass = ({ isActive }) =>
     `relative text-sm font-medium tracking-wider uppercase transition-colors duration-300 ${
-      isActive ? 'text-gold-400' : 'text-white/80 hover:text-gold-300'
-    }`
+      isActive ? 'text-gold-400 after:scale-x-100' : 'text-white/80 hover:text-gold-300 after:scale-x-0'
+    } after:content-[""] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[1.5px] after:bg-gold-400 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100`
 
   const mobileNavLinkClass = ({ isActive }) =>
     `text-3xl font-display font-normal text-white transition-colors duration-300 ${
@@ -67,13 +67,13 @@ export default function Navbar() {
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-300 ${
-          scrolled ? 'bg-navy-950/97 backdrop-blur-md shadow-[0_1px_0_rgba(201,168,76,0.2)]' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-500 ${
+          scrolled ? 'bg-navy-950/98 backdrop-blur-xl shadow-[0_1px_0_rgba(212,162,42,0.15)]' : 'bg-gradient-to-b from-navy-950/40 to-transparent'
         }`}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <Link to="/" className="flex flex-col leading-none" aria-label="Beechnut Hotel Warri — Home">
-            <span className="font-display text-2xl font-semibold text-white tracking-wide">Beechnut</span>
+          <Link to="/" className="group flex flex-col leading-none" aria-label="Beechnut Hotel Warri — Home">
+            <span className="font-display text-2xl font-semibold text-white tracking-wide group-hover:text-gold-400 transition-colors duration-300">Beechnut</span>
             <span className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-gold-400 mt-0.5">Hotel Warri</span>
           </Link>
 

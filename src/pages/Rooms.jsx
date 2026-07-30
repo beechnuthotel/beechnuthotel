@@ -75,22 +75,24 @@ export default function Rooms() {
               {filtered.map((room, i) => (
                 <ScrollReveal key={room.id} delay={0.05 * i}>
                   <motion.article
-                    className="bg-white rounded-lg overflow-hidden shadow-sm border border-navy-900/5 flex flex-col group"
-                    whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(0,0,0,0.1)' }}
+                    className="bg-white rounded-lg overflow-hidden shadow-sm border border-navy-900/5 flex flex-col group premium-card"
+                    whileHover={{ y: -6, boxShadow: '0 24px 72px rgba(10,20,71,0.10), 0 0 0 1px rgba(212,162,42,0.12)' }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   >
                     <div className="relative overflow-hidden aspect-[16/10]">
-                      <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                      <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-gold-400/0 via-transparent to-gold-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       {room.badge !== 'Standard' && (
                         <span className={`absolute top-3 left-3 z-10 text-[0.6rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${
-                          room.badge === 'Most Popular' ? 'bg-gold-400 text-navy-900' : room.badge === 'Presidential' ? 'bg-navy-950 text-gold-400' : 'bg-navy-900 text-white'
+                          room.badge === 'Most Popular' ? 'bg-gold-400 text-navy-900' : room.badge === 'Presidential' ? 'bg-navy-950/80 text-gold-400 backdrop-blur-sm' : 'bg-navy-900/80 text-white backdrop-blur-sm'
                         }`}>
                           {room.badge}
                         </span>
                       )}
                     </div>
-                    <div className="p-5 flex flex-col flex-1">
+                    <div className="p-5 flex flex-col flex-1 relative">
+                      <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent" />
                       <span className="text-xs font-semibold tracking-widest uppercase text-gold-500 mb-1">{room.type === 'presidential' ? 'Presidential Suite' : room.type.charAt(0).toUpperCase() + room.type.slice(1)}</span>
                       <h3 className="font-display text-xl font-semibold text-navy-900 mb-2">{room.name}</h3>
                       <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-3">{room.description}</p>
