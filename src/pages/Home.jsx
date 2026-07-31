@@ -356,7 +356,7 @@ export default function Home() {
             <blockquote className="font-accent text-2xl italic text-gold-300 leading-relaxed mb-4 border-l-3 border-gold-400 pl-4">
               &ldquo;Food is memory, culture, and celebration — we serve all three.&rdquo;
             </blockquote>
-            <p className="text-white/70 mb-6">Three distinct dining venues — from an elegant à la carte restaurant celebrating Nigerian cuisine with a fine-dining twist, to a relaxed poolside grill and a rooftop cocktail bar with Warri's best skyline views.</p>
+            <p className="text-white/70 mb-6">One elegant dining area serving authentic Nigerian cuisine with a fine-dining twist — plus three tropical bar sections: the Indoor Bar, Poolside Bar, and Roof Top Bar, each with its own character and Warri's best views.</p>
             <div className="flex gap-3 flex-wrap">
               <Link to="/dining" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all">Explore Dining</Link>
               <Link to="/dining#reservations" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm border-2 border-gold-400 text-white hover:bg-gold-400 hover:text-navy-900 transition-all">Reserve a Table</Link>

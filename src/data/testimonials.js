@@ -26,8 +26,8 @@ export const TESTIMONIALS = [
 ]
 
 export const STATS = [
-  { value: '72', label: 'Luxury Rooms' },
+  { value: '75', label: 'Luxury Rooms' },
   { value: '4.9', label: 'Guest Rating' },
-  { value: '12+', label: 'Years of Excellence' },
-  { value: '3', label: 'Dining Venues' },
+  { value: '3+', label: 'Years of Excellence' },
+  { value: '3', label: 'Tropical Bars' },
 ]
