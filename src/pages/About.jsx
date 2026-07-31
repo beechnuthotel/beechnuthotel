@@ -81,6 +81,56 @@ export default function About() {
             </div>
           </ScrollReveal>
 
+          <ScrollReveal delay={0.15}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16 bg-navy-950 rounded-lg overflow-hidden">
+              <motion.div
+                initial={{ opacity: 0, scale: 1.05 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+                className="relative aspect-video lg:aspect-auto lg:h-full overflow-hidden"
+              >
+                <video
+                  src="/videos/gm-welcome.mp4"
+                  poster="/images/gallery/facilities/gallery-facility-3.webp"
+                  controls
+                  preload="metadata"
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                className="p-8 lg:p-12 flex flex-col justify-center"
+              >
+                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-400 block mb-2">A Message From Our General Manager</span>
+                <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Welcome to Beechnut Hotel Warri</h3>
+                <div className="w-12 h-0.5 bg-gold-400 mb-4" />
+                <p className="text-white/70 leading-relaxed mb-4">
+                  "On behalf of our entire team, I warmly welcome you to Beechnut Hotel Warri. Whether you are visiting for business, leisure, or a special celebration, we are committed to making your stay truly memorable."
+                </p>
+                <p className="text-white/70 leading-relaxed mb-6">
+                  From our elegant rooms and suites to our dining area, tropical bars, conference facilities, and recreation — every corner of Beechnut is designed to offer you comfort, security, and genuine Nigerian hospitality.
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gold-400/15 border border-gold-400/40 flex items-center justify-center shrink-0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="text-gold-400" aria-hidden="true">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-display text-lg font-semibold text-white leading-tight">General Manager</p>
+                    <p className="text-xs tracking-[0.18em] uppercase text-gold-400">Beechnut Hotel Warri</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </ScrollReveal>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <ScrollReveal direction="left">
               <motion.div

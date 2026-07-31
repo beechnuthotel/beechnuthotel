@@ -152,7 +152,7 @@ export default function Contact() {
 
       <section className="h-[400px] w-full overflow-hidden relative">
         <iframe
-          src="https://maps.google.com/maps?q=1+Justice+Mosheshe+Close+Off+Aziza+Road+Effurun+Delta+Nigeria&t=k&z=16&output=embed&iwloc=near"
+          src="https://maps.google.com/maps?q=JQ9H%2BJM%20Oharhe&t=k&z=16&output=embed&iwloc=near"
           className="absolute inset-0 w-full h-full border-0"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

@@ -10,6 +10,7 @@ import Events from './pages/Events'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Gallery from './pages/Gallery'
+import Testimonials from './pages/Testimonials'
 import Facilities from './pages/Facilities'
 import Offers from './pages/Offers'
 
@@ -48,6 +49,7 @@ export default function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
         <Route path="gallery" element={<Gallery />} />
+        <Route path="testimonials" element={<Testimonials />} />
         <Route path="facilities" element={<Facilities />} />
         <Route path="offers" element={<Offers />} />
         <Route path="*" element={<NotFound />} />

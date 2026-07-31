@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { to: '/dining', label: 'Dining' },
   { to: '/events', label: 'Events' },
   { to: '/gallery', label: 'Gallery' },
+  { to: '/testimonials', label: 'Testimonials' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -72,9 +73,12 @@ export default function Navbar() {
         }`}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <Link to="/" className="flex flex-col leading-none" aria-label="Beechnut Hotel Warri — Home">
-            <span className="font-display text-2xl font-semibold text-white tracking-wide">Beechnut</span>
-            <span className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-gold-400 mt-0.5">Hotel Warri</span>
+          <Link to="/" className="flex items-center gap-3" aria-label="Beechnut Hotel Warri — Home">
+            <img src="/images/logo.png" alt="Beechnut Hotel Warri logo" className="h-11 w-auto rounded-md bg-white p-1.5" />
+            <span className="flex flex-col leading-none">
+              <span className="font-display text-2xl font-semibold text-white tracking-wide">Beechnut</span>
+              <span className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-gold-400 mt-0.5">Hotel Warri</span>
+            </span>
           </Link>
 
           <ul className="hidden lg:flex items-center gap-8">

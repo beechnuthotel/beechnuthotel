@@ -27,6 +27,7 @@ const QUICK_LINKS = [
   { label: 'Dining', to: '/dining' },
   { label: 'Events & Conferences', to: '/events' },
   { label: 'Photo Gallery', to: '/gallery' },
+  { label: 'Video Testimonials', to: '/testimonials' },
   { label: 'About Beechnut', to: '/about' },
   { label: 'Special Offers', to: '/offers' },
 ]
@@ -77,9 +78,12 @@ export default function Footer() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10"
         >
           <motion.div variants={itemVariants}>
-            <Link to="/" className="inline-block mb-4">
-              <span className="font-display text-2xl font-medium text-white block">Beechnut</span>
-              <span className="text-xs tracking-[0.18em] uppercase text-gold-400 block">Hotel Warri</span>
+            <Link to="/" className="inline-flex items-center gap-3 mb-4">
+              <img src="/images/logo.png" alt="Beechnut Hotel Warri logo" className="h-12 w-auto rounded-md bg-white p-1.5" />
+              <span>
+                <span className="font-display text-2xl font-medium text-white block">Beechnut</span>
+                <span className="text-xs tracking-[0.18em] uppercase text-gold-400 block">Hotel Warri</span>
+              </span>
             </Link>
             <p className="text-sm text-white/55 leading-relaxed mb-4">
               Warri's premier luxury destination — where Nigerian warmth, world-class hospitality, and architectural elegance converge to create memories that last a lifetime.
