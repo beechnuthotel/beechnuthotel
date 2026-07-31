@@ -180,6 +180,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between py-4 text-xs text-white/35 gap-2">
           <span>&copy; {year} Beechnut Hotel Warri. All rights reserved.</span>
+          <span>Site designed by <a href="https://webdev.talent-loop.org" target="_blank" rel="noopener noreferrer" className="text-gold-400/80 hover:text-gold-400 underline underline-offset-2 transition-colors">Talent Loop Web Service</a></span>
           <span className="flex gap-3">
             <span>Privacy Policy</span>
             <span>Terms of Use</span>

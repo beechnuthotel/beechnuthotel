@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppFloat from '../ui/WhatsAppFloat'
 import BackToTop from '../ui/BackToTop'
+import ScrollToTop from '../ui/ScrollToTop'
 
 const pageVariants = {
   initial: { opacity: 0, y: 16 },
@@ -16,6 +17,7 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1">
         <AnimatePresence mode="wait">
