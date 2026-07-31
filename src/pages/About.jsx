@@ -311,7 +311,7 @@ export default function About() {
           </ScrollReveal>
 
           <div className="text-center mt-12">
-            <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all">
+            <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">
               Book Your Stay
             </Link>
           </div>

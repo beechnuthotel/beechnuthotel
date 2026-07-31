@@ -108,7 +108,7 @@ export default function Events() {
           <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-400 block mb-2">Start Planning</span>
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-3">Let's Create Something <em className="text-gold-400 not-italic">Extraordinary</em></h2>
           <p className="text-white/60 mb-6">Our events team is available seven days a week. Whether you have a firm date or are still exploring ideas, we'd love to hear from you.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-transparent hover:text-gold-400 border-2 border-gold-500 hover:border-gold-400 transition-all">
+          <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-transparent hover:text-gold-400 border-2 border-gold-500 hover:border-gold-400 transition-all">
             Contact Events Team
           </Link>
         </div>

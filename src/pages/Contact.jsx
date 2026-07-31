@@ -129,7 +129,7 @@ export default function Contact() {
                     <textarea id="contact-message" rows={5} value={formData.message} onChange={handleChange('message')} className="w-full px-3 py-2.5 border border-gray-200 rounded-sm text-sm bg-gray-50 focus:border-navy-900 focus:bg-white focus:outline-none resize-y min-h-[120px]" placeholder="Tell us how we can assist you…" required />
                   </div>
 
-                  <button type="submit" className="px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all">
+                  <button type="submit" className="px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">
                     Send Message
                   </button>
                 </motion.form>

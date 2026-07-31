@@ -79,7 +79,7 @@ export default function Footer() {
         >
           <motion.div variants={itemVariants}>
             <Link to="/" className="inline-flex items-center gap-3 mb-4">
-              <img src="/images/logo.png" alt="Beechnut Hotel Warri logo" className="h-12 w-auto rounded-md bg-white p-1.5" />
+              <img src="/images/logo.png" alt="Beechnut Hotel Warri logo" width="180" height="112" className="h-12 w-auto rounded-md bg-white p-1.5" />
               <span>
                 <span className="font-display text-2xl font-medium text-white block">Beechnut</span>
                 <span className="text-xs tracking-[0.18em] uppercase text-gold-400 block">Hotel Warri</span>
@@ -168,7 +168,7 @@ export default function Footer() {
                   className="flex-1 px-3 py-2.5 text-sm bg-white/10 border border-white/15 rounded-sm text-white placeholder-white/30 outline-none focus:border-gold-400 transition-colors"
                   required
                 />
-                <button type="submit" className="px-3 py-2.5 bg-gold-500 text-navy-900 rounded-sm hover:bg-gold-600 transition-colors" aria-label="Subscribe">
+                <button type="submit" className="px-3 py-2.5 bg-gold-400 text-navy-900 rounded-sm hover:bg-gold-600 transition-colors" aria-label="Subscribe">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>

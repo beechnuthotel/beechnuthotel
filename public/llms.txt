@@ -1,0 +1,21 @@
+# Beechnut Hotel Warri
+
+> Beechnut Hotel Warri is a luxury hotel located at 1 Justice Mosheshe Close, Off Aziza Road, Effurun, Delta State, Nigeria. We offer 75 luxury rooms and suites, a restaurant, three tropical bars, conference facilities, and recreational services.
+
+## Pages
+
+- [Home](https://beechnuthotel.com/)
+- [About Us](https://beechnuthotel.com/about)
+- [Rooms & Suites](https://beechnuthotel.com/rooms)
+- [Dining & Bars](https://beechnuthotel.com/dining)
+- [Events & Conferences](https://beechnuthotel.com/events)
+- [Gallery](https://beechnuthotel.com/gallery)
+- [Video Testimonials](https://beechnuthotel.com/testimonials)
+- [Special Offers](https://beechnuthotel.com/offers)
+- [Contact Us](https://beechnuthotel.com/contact)
+- [Book a Room](https://beechnuthotel.com/booking)
+
+## Contact
+
+- Address: 1 Justice Mosheshe Close, Off Aziza Road, Effurun/Sapele Road, Effurun, Delta, Nigeria
+- Phone: +234 805 500 0822

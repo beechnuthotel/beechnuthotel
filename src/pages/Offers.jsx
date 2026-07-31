@@ -147,7 +147,7 @@ export default function Offers() {
                     <p className="text-sm text-gray-600 mb-4">{offer.desc}</p>
                     <div className="flex items-center justify-between">
                       <span className="font-display text-lg font-semibold text-navy-900">{offer.price}</span>
-                      <Link to="/booking" className="px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all">
+                      <Link to="/booking" className="px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">
                         Book Offer
                       </Link>
                     </div>

@@ -74,7 +74,7 @@ export default function Navbar() {
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3" aria-label="Beechnut Hotel Warri — Home">
-            <img src="/images/logo.png" alt="Beechnut Hotel Warri logo" className="h-11 w-auto rounded-md bg-white p-1.5" />
+            <img src="/images/logo.png" alt="Beechnut Hotel Warri logo" width="180" height="112" className="h-11 w-auto rounded-md bg-white p-1.5" />
             <span className="flex flex-col leading-none">
               <span className="font-display text-2xl font-semibold text-white tracking-wide">Beechnut</span>
               <span className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-gold-400 mt-0.5">Hotel Warri</span>
@@ -93,7 +93,7 @@ export default function Navbar() {
 
           <Link
             to="/booking"
-            className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)]"
+            className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)]"
           >
             Book Now
           </Link>
@@ -139,7 +139,7 @@ export default function Navbar() {
             <motion.div variants={menuItemVariants}>
               <Link
                 to="/booking"
-                className="mt-4 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all"
+                className="mt-4 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all"
                 onClick={() => setMobileOpen(false)}
               >
                 Book Now

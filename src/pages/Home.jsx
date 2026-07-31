@@ -7,7 +7,7 @@ import ScrollReveal from '../components/ui/ScrollReveal'
 
 function StarRating({ count = 5 }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${count} out of 5 stars`}>
+    <div className="flex gap-0.5" role="img" aria-label={`${count} out of 5 stars`}>
       {Array.from({ length: count }, (_, i) => (
         <svg key={i} viewBox="0 0 20 20" width="16" height="16" fill="currentColor" className="text-gold-400" aria-hidden="true">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 0 0 .951-.69l1.07-3.292z" />
@@ -130,6 +130,7 @@ export default function Home() {
               key={slideIndex}
               src={heroSlides[slideIndex]}
               alt=""
+              fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
               variants={heroBgVariants}
               initial="enter"
               animate="center"
@@ -170,7 +171,7 @@ export default function Home() {
             transition={{ delay: 0.9, duration: 0.6 }}
             className="flex items-center justify-center gap-3 flex-wrap"
           >
-            <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)]">
+            <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)]">
               Reserve a Room
             </Link>
             <a href="#rooms" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm border-2 border-gold-400 text-white hover:bg-gold-400 hover:text-navy-900 transition-all duration-300">
@@ -358,7 +359,7 @@ export default function Home() {
             </blockquote>
             <p className="text-white/70 mb-6">One elegant dining area serving authentic Nigerian cuisine with a fine-dining twist — plus three tropical bar sections: the Indoor Bar, Poolside Bar, and Roof Top Bar, each with its own character and Warri's best views.</p>
             <div className="flex gap-3 flex-wrap">
-              <Link to="/dining" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all">Explore Dining</Link>
+              <Link to="/dining" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">Explore Dining</Link>
               <Link to="/dining#reservations" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm border-2 border-gold-400 text-white hover:bg-gold-400 hover:text-navy-900 transition-all">Reserve a Table</Link>
             </div>
           </motion.div>
@@ -458,7 +459,7 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex gap-3 justify-center flex-wrap mb-8"
           >
-            <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 transition-all">Reserve a Room</Link>
+            <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">Reserve a Room</Link>
             <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm border-2 border-gold-400 text-white hover:bg-gold-400 hover:text-navy-900 transition-all">Speak to Us</Link>
           </motion.div>
           <motion.div

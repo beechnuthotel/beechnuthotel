@@ -24,7 +24,7 @@ function StepIndicator({ currentStep }) {
           <div className="flex flex-col items-center">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
               s.num === currentStep
-                ? 'bg-gold-500 text-navy-900 shadow-[0_0_0_4px_rgba(212,162,42,0.2)]'
+                ? 'bg-gold-400 text-navy-900 shadow-[0_0_0_4px_rgba(212,162,42,0.2)]'
                 : s.num < currentStep
                   ? 'bg-gold-400 text-navy-900'
                   : 'bg-gray-200 text-gray-400'
@@ -317,7 +317,7 @@ export default function Booking() {
                                 <div
                                   className={`px-3 py-1.5 text-xs font-semibold tracking-wider uppercase rounded-sm border-2 transition-all ${
                                     isSelected
-                                      ? 'bg-gold-500 text-navy-900 border-gold-500'
+                                      ? 'bg-gold-400 text-navy-900 border-gold-500'
                                       : 'bg-transparent text-navy-900 border-navy-900 hover:bg-navy-900 hover:text-white'
                                   }`}
                                   onClick={e => e.stopPropagation()}
@@ -363,7 +363,7 @@ export default function Booking() {
                       disabled={!canProceedStep1}
                       className={`px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm transition-all ${
                         canProceedStep1
-                          ? 'bg-gold-500 text-navy-900 hover:bg-gold-600 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)]'
+                          ? 'bg-gold-400 text-navy-900 hover:bg-gold-600 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)]'
                           : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                       }`}
                     >
@@ -427,7 +427,7 @@ export default function Booking() {
                       </button>
                       <button
                         onClick={handleNextStep2}
-                        className="px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)] transition-all"
+                        className="px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)] transition-all"
                       >
                         Next Step →
                       </button>
@@ -508,7 +508,7 @@ export default function Booking() {
                       </button>
                       <button
                         onClick={handleConfirm}
-                        className="px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-gold-600 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)] transition-all"
+                        className="px-8 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(161,98,7,0.25)] transition-all"
                       >
                         Confirm Booking
                       </button>

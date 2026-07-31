@@ -111,7 +111,7 @@ export default function Rooms() {
                           <Link to={`/rooms/${room.id}`} className="px-3 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white transition-all">
                             Details
                           </Link>
-                          <Link to={`/booking?room=${room.id}`} className="px-3 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-navy-900 hover:text-gold-400 transition-all border-2 border-gold-500 hover:border-navy-900">
+                          <Link to={`/booking?room=${room.id}`} className="px-3 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-navy-900 hover:text-gold-400 transition-all border-2 border-gold-500 hover:border-navy-900">
                             Book
                           </Link>
                         </div>
@@ -137,7 +137,7 @@ export default function Rooms() {
             Book Direct &amp; <em className="text-gold-400 not-italic">Save More</em>
           </h2>
           <p className="text-white/60 mb-6">Book directly through our website and enjoy our best available rates, complimentary early check-in (subject to availability), and exclusive member perks.</p>
-          <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-500 text-navy-900 hover:bg-transparent hover:text-gold-400 border-2 border-gold-500 hover:border-gold-400 transition-all">
+          <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-transparent hover:text-gold-400 border-2 border-gold-500 hover:border-gold-400 transition-all">
             Reserve a Room
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
           </Link>
