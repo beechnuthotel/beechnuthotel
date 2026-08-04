@@ -53,7 +53,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="relative z-10 px-4"
         >
-          <span className="font-body text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Warri</span>
+          <span className="font-body text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Effurun</span>
           <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">
             Corporate <em className="italic text-gold-400 not-italic">Profile</em>
           </h1>
@@ -107,10 +107,10 @@ export default function About() {
                 className="p-8 lg:p-12 flex flex-col justify-center"
               >
                 <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-400 block mb-2">A Message From Our General Manager</span>
-                <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Welcome to Beechnut Hotel Warri</h3>
+                <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Welcome to Beechnut Hotel Effurun</h3>
                 <div className="w-12 h-0.5 bg-gold-400 mb-4" />
                 <p className="text-white/70 leading-relaxed mb-4">
-                  "On behalf of our entire team, I warmly welcome you to Beechnut Hotel Warri. Whether you are visiting for business, leisure, or a special celebration, we are committed to making your stay truly memorable."
+                  "On behalf of our entire team, I warmly welcome you to Beechnut Hotel Effurun. Whether you are visiting for business, leisure, or a special celebration, we are committed to making your stay truly memorable."
                 </p>
                 <p className="text-white/70 leading-relaxed mb-6">
                   From our elegant rooms and suites to our dining area, tropical bars, conference facilities, and recreation — every corner of Beechnut is designed to offer you comfort, security, and genuine Nigerian hospitality.
@@ -124,7 +124,7 @@ export default function About() {
                   </div>
                   <div>
                     <p className="font-display text-lg font-semibold text-white leading-tight">General Manager</p>
-                    <p className="text-xs tracking-[0.18em] uppercase text-gold-400">Beechnut Hotel Warri</p>
+                    <p className="text-xs tracking-[0.18em] uppercase text-gold-400">Beechnut Hotel Effurun</p>
                   </div>
                 </div>
               </motion.div>

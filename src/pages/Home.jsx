@@ -123,7 +123,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden bg-navy-950" aria-label="Welcome to Beechnut Hotel Warri">
+      <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden bg-navy-950" aria-label="Welcome to Beechnut Hotel Effurun">
         <div className="absolute inset-0">
           <AnimatePresence mode="wait">
             <motion.img

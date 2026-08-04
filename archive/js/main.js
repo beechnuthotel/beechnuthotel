@@ -1,6 +1,6 @@
 /**
  * ============================================================
- * BEECHNUT HOTEL WARRI — Global JavaScript
+ * BEECHNUT HOTEL EFFURUN — Global JavaScript
  * main.js | Version 1.0
  * Pure vanilla JS — no external dependencies
  * ============================================================
@@ -11,7 +11,7 @@
 
   /* ─── CONSTANTS ─────────────────────────────────────────── */
   const WHATSAPP_NUMBER = '[HOTEL_WHATSAPP_NUMBER]'; // e.g. "2348012345678"
-  const WHATSAPP_MESSAGE = encodeURIComponent('Hello, I would like to make a reservation at Beechnut Hotel Warri.');
+  const WHATSAPP_MESSAGE = encodeURIComponent('Hello, I would like to make a reservation at Beechnut Hotel Effurun.');
   const SCROLL_THRESHOLD = 60; // px before navbar becomes solid
 
   /* ─── DOM READY HELPER ──────────────────────────────────── */

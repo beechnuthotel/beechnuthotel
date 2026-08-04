@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   BEECHNUT HOTEL WARRI — Gallery JS
+   BEECHNUT HOTEL EFFURUN — Gallery JS
    gallery.js | Vanilla JS, no dependencies
    Features: Category filter + full-screen lightbox
    ============================================================ */

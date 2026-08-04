@@ -75,7 +75,7 @@ export default function Testimonials() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="relative z-10 px-4"
         >
-          <span className="text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Warri</span>
+          <span className="text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Effurun</span>
           <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">
             Video <em className="italic text-gold-400 not-italic">Testimonials</em>
           </h1>
@@ -95,7 +95,7 @@ export default function Testimonials() {
               <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-navy-900 leading-tight mb-2">
                 Hear From Our <em className="text-gold-500 not-italic">Guests &amp; Team</em>
               </h2>
-              <p className="text-gray-500 max-w-lg mx-auto">Real voices, real experiences — watch what our guests and staff say about staying and working at Beechnut Hotel Warri.</p>
+              <p className="text-gray-500 max-w-lg mx-auto">Real voices, real experiences — watch what our guests and staff say about staying and working at Beechnut Hotel Effurun.</p>
             </div>
           </ScrollReveal>
 
@@ -152,7 +152,7 @@ export default function Testimonials() {
                           {video.role}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400">Beechnut Hotel Warri</p>
+                      <p className="text-xs text-gray-400">Beechnut Hotel Effurun</p>
                     </div>
                   </motion.article>
                 </ScrollReveal>

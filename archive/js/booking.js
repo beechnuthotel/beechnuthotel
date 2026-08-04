@@ -1,5 +1,5 @@
 /* ============================================================
-   BEECHNUT HOTEL WARRI — Booking System
+   BEECHNUT HOTEL EFFURUN — Booking System
    booking.js | Vanilla JS, no dependencies
    Multi-step: Dates → Room → Guest Details → Confirmation
    ============================================================ */
@@ -8,7 +8,7 @@
 
 /* ─── HOTEL CONFIGURATION ───────────────────────────────────── */
 const HOTEL_CONFIG = {
-  name:        'Beechnut Hotel Warri',
+  name:        'Beechnut Hotel Effurun',
   whatsapp:    '[HOTEL_WHATSAPP_NUMBER]',   /* TODO: Replace */
   email:       '[HOTEL_EMAIL]',             /* TODO: Replace */
   currency:    '₦',
@@ -82,7 +82,7 @@ const ROOMS = [
     name:        'Presidential Suite',
     type:        'presidential',
     image:       '/images/rooms/presidential-suite.jpg',
-    description: 'The pinnacle of luxury at Beechnut Hotel Warri — a full apartment-style suite with panoramic views, butler service and unparalleled amenities.',
+    description: 'The pinnacle of luxury at Beechnut Hotel Effurun — a full apartment-style suite with panoramic views, butler service and unparalleled amenities.',
     maxOccupancy: 4,
     bedType:     'Super King Bed',
     sizeSqm:     120,

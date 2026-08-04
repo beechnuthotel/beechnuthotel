@@ -56,7 +56,7 @@ export default function Footer() {
   const handleNewsletterSubmit = (e) => {
     e.preventDefault()
     if (!newsletterEmail.trim()) return
-    const msg = encodeURIComponent(`Newsletter signup — Beechnut Hotel Warri\n\nEmail: ${newsletterEmail}\n\nSent from beechnuthotel.pages.dev`)
+    const msg = encodeURIComponent(`Newsletter signup — Beechnut Hotel Effurun\n\nEmail: ${newsletterEmail}\n\nSent from beechnuthotel.pages.dev`)
     window.open(`https://wa.me/${PHONE}?text=${msg}`, '_blank', 'noopener,noreferrer')
     setNewsletterEmail('')
   }
@@ -79,7 +79,7 @@ export default function Footer() {
         >
           <motion.div variants={itemVariants}>
             <Link to="/" className="inline-flex items-center gap-3 mb-4">
-              <img src="/images/logo.png" alt="Beechnut Hotel Warri logo" width="180" height="112" className="h-12 w-auto rounded-md bg-white p-1.5" />
+              <img src="/images/logo.png" alt="Beechnut Hotel Effurun logo" width="180" height="112" className="h-12 w-auto rounded-md bg-white p-1.5" />
               <span>
                 <span className="font-display text-2xl font-medium text-white block">Beechnut</span>
                 <span className="text-xs tracking-[0.18em] uppercase text-gold-400 block">Hotel Warri</span>
@@ -179,7 +179,7 @@ export default function Footer() {
         </motion.div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between py-4 text-xs text-white/35 gap-2">
-          <span>&copy; {year} Beechnut Hotel Warri. All rights reserved.</span>
+          <span>&copy; {year} Beechnut Hotel Effurun. All rights reserved.</span>
           <span>Site designed by <a href="https://webdev.talent-loop.org" target="_blank" rel="noopener noreferrer" className="text-gold-400/80 hover:text-gold-400 underline underline-offset-2 transition-colors">Talent Loop Web Service</a></span>
           <span className="flex gap-3">
             <span>Privacy Policy</span>

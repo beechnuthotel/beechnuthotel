@@ -1,5 +1,5 @@
 /**
- * offers.js — Beechnut Hotel Warri
+ * offers.js — Beechnut Hotel Effurun
  * Handles the special-offers page:
  *   • Countdown timer targeting August 16, 2026
  *   • Displays days / hours / minutes / seconds
@@ -86,7 +86,7 @@
     if (elSecs)  elSecs.textContent  = pad(t.seconds);
 
     /* Optional: update the page title with remaining days for tab visibility */
-    document.title = t.days + 'd ' + pad(t.hours) + 'h left | Special Offers | Beechnut Hotel Warri';
+    document.title = t.days + 'd ' + pad(t.hours) + 'h left | Special Offers | Beechnut Hotel Effurun';
   }
 
   /**
@@ -97,7 +97,7 @@
     if (elExpired) elExpired.style.display = 'block';
 
     /* Reset tab title */
-    document.title = 'Special Offers | Beechnut Hotel Warri';
+    document.title = 'Special Offers | Beechnut Hotel Effurun';
 
     /* Optionally disable the "Book This Offer" button for the featured card */
     var featuredBtn = document.querySelector('.countdown-featured__body .btn-gold');

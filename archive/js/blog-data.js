@@ -1,5 +1,5 @@
 /**
- * Beechnut Hotel Warri — Blog Data
+ * Beechnut Hotel Effurun — Blog Data
  * To add a new post: append one object to the BLOG_POSTS array below.
  * No new HTML files required. blog-post.html reads ?post=slug from the URL.
  */

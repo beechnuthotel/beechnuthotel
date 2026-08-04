@@ -17,7 +17,7 @@ export default function Contact() {
     if (!name.trim() || !email.trim() || !message.trim()) return
     const timestamp = new Date().toLocaleString('en-NG', { timeZone: 'Africa/Lagos', dateStyle: 'full', timeStyle: 'short' })
     const msg = encodeURIComponent(
-      `*New Contact Form Message — Beechnut Hotel Warri*\n_Submitted: ${timestamp}_\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject || 'Not provided'}\n*Message:*\n${message}\n\nSent from beechnuthotel.pages.dev`
+      `*New Contact Form Message — Beechnut Hotel Effurun*\n_Submitted: ${timestamp}_\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject || 'Not provided'}\n*Message:*\n${message}\n\nSent from beechnuthotel.pages.dev`
     )
     window.open(`https://wa.me/${PHONE}?text=${msg}`, '_blank', 'noopener,noreferrer')
     setSubmitted(true)
@@ -33,7 +33,7 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="relative z-10 px-4"
         >
-          <span className="text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Warri</span>
+          <span className="text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Effurun</span>
           <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">
             Get in <em className="italic text-gold-400 not-italic">Touch</em>
           </h1>

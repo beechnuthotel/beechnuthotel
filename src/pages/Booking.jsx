@@ -126,7 +126,7 @@ export default function Booking() {
   const buildBookingMessage = () => {
     const timestamp = new Date().toLocaleString('en-NG', { timeZone: 'Africa/Lagos', dateStyle: 'full', timeStyle: 'short' })
     const lines = [
-      `*New Booking Request — Beechnut Hotel Warri*`,
+      `*New Booking Request — Beechnut Hotel Effurun*`,
       `_Submitted: ${timestamp}_`,
       ``,
       `*Guest Details*`,
@@ -156,7 +156,7 @@ export default function Booking() {
 
   const buildReceiptMessage = () => {
     const lines = [
-      `*Payment Receipt — Beechnut Hotel Warri*`,
+      `*Payment Receipt — Beechnut Hotel Effurun*`,
       `Guest: ${name}`,
       `Room: ${selectedRoom.name}`,
       `Amount Paid: ₦${total.toLocaleString('en-NG')}`,
@@ -184,7 +184,7 @@ export default function Booking() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="relative z-10 px-4"
         >
-          <span className="text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Warri</span>
+          <span className="text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Effurun</span>
           <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">
             Book a <em className="italic text-gold-400 not-italic">Room</em>
           </h1>
