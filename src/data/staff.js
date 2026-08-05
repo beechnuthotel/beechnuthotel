@@ -3,7 +3,7 @@ export const GM_WELCOME = {
   name: 'Clement Imhandebhor',
   role: 'General Manager',
   department: 'Management',
-  photo: '/staff/gm/gm-headshot.svg',
+  photo: '/staff/gm/gm-headshot.jpeg',
   poster: '/staff/gm/gm-poster.svg',
   video: '/staff/gm/gm-welcome.mp4',
   duration: '0:45',
