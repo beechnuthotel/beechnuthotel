@@ -1,17 +1,42 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 export default function StaffVideoCard({
   member,
   compact = false,
   short = false,
+  autoplayOnView = false,
   showQuote = true,
   showTranscript = false,
   className = '',
 }) {
   const [playing, setPlaying] = useState(false)
+  const videoRef = useRef(null)
   const { name, role, department, photo, poster, video, shortVideo, duration, quote, transcript } = member
   const src = short && shortVideo ? shortVideo : video
+
+  useEffect(() => {
+    if (!autoplayOnView || !videoRef.current) return
+    const el = videoRef.current
+    const start = () => {
+      const attempt = el.play()
+      if (attempt !== undefined) {
+        attempt.catch(() => {
+          el.muted = true
+          el.play().catch(() => {})
+        })
+      }
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) start()
+        else if (!el.paused) el.pause()
+      },
+      { threshold: 0.35 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [autoplayOnView, src])
 
   return (
     <motion.article
@@ -20,12 +45,14 @@ export default function StaffVideoCard({
       className={`bg-white rounded-lg overflow-hidden shadow-sm border border-navy-900/5 ${compact ? '' : 'flex flex-col h-full'} ${className}`}
     >
       <div className="relative aspect-video bg-navy-950 overflow-hidden">
-        {playing ? (
+        {autoplayOnView || playing ? (
           <video
+            ref={autoplayOnView ? videoRef : undefined}
             src={src}
-            poster={poster}
+            poster={poster || photo}
             controls
-            autoPlay
+            autoPlay={playing}
+            loop={autoplayOnView}
             playsInline
             preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"

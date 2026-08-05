@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import StaffVideoCard from '../components/ui/StaffVideoCard'
-import { GM_WELCOME, TEAM_MEMBERS } from '../data/staff'
+import { TEAM_MEMBERS } from '../data/staff'
 
 const CORE_VALUES = [
   'Excellence', 'Integrity', 'Hospitality', 'Professionalism',
@@ -122,46 +122,6 @@ export default function About() {
               <p className="text-gray-600 leading-relaxed text-lg">
                 We combine contemporary hospitality standards with the rich culture and warmth of the Niger Delta to create memorable experiences for our guests. Whether visiting for business, family vacations, conferences, or special events, we strive to exceed expectations through professionalism, innovation, and attention to detail.
               </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.15}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-16 bg-navy-950 rounded-lg overflow-hidden">
-              <motion.div
-                initial={{ opacity: 0, scale: 1.05 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                className="relative overflow-hidden"
-              >
-                <StaffVideoCard member={GM_WELCOME} showQuote={false} showTranscript className="h-full rounded-none border-0" />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                className="p-8 lg:p-12 flex flex-col justify-center"
-              >
-                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-400 block mb-2">A Message From Our General Manager</span>
-                <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Welcome to Beechnut Hotel Effurun</h3>
-                <div className="w-12 h-0.5 bg-gold-400 mb-4" />
-                <p className="text-white/70 leading-relaxed mb-4">
-                  {GM_WELCOME.caption}
-                </p>
-                <p className="text-white/70 leading-relaxed mb-6">
-                  From our elegant rooms and suites to our dining area, tropical bars, conference facilities, and recreation — every corner of Beechnut is designed to offer you comfort, security, and genuine Nigerian hospitality.
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gold-400/15 border border-gold-400/40 flex items-center justify-center shrink-0 overflow-hidden">
-                    <img src={GM_WELCOME.photo} alt={`${GM_WELCOME.name} — ${GM_WELCOME.role}`} className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div>
-                    <p className="font-display text-lg font-semibold text-white leading-tight">{GM_WELCOME.name}</p>
-                    <p className="text-xs tracking-[0.18em] uppercase text-gold-400">{GM_WELCOME.role} — Beechnut Hotel Effurun</p>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </ScrollReveal>
 
