@@ -30,6 +30,7 @@ const QUICK_LINKS = [
   { label: 'Video Testimonials', to: '/testimonials' },
   { label: 'About Beechnut', to: '/about' },
   { label: 'Special Offers', to: '/offers' },
+  { label: 'Meet Our Team', to: '/team' },
 ]
 
 const GUEST_LINKS = [

@@ -1,0 +1,102 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+
+export default function StaffVideoCard({
+  member,
+  compact = false,
+  short = false,
+  showQuote = true,
+  showTranscript = false,
+  className = '',
+}) {
+  const [playing, setPlaying] = useState(false)
+  const { name, role, department, photo, poster, video, shortVideo, duration, quote, transcript } = member
+  const src = short && shortVideo ? shortVideo : video
+
+  return (
+    <motion.article
+      whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(0,0,0,0.1)' }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      className={`bg-white rounded-lg overflow-hidden shadow-sm border border-navy-900/5 ${compact ? '' : 'flex flex-col h-full'} ${className}`}
+    >
+      <div className="relative aspect-video bg-navy-950 overflow-hidden">
+        {playing ? (
+          <video
+            src={src}
+            poster={poster}
+            controls
+            autoPlay
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <track kind="captions" label="English" srcLang="en" />
+          </video>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setPlaying(true)}
+            className="absolute inset-0 w-full h-full group cursor-pointer"
+            aria-label={`Play video: ${name}, ${role}`}
+          >
+            <img
+              src={poster || photo}
+              alt={`${name} — ${role} — video preview`}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <span className="absolute inset-0 bg-navy-950/30 group-hover:bg-navy-950/45 transition-colors duration-300" />
+            <span className="absolute inset-0 flex items-center justify-center">
+              <span className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gold-400 text-navy-900 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+            </span>
+            {duration && (
+              <span className="absolute bottom-3 right-3 text-[0.65rem] font-semibold tracking-wider uppercase bg-navy-950/80 text-white/90 px-2 py-1 rounded-sm">
+                {duration}
+              </span>
+            )}
+          </button>
+        )}
+      </div>
+
+      {compact ? (
+        <div className="p-4 flex items-center gap-3">
+          <img src={photo} alt={`${name} — ${role}`} loading="lazy" className="w-11 h-11 rounded-full object-cover border border-gold-400/40 shrink-0" />
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-navy-900 truncate">{name}</p>
+            <p className="text-[0.65rem] tracking-widest uppercase text-gold-500 truncate">{role}</p>
+          </div>
+        </div>
+      ) : (
+        <div className="p-5 flex flex-col flex-1">
+          <div className="flex items-start justify-between gap-3 mb-3">
+            <div className="flex items-center gap-3 min-w-0">
+              <img src={photo} alt={`${name} — ${role}`} loading="lazy" className="w-12 h-12 rounded-full object-cover border border-gold-400/40 shrink-0" />
+              <div className="min-w-0">
+                <h3 className="font-display text-lg font-semibold text-navy-900 truncate">{name}</h3>
+                <p className="text-xs font-medium text-gray-500 truncate">{role}</p>
+              </div>
+            </div>
+            <span className="text-[0.6rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-navy-900 text-gold-400 shrink-0">
+              {department}
+            </span>
+          </div>
+          {showQuote && quote && (
+            <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-2">&ldquo;{quote}&rdquo;</p>
+          )}
+          {showTranscript && transcript && (
+            <details className="mt-auto">
+              <summary className="text-xs font-semibold tracking-wider uppercase text-gold-500 cursor-pointer select-none hover:text-gold-600 transition-colors">
+                Read transcript
+              </summary>
+              <p className="text-xs text-gray-500 leading-relaxed mt-2">{transcript}</p>
+            </details>
+          )}
+        </div>
+      )}
+    </motion.article>
+  )
+}

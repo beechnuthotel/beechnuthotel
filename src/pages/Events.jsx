@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import StaffVideoCard from '../components/ui/StaffVideoCard'
+import { TEAM_MEMBERS } from '../data/staff'
 
 const EVENT_SPACES = [
   {
@@ -95,6 +97,26 @@ export default function Events() {
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal delay={0.15}>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mb-16">
+              <StaffVideoCard member={TEAM_MEMBERS.find(m => m.id === 'events-sales')} compact short showQuote={false} />
+              <div className="lg:col-span-2">
+                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">Your Events Team</span>
+                <h3 className="font-display text-2xl lg:text-3xl font-bold text-navy-900 mb-3">Let&rsquo;s Plan Something Unforgettable</h3>
+                <div className="w-8 h-0.5 bg-gold-400 mb-4" />
+                <p className="text-gray-600 leading-relaxed mb-3">
+                  Events &amp; Sales Manager Tunde Adebayo and his team coordinate weddings, conferences, and corporate functions for up to 500 guests — handling every detail so you can focus on the moment.
+                </p>
+                <Link to="/team" className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase text-gold-500 hover:text-gold-600 transition-colors">
+                  Meet the Full Team
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

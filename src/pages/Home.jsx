@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { TESTIMONIALS, STATS } from '../data/testimonials'
 import { ROOMS } from '../data/rooms'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import StaffVideoCard from '../components/ui/StaffVideoCard'
+import { GM_WELCOME } from '../data/staff'
 
 function StarRating({ count = 5 }) {
   return (
@@ -215,6 +217,40 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+      <section className="py-16 lg:py-24 bg-surface" aria-labelledby="gm-welcome-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <ScrollReveal>
+              <StaffVideoCard member={GM_WELCOME} showTranscript className="h-full" />
+            </ScrollReveal>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <span className="text-xs font-semibold tracking-[0.18em] uppercase text-gold-500 block mb-3">A Message From Our General Manager</span>
+              <h2 id="gm-welcome-heading" className="font-display text-3xl lg:text-4xl font-medium text-navy-900 mb-3">
+                Welcome, From {GM_WELCOME.name}
+              </h2>
+              <div className="w-12 h-0.5 bg-gold-400 mb-4" />
+              <p className="text-navy-900/70 leading-relaxed mb-4">{GM_WELCOME.caption}</p>
+              <p className="text-navy-900/70 mb-6">
+                Meet the department heads who bring Warri's legendary warmth into every room, every plate, and every celebration.
+              </p>
+              <div className="flex gap-3 flex-wrap">
+                <Link to="/team" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">
+                  Meet the Team
+                </Link>
+                <Link to="/booking" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white transition-all">
+                  Reserve a Room
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 lg:py-24 bg-surface" id="rooms" aria-labelledby="rooms-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

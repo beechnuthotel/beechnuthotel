@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import StaffVideoCard from '../components/ui/StaffVideoCard'
+import { TEAM_MEMBERS } from '../data/staff'
 
 const PHONE = '2348055000822'
 
@@ -93,6 +95,25 @@ export default function Contact() {
                     </div>
                   </motion.div>
                 ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.15}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center mt-10 bg-white border border-gray-200 rounded-lg p-6">
+                <StaffVideoCard member={TEAM_MEMBERS.find(m => m.id === 'guest-services')} compact short showQuote={false} className="rounded-none border-0 shadow-none" />
+                <div>
+                  <span className="text-xs font-semibold tracking-[0.18em] uppercase text-gold-500 block mb-2">24 / 7 Guest Services</span>
+                  <h3 className="font-display text-xl font-bold text-navy-900 mb-2">We&rsquo;re Here to Help</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Guest Services Manager Chioma Emeka and her team arrange airport transfers, tours, dining reservations, and everything in between — on the phone, on WhatsApp, or at the front desk.
+                  </p>
+                  <Link to="/team" className="inline-flex items-center gap-2 mt-3 text-xs font-semibold tracking-wider uppercase text-gold-500 hover:text-gold-600 transition-colors">
+                    Meet the Full Team
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </ScrollReveal>
 

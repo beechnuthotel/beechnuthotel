@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
 
-const CATEGORIES = ['all', 'rooms', 'dining', 'events', 'facilities']
+const CATEGORIES = ['all', 'rooms', 'dining', 'events', 'facilities', 'team']
 
 const GALLERY_ITEMS = [
   { id: 1, category: 'rooms', image: '/images/gallery/rooms/gallery-room-1.webp', caption: 'Executive Suite Living Area' },
@@ -14,6 +14,11 @@ const GALLERY_ITEMS = [
   { id: 6, category: 'facilities', image: '/images/gallery/facilities/gallery-facility-1.webp', caption: 'Guest Lounge' },
   { id: 7, category: 'facilities', image: '/images/gallery/facilities/gallery-facility-2.webp', caption: 'Relaxation Area' },
   { id: 8, category: 'facilities', image: '/images/gallery/facilities/gallery-facility-3.webp', caption: 'Reception & Lobby' },
+  { id: 9, category: 'team', image: '/staff/kitchen/kitchen-candid-1.svg', caption: 'The Kitchen Crew at Work' },
+  { id: 10, category: 'team', image: '/staff/front-office/front-desk-candid-1.svg', caption: 'Front Desk Team' },
+  { id: 11, category: 'team', image: '/staff/events/events-candid-1.svg', caption: 'Event Planning in Action' },
+  { id: 12, category: 'team', image: '/staff/guest-services/guest-services-candid-1.svg', caption: 'Guest Services Team' },
+  { id: 13, category: 'team', image: '/staff/housekeeping/housekeeping-candid-1.svg', caption: 'Housekeeping Excellence' },
 ]
 
 export default function Gallery() {

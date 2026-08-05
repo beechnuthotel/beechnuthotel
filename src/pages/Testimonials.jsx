@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import StaffVideoCard from '../components/ui/StaffVideoCard'
 
 const CATEGORIES = [
   { key: 'all', label: 'All Videos' },
@@ -12,51 +13,75 @@ const CATEGORIES = [
 const TESTIMONIAL_VIDEOS = [
   {
     id: 1,
-    name: 'Guest Testimonial 1',
-    role: 'Guest',
+    name: 'Chukwuemeka O.',
+    role: 'Business Traveller',
     category: 'guest',
+    department: 'Guest',
     src: '/videos/guest-1.mp4',
     poster: '/images/gallery/rooms/gallery-room-1.webp',
+    photo: '/images/gallery/rooms/gallery-room-1.webp',
+    duration: '0:30',
+    quote: 'The room was immaculate, the staff remembered my name every single day, and the breakfast spread was extraordinary.',
   },
   {
     id: 2,
-    name: 'Guest Testimonial 2',
-    role: 'Guest',
+    name: 'Adaeze M.',
+    role: 'Corporate Client',
     category: 'guest',
+    department: 'Guest',
     src: '/videos/guest-2.mp4',
     poster: '/images/gallery/facilities/gallery-facility-2.webp',
+    photo: '/images/gallery/facilities/gallery-facility-2.webp',
+    duration: '0:25',
+    quote: 'We hosted our company\u2019s annual conference here and the event team was flawless from start to finish.',
   },
   {
     id: 3,
-    name: 'Guest Testimonial 3',
-    role: 'Guest',
+    name: 'Emeka & Ngozi A.',
+    role: 'Leisure Guests',
     category: 'guest',
+    department: 'Guest',
     src: '/videos/guest-3.mp4',
     poster: '/images/dining/gold-restaurant.webp',
+    photo: '/images/dining/gold-restaurant.webp',
+    duration: '0:35',
+    quote: 'The Presidential Suite on our anniversary was beyond anything we imagined \u2014 Beechnut made our celebration unforgettable.',
   },
   {
     id: 4,
-    name: 'Staff Testimonial 1',
-    role: 'Staff',
+    name: 'Kitchen Team',
+    role: 'Staff Reaction',
     category: 'staff',
-    src: '/videos/staff-1.mp4',
-    poster: '/images/gallery/facilities/gallery-facility-3.webp',
+    department: 'Kitchen',
+    src: '/staff/kitchen/kitchen-reaction.mp4',
+    poster: '/staff/kitchen/chef-poster.svg',
+    photo: '/staff/kitchen/chef-headshot.svg',
+    duration: '0:20',
+    quote: 'We take pride in every plate that leaves our kitchen \u2014 cooking for our guests feels like cooking for family.',
   },
   {
     id: 5,
-    name: 'Staff Testimonial 2',
-    role: 'Staff',
+    name: 'Front Desk Team',
+    role: 'Staff Reaction',
     category: 'staff',
-    src: '/videos/staff-2.mp4',
-    poster: '/images/gallery/facilities/gallery-facility-1.webp',
+    department: 'Front Office',
+    src: '/staff/front-office/front-desk-reaction.mp4',
+    poster: '/staff/front-office/fom-poster.svg',
+    photo: '/staff/front-office/fom-headshot.svg',
+    duration: '0:20',
+    quote: 'Nothing makes our day like a guest who arrives as a stranger and leaves as a friend.',
   },
   {
     id: 6,
-    name: 'Staff Testimonial 3',
-    role: 'Staff',
+    name: 'Events Team',
+    role: 'Staff Reaction',
     category: 'staff',
-    src: '/videos/staff-3.mp4',
-    poster: '/images/gallery/dining/gallery-dining-2.webp',
+    department: 'Events',
+    src: '/staff/events/events-reaction.mp4',
+    poster: '/staff/events/events-poster.svg',
+    photo: '/staff/events/events-headshot.svg',
+    duration: '0:20',
+    quote: 'Seeing a celebration come together \u2014 that is why we love what we do every single day.',
   },
 ]
 
@@ -128,33 +153,20 @@ export default function Testimonials() {
             >
               {filtered.map((video, i) => (
                 <ScrollReveal key={video.id} delay={0.05 * i}>
-                  <motion.article
-                    className="bg-white rounded-lg overflow-hidden shadow-sm border border-navy-900/5 flex flex-col h-full"
-                    whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(0,0,0,0.1)' }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  >
-                    <div className="relative aspect-video bg-navy-950">
-                      <video
-                        src={video.src}
-                        poster={video.poster}
-                        controls
-                        preload="metadata"
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-display text-lg font-semibold text-navy-900">{video.name}</h3>
-                        <span className={`text-[0.6rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${
-                          video.category === 'guest' ? 'bg-gold-400 text-navy-900' : 'bg-navy-900 text-gold-400'
-                        }`}>
-                          {video.role}
-                        </span>
-                      </div>
-                      <p className="text-xs text-gray-400">Beechnut Hotel Effurun</p>
-                    </div>
-                  </motion.article>
+                  <StaffVideoCard
+                    member={{
+                      name: video.name,
+                      role: video.role,
+                      department: video.department,
+                      photo: video.photo,
+                      poster: video.poster,
+                      video: video.src,
+                      duration: video.duration,
+                      quote: video.quote,
+                    }}
+                    showTranscript={false}
+                    className="h-full"
+                  />
                 </ScrollReveal>
               ))}
             </motion.div>

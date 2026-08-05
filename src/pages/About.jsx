@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import StaffVideoCard from '../components/ui/StaffVideoCard'
+import { GM_WELCOME, TEAM_MEMBERS } from '../data/staff'
 
 const CORE_VALUES = [
   'Excellence', 'Integrity', 'Hospitality', 'Professionalism',
@@ -82,22 +84,15 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16 bg-navy-950 rounded-lg overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-16 bg-navy-950 rounded-lg overflow-hidden">
               <motion.div
                 initial={{ opacity: 0, scale: 1.05 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                className="relative aspect-video lg:aspect-auto lg:h-full overflow-hidden"
+                className="relative overflow-hidden"
               >
-                <video
-                  src="/videos/gm-welcome.mp4"
-                  poster="/images/gallery/facilities/gallery-facility-3.webp"
-                  controls
-                  preload="metadata"
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+                <StaffVideoCard member={GM_WELCOME} showQuote={false} showTranscript className="h-full rounded-none border-0" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
@@ -110,25 +105,49 @@ export default function About() {
                 <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Welcome to Beechnut Hotel Effurun</h3>
                 <div className="w-12 h-0.5 bg-gold-400 mb-4" />
                 <p className="text-white/70 leading-relaxed mb-4">
-                  "On behalf of our entire team, I warmly welcome you to Beechnut Hotel Effurun. Whether you are visiting for business, leisure, or a special celebration, we are committed to making your stay truly memorable."
+                  {GM_WELCOME.caption}
                 </p>
                 <p className="text-white/70 leading-relaxed mb-6">
                   From our elegant rooms and suites to our dining area, tropical bars, conference facilities, and recreation — every corner of Beechnut is designed to offer you comfort, security, and genuine Nigerian hospitality.
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gold-400/15 border border-gold-400/40 flex items-center justify-center shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="text-gold-400" aria-hidden="true">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                      <circle cx="12" cy="7" r="4" />
-                    </svg>
+                  <div className="w-12 h-12 rounded-full bg-gold-400/15 border border-gold-400/40 flex items-center justify-center shrink-0 overflow-hidden">
+                    <img src={GM_WELCOME.photo} alt={`${GM_WELCOME.name} — ${GM_WELCOME.role}`} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
-                    <p className="font-display text-lg font-semibold text-white leading-tight">General Manager</p>
-                    <p className="text-xs tracking-[0.18em] uppercase text-gold-400">Beechnut Hotel Effurun</p>
+                    <p className="font-display text-lg font-semibold text-white leading-tight">{GM_WELCOME.name}</p>
+                    <p className="text-xs tracking-[0.18em] uppercase text-gold-400">{GM_WELCOME.role} — Beechnut Hotel Effurun</p>
                   </div>
                 </div>
               </motion.div>
             </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-navy-950 to-navy-900 rounded-lg p-8 lg:p-10 mb-16 relative overflow-hidden"
+            >
+              <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gold-400/5 pointer-events-none" />
+              <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+                <div className="max-w-2xl">
+                  <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-400 block mb-2">Leadership</span>
+                  <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Meet the Team Behind the Welcome</h3>
+                  <div className="w-12 h-0.5 bg-gold-400 lg:mx-0 mx-auto mb-4" />
+                  <p className="text-white/70 leading-relaxed">
+                    From our kitchen to the front desk, every department at Beechnut is led by a dedicated team head — watch their introductions and put a face to the name before you arrive.
+                  </p>
+                </div>
+                <Link to="/team" className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">
+                  Meet the Team
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -203,6 +222,32 @@ export default function About() {
               <p className="text-gray-600 leading-relaxed text-center max-w-4xl mx-auto">We are committed to consistently delivering high-quality hospitality services through continuous staff development, effective management systems, regular facility maintenance, and continual improvement that meets and exceeds customer expectations.</p>
             </ScrollReveal>
           </div>
+
+          <ScrollReveal delay={0.1}>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mb-16">
+              <StaffVideoCard
+                member={TEAM_MEMBERS.find(m => m.id === 'housekeeping')}
+                compact
+                short
+                showQuote={false}
+                className="lg:col-span-1"
+              />
+              <div className="lg:col-span-2">
+                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">Housekeeping</span>
+                <h3 className="font-display text-2xl font-bold text-navy-900 mb-3">The Quiet Standard Behind Every Stay</h3>
+                <div className="w-8 h-0.5 bg-gold-400 mb-4" />
+                <p className="text-gray-600 leading-relaxed mb-3">
+                  Clean, comfortable, and secure — our housekeeping team keeps all 75 rooms, suites, and public spaces pristine around the clock, so every detail is perfect before you even notice it.
+                </p>
+                <Link to="/team" className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase text-gold-500 hover:text-gold-600 transition-colors">
+                  Meet the Full Team
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
             <div className="text-center mb-10">
