@@ -65,7 +65,7 @@ export default function Contact() {
                   { icon: 'map', label: 'Address', value: '1 Justice Mosheshe Close, Off Aziza Road, Effurun, Delta, Nigeria' },
                   { icon: 'phone', label: 'Phone', value: '+234 805 500 0822', href: 'tel:+2348055000822' },
                   { icon: 'whatsapp', label: 'WhatsApp', value: '+234 805 500 0822', href: 'https://wa.me/2348055000822' },
-                  { icon: 'mail', label: 'Email', value: 'info@beechnuthotelwarri.com', href: 'mailto:info@beechnuthotelwarri.com' },
+                  { icon: 'mail', label: 'Email', value: 'info@beechnuthotel.com', href: 'mailto:info@beechnuthotel.com' },
                   { icon: 'clock', label: 'Reception', value: 'Open 24 hours — 7 days a week' },
                 ].map((item) => (
                   <motion.div
