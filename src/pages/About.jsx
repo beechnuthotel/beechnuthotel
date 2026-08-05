@@ -67,6 +67,48 @@ export default function About() {
         </motion.div>
       </section>
 
+      <section className="py-16 lg:py-24" aria-labelledby="gm-word-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="bg-white rounded-lg p-8 lg:p-12 shadow-sm border border-gray-100">
+              <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 lg:gap-14 items-center">
+                <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden ring-4 ring-gold-400/30 shadow-lg mx-auto lg:mx-0">
+                  {/* GM_WELCOME_VIDEO — embed the GM welcome video here, replacing the static photo */}
+                  <img
+                    src="/staff/gm/gm-headshot.svg"
+                    alt="Clement Imhandebhor — General Manager, Beechnut Hotel"
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <span className="eyebrow">A Welcome Message</span>
+                  <h2 id="gm-word-heading" className="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-3">A Word from Our General Manager</h2>
+                  <div className="w-12 h-0.5 bg-gold-400 mb-6" />
+                  <div className="border-l-3 border-gold-400 pl-6">
+                    <span className="font-accent text-5xl text-gold-400 leading-none block mb-3" aria-hidden="true">&ldquo;</span>
+                    <p className="font-accent text-lg lg:text-xl text-navy-900/80 leading-relaxed mb-4">Welcome to Beechnut Hotel.</p>
+                    <p className="font-accent text-lg lg:text-xl text-navy-900/80 leading-relaxed mb-4">
+                      My name is Clement Imhandebhor, General Manager of Beechnut Hotel. It&rsquo;s my pleasure to welcome you to a place where comfort, quality service, and genuine hospitality come together to create an exceptional guest experience.
+                    </p>
+                    <p className="font-accent text-lg lg:text-xl text-navy-900/80 leading-relaxed mb-4">
+                      At Beechnut Hotel, we&rsquo;re committed to making every stay memorable — from our well-appointed rooms and excellent dining, to our relaxing swimming pool and dedicated team of professionals. Whether you&rsquo;re visiting for business, leisure, or a special occasion, expect warm hospitality and outstanding service from every department.
+                    </p>
+                    <p className="font-accent text-lg lg:text-xl text-navy-900/80 leading-relaxed mb-4">
+                      Thank you for choosing Beechnut Hotel. We look forward to welcoming you and making your stay a truly enjoyable one.
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-gray-100">
+                    <p className="font-display text-xl font-bold text-navy-900">Clement Imhandebhor</p>
+                    <p className="text-sm font-medium tracking-[0.14em] uppercase text-gold-500 mt-0.5">General Manager, Beechnut Hotel</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>

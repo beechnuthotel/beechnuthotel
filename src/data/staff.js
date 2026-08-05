@@ -1,6 +1,6 @@
 export const GM_WELCOME = {
   id: 'gm',
-  name: 'Efe Okuwobi',
+  name: 'Clement Imhandebhor',
   role: 'General Manager',
   department: 'Management',
   photo: '/staff/gm/gm-headshot.svg',
@@ -8,11 +8,11 @@ export const GM_WELCOME = {
   video: '/staff/gm/gm-welcome.mp4',
   duration: '0:45',
   caption:
-    'On behalf of our entire team, I warmly welcome you to Beechnut Hotel Effurun. Whether you are visiting for business, leisure, or a special celebration, we are committed to making your stay truly memorable.',
+    'Welcome to Beechnut Hotel. My name is Clement Imhandebhor, General Manager of Beechnut Hotel. It\u2019s my pleasure to welcome you to a place where comfort, quality service, and genuine hospitality come together to create an exceptional guest experience.',
   quote:
-    'Every guest who walks through our doors is welcomed like family — that is the Beechnut promise.',
+    'Whether you\u2019re visiting for business, leisure, or a special occasion, expect warm hospitality and outstanding service from every department.',
   transcript:
-    'Hello and welcome to Beechnut Hotel Warri. I am Efe Okuwobi, the General Manager. From our elegant rooms and suites to our dining area, tropical bars, and conference facilities, every corner of Beechnut is designed to offer you comfort, security, and genuine Nigerian hospitality. We look forward to welcoming you soon.',
+    'Welcome to Beechnut Hotel. My name is Clement Imhandebhor, General Manager of Beechnut Hotel. It\u2019s my pleasure to welcome you to a place where comfort, quality service, and genuine hospitality come together to create an exceptional guest experience. At Beechnut Hotel, we\u2019re committed to making every stay memorable \u2014 from our well-appointed rooms and excellent dining, to our relaxing swimming pool and dedicated team of professionals. Whether you\u2019re visiting for business, leisure, or a special occasion, expect warm hospitality and outstanding service from every department. Thank you for choosing Beechnut Hotel. We look forward to welcoming you and making your stay a truly enjoyable one.',
 }
 
 export const TEAM_MEMBERS = [
