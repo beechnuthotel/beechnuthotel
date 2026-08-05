@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /js/
 
-Sitemap: https://www.beechnuthotelwarri.com/sitemap.xml
+Sitemap: https://www.beechnuthoteleffurun.com/sitemap.xml

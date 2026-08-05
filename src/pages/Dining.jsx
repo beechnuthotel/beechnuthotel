@@ -31,8 +31,8 @@ const BAR_SECTIONS = [
   },
   {
     name: 'Roof Top Bar',
-    tagline: 'Warri\'s Best Views',
-    description: 'Perched on the top floor, our tropical rooftop bar offers panoramic views of the Warri skyline. Sip on signature cocktails and premium spirits as the sun sets over the Niger Delta.',
+    tagline: 'Effurun\'s Best Views',
+    description: 'Perched on the top floor, our tropical rooftop bar offers panoramic views of the Effurun skyline. Sip on signature cocktails and premium spirits as the sun sets over the Niger Delta.',
     image: '/images/dining/skyview-rooftop.webp',
     highlights: ['Panoramic views', 'Signature cocktails', 'Live music Fri–Sat', 'Open 4pm–late'],
   },

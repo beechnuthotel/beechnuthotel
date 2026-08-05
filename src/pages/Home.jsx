@@ -154,10 +154,10 @@ export default function Home() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="font-body text-xs font-semibold tracking-[0.25em] uppercase text-gold-400 block mb-3"
           >
-            Welcome to Warri's Finest
+            Welcome to Effurun's Finest
           </motion.span>
           <h1 className="font-display text-[clamp(3rem,8vw,6.5rem)] font-normal text-white leading-none tracking-tight mb-4">
-            Beechnut<br />Hotel Warri
+            Beechnut<br />Hotel Effurun
           </h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -237,7 +237,7 @@ export default function Home() {
               <div className="w-12 h-0.5 bg-gold-400 mb-4" />
               <p className="text-navy-900/70 leading-relaxed mb-4">{GM_WELCOME.caption}</p>
               <p className="text-navy-900/70 mb-6">
-                Meet the department heads who bring Warri's legendary warmth into every room, every plate, and every celebration.
+                Meet the department heads who bring Effurun's legendary warmth into every room, every plate, and every celebration.
               </p>
               <div className="flex gap-3 flex-wrap">
                 <Link to="/team" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">
@@ -259,7 +259,7 @@ export default function Home() {
               <span className="eyebrow">Accommodation</span>
               <h2 id="rooms-heading" className="section-title">Rooms &amp; Suites</h2>
               <div className="w-12 h-0.5 bg-gold-400 mx-auto my-3" />
-              <p className="section-subtitle mx-auto">Each space is a carefully composed sanctuary — blending contemporary design with the warmth of Warri's spirit.</p>
+              <p className="section-subtitle mx-auto">Each space is a carefully composed sanctuary — blending contemporary design with the warmth of Effurun's spirit.</p>
             </div>
           </ScrollReveal>
 
@@ -299,7 +299,7 @@ export default function Home() {
             className="bg-surface p-8 lg:p-12 flex flex-col justify-center"
           >
             <span className="text-xs font-semibold tracking-[0.18em] uppercase text-gold-500 block mb-3">Our Promise</span>
-            <h2 id="usp-heading" className="font-display text-3xl font-medium text-navy-900 mb-3">Hospitality Rooted in Warri's Soul</h2>
+            <h2 id="usp-heading" className="font-display text-3xl font-medium text-navy-900 mb-3">Hospitality Rooted in Effurun's Soul</h2>
             <div className="w-12 h-0.5 bg-gold-400 mb-3" />
             <p className="text-navy-900/70 mb-3">From the moment you arrive, every interaction is crafted with intention. Our team brings the city's legendary warmth and community spirit into every room, every plate, every smile.</p>
             <p className="text-navy-900/70 mb-4">We don't just host guests — we welcome family.</p>
@@ -325,9 +325,9 @@ export default function Home() {
             className="order-2 lg:order-1 bg-navy-900 p-8 lg:p-12 flex flex-col justify-center"
           >
             <span className="text-xs font-semibold tracking-[0.18em] uppercase text-gold-300 block mb-3">Location</span>
-            <h2 className="font-display text-3xl font-medium text-white mb-3">At the Heart of Warri</h2>
+            <h2 className="font-display text-3xl font-medium text-white mb-3">At the Heart of Effurun</h2>
             <div className="w-12 h-0.5 bg-gold-400 mb-3" />
-            <p className="text-white/70 mb-3">Strategically positioned in the commercial and cultural centre of Warri, Beechnut places you minutes from key business hubs, entertainment districts, and the vibrant energy that defines this city.</p>
+            <p className="text-white/70 mb-3">Strategically positioned in the commercial and cultural centre of Effurun, Beechnut places you minutes from key business hubs, entertainment districts, and the vibrant energy that defines this city.</p>
             <p className="text-white/70 mb-4">Whether you're here for business or leisure, our location is your advantage.</p>
             <Link to="/contact" className="self-start px-6 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-navy-900 transition-all">Get Directions</Link>
           </motion.div>
@@ -393,7 +393,7 @@ export default function Home() {
             <blockquote className="font-accent text-2xl italic text-gold-300 leading-relaxed mb-4 border-l-3 border-gold-400 pl-4">
               &ldquo;Food is memory, culture, and celebration — we serve all three.&rdquo;
             </blockquote>
-            <p className="text-white/70 mb-6">One elegant dining area serving authentic Nigerian cuisine with a fine-dining twist — plus three tropical bar sections: the Indoor Bar, Poolside Bar, and Roof Top Bar, each with its own character and Warri's best views.</p>
+            <p className="text-white/70 mb-6">One elegant dining area serving authentic Nigerian cuisine with a fine-dining twist — plus three tropical bar sections: the Indoor Bar, Poolside Bar, and Roof Top Bar, each with its own character and Effurun's best views.</p>
             <div className="flex gap-3 flex-wrap">
               <Link to="/dining" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm bg-gold-400 text-navy-900 hover:bg-gold-600 transition-all">Explore Dining</Link>
               <Link to="/dining#reservations" className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold tracking-wider uppercase rounded-sm border-2 border-gold-400 text-white hover:bg-gold-400 hover:text-navy-900 transition-all">Reserve a Table</Link>
@@ -477,7 +477,7 @@ export default function Home() {
             id="cta-heading"
             className="font-display text-4xl lg:text-5xl font-normal text-white leading-tight mb-3"
           >
-            Experience Warri's Finest.<br />Book Your Stay Today.
+            Experience Effurun's Finest.<br />Book Your Stay Today.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}

@@ -77,7 +77,7 @@ export default function Navbar() {
             <img src="/images/logo.png" alt="Beechnut Hotel Effurun logo" width="180" height="112" className="h-11 w-auto rounded-md bg-white p-1.5" />
             <span className="flex flex-col leading-none">
               <span className="font-display text-2xl font-semibold text-white tracking-wide">Beechnut</span>
-              <span className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-gold-400 mt-0.5">Hotel Warri</span>
+              <span className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-gold-400 mt-0.5">Hotel Effurun</span>
             </span>
           </Link>
 

@@ -4,7 +4,7 @@ export const TESTIMONIALS = [
     name: 'Chukwuemeka O.',
     meta: 'Lagos — Business Traveller',
     avatar: null,
-    text: 'Beechnut is in a class of its own in Warri. The room was immaculate, the staff remembered my name every single day, and the breakfast spread was extraordinary. I\'ll never stay anywhere else when I\'m in Delta State.',
+    text: 'Beechnut is in a class of its own in Effurun. The room was immaculate, the staff remembered my name every single day, and the breakfast spread was extraordinary. I\'ll never stay anywhere else when I\'m in Delta State.',
     rating: 5,
   },
   {

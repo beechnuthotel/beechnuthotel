@@ -23,7 +23,7 @@ const EVENT_SPACES = [
     name: 'Riverside Terrace',
     capacity: 'Up to 120 guests',
     image: '/images/gallery/dining/gallery-dining-3.webp',
-    description: 'An intimate outdoor setting for evening cocktail parties and sundowner events, with the Warri skyline as a breathtaking backdrop.',
+    description: 'An intimate outdoor setting for evening cocktail parties and sundowner events, with the Effurun skyline as a breathtaking backdrop.',
     features: ['Outdoor covered terrace', 'Built-in BBQ & bar', 'Skyline views', 'Evening events'],
   },
   {

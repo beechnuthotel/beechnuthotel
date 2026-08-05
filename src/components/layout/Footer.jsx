@@ -7,17 +7,17 @@ const PHONE = '2348055000822'
 const SOCIAL_LINKS = [
   {
     label: 'Facebook',
-    href: 'https://facebook.com/beechnuthotelwarri',
+    href: 'https://facebook.com/beechnuthoteleffurun',
     path: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z',
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com/beechnuthotelwarri',
+    href: 'https://instagram.com/beechnuthoteleffurun',
     path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z',
   },
   {
     label: 'Twitter / X',
-    href: 'https://x.com/beechnutwarri',
+    href: 'https://x.com/beechnuteffurun',
     path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z',
   },
 ]
@@ -83,11 +83,11 @@ export default function Footer() {
               <img src="/images/logo.png" alt="Beechnut Hotel Effurun logo" width="180" height="112" className="h-12 w-auto rounded-md bg-white p-1.5" />
               <span>
                 <span className="font-display text-2xl font-medium text-white block">Beechnut</span>
-                <span className="text-xs tracking-[0.18em] uppercase text-gold-400 block">Hotel Warri</span>
+                <span className="text-xs tracking-[0.18em] uppercase text-gold-400 block">Hotel Effurun</span>
               </span>
             </Link>
             <p className="text-sm text-white/55 leading-relaxed mb-4">
-              Warri's premier luxury destination — where Nigerian warmth, world-class hospitality, and architectural elegance converge to create memories that last a lifetime.
+              Effurun's premier luxury destination — where Nigerian warmth, world-class hospitality, and architectural elegance converge to create memories that last a lifetime.
             </p>
             <div className="flex gap-3" aria-label="Social media links">
               {SOCIAL_LINKS.map(({ label, href, path }) => (
@@ -159,7 +159,7 @@ export default function Footer() {
 
             <div className="mt-5">
               <h4 className="font-body text-xs font-bold tracking-[0.15em] uppercase text-gold-400 mb-2">Newsletter</h4>
-              <p className="text-sm text-white/55 mb-3">Special offers, seasonal packages, and stories from Warri's finest.</p>
+              <p className="text-sm text-white/55 mb-3">Special offers, seasonal packages, and stories from Effurun's finest.</p>
               <form className="flex gap-2" onSubmit={handleNewsletterSubmit} aria-label="Newsletter signup">
                 <input
                   type="email"
