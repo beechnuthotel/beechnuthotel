@@ -75,7 +75,7 @@ export default function About() {
                 <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden ring-4 ring-gold-400/30 shadow-lg mx-auto lg:mx-0">
                   {/* GM_WELCOME_VIDEO — embed the GM welcome video here, replacing the static photo */}
                   <img
-                    src="/staff/gm/gm-headshot.svg"
+                    src="/staff/gm/gm-headshot.jpeg"
                     alt="Clement Imhandebhor — General Manager, Beechnut Hotel"
                     loading="lazy"
                     className="w-full h-full object-cover"
