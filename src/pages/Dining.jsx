@@ -9,7 +9,7 @@ const DINING_VENUES = [
     name: 'The Gold Restaurant',
     tagline: 'Our Dining Area',
     description: 'Elegant à la carte dining celebrating Nigeria\'s most iconic flavours with a contemporary fine-dining twist. Our signature banga bisque, pepper-rubbed grilled lobster, and plantain crème brûlée are guest favourites.',
-    image: '/images/dining/gold-restaurant.webp',
+    image: '/images/dining/gold-restaurant.jpeg',
     highlights: ['À la carte menu', 'Private dining room', 'Wine cellar', 'Open daily 6:30am–10pm'],
   },
 ]
@@ -19,21 +19,21 @@ const BAR_SECTIONS = [
     name: 'Indoor Bar',
     tagline: 'The Heart of the Lounge',
     description: 'A sophisticated tropical bar at the heart of the hotel, serving signature cocktails, premium spirits, and ice-cold refreshments in an air-conditioned lounge setting.',
-    image: '/images/gallery/dining/gallery-dining-1.webp',
+    image: '/images/gallery/dining/gallery-dining-1.jpeg',
     highlights: ['Signature cocktails', 'Premium spirits', 'Air-conditioned lounge', 'Open daily'],
   },
   {
     name: 'Poolside Bar',
     tagline: 'Relax by the Water',
     description: 'Relaxed bar service right by the pool — the perfect spot to sip a handcrafted cocktail or chilled beer between swims on a lazy afternoon.',
-    image: '/images/dining/poolside-grill.webp',
+    image: '/images/dining/poolside-grill.jpeg',
     highlights: ['Cocktail bar', 'Poolside seating', 'Light bites', 'Open 11am–11pm'],
   },
   {
     name: 'Roof Top Bar',
     tagline: 'Effurun\'s Best Views',
     description: 'Perched on the top floor, our tropical rooftop bar offers panoramic views of the Effurun skyline. Sip on signature cocktails and premium spirits as the sun sets over the Niger Delta.',
-    image: '/images/dining/skyview-rooftop.webp',
+    image: '/images/dining/skyview-rooftop.jpeg',
     highlights: ['Panoramic views', 'Signature cocktails', 'Live music Fri–Sat', 'Open 4pm–late'],
   },
 ]

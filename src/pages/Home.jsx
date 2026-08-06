@@ -116,7 +116,7 @@ const statVariants = {
 
 export default function Home() {
   const [slideIndex, setSlideIndex] = useState(0)
-  const heroSlides = ['/images/hero-slide-1.webp', '/images/hero-slide-2.webp']
+  const heroSlides = Array.from({ length: 6 }, (_, i) => `/images/hero-slide-${i + 1}.jpeg`)
 
   useEffect(() => {
     const t = setInterval(() => setSlideIndex(i => (i + 1) % heroSlides.length), 5000)
@@ -312,7 +312,7 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             className="min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src="/images/dining/gold-restaurant.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/dining/gold-restaurant.jpeg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
 
@@ -338,7 +338,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-1 lg:order-2 min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src="/images/gallery/facilities/gallery-facility-3.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/gallery/facilities/gallery-facility-3.jpeg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
 
@@ -364,7 +364,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src="/images/rooms/deluxe-suite.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src="/images/rooms/deluxe-suite.jpeg" alt="" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>
@@ -377,7 +377,7 @@ export default function Home() {
         id="dining"
         aria-labelledby="dining-heading"
       >
-        <img src="/images/dining/poolside-grill.webp" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <img src="/images/dining/poolside-grill.jpeg" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-navy-950/70 z-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <motion.div

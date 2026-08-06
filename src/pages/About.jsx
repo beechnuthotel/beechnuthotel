@@ -201,7 +201,7 @@ export default function About() {
           <ScrollReveal delay={0.1}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
               <motion.div className="h-[400px] overflow-hidden rounded-lg">
-                <img src="/images/gallery/facilities/gallery-facility-1.webp" alt="Beechnut Hotel Lounge" className="w-full h-full object-cover" loading="lazy" />
+                <img src="/images/gallery/facilities/gallery-facility-1.jpeg" alt="Beechnut Hotel Lounge" className="w-full h-full object-cover" loading="lazy" />
               </motion.div>
               <motion.div>
                 <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">Service Philosophy</span>
