@@ -15,7 +15,7 @@ const Gallery = lazy(() => import('./pages/Gallery'))
 const Testimonials = lazy(() => import('./pages/Testimonials'))
 const Facilities = lazy(() => import('./pages/Facilities'))
 const Offers = lazy(() => import('./pages/Offers'))
-const Team = lazy(() => import('./pages/Team'))
+const MeetTheTeam = lazy(() => import('./pages/MeetTheTeam'))
 
 function NotFound() {
   return (
@@ -64,7 +64,7 @@ export default function App() {
           <Route path="testimonials" element={<Testimonials />} />
           <Route path="facilities" element={<Facilities />} />
           <Route path="offers" element={<Offers />} />
-          <Route path="team" element={<Team />} />
+          <Route path="team" element={<MeetTheTeam />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
