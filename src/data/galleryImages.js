@@ -1,0 +1,41 @@
+const IMAGES = import.meta.glob(
+  [
+    '/src/assets/gallery/**/*.{jpeg,jpg,png}',
+    '/src/assets/exterior/**/*.{jpeg,jpg,png}',
+    '/src/assets/rooms/**/*.{jpeg,jpg,png}',
+    '/src/assets/dining/**/*.{jpeg,jpg,png}',
+  ],
+  { eager: true, query: '?url', import: 'default' }
+)
+
+const byCategory = {}
+for (const [key, url] of Object.entries(IMAGES)) {
+  const parts = key.split('/')
+  const category = parts[parts.length - 2]
+  const filename = parts[parts.length - 1]
+  const order = parseInt(filename.match(/(\d+)/)?.[1] ?? '0', 10)
+  ;(byCategory[category] ??= []).push({ url, order })
+}
+
+const grouped = Object.fromEntries(
+  Object.entries(byCategory).map(([category, items]) => [
+    category,
+    items.sort((a, b) => a.order - b.order).map(item => item.url),
+  ])
+)
+
+const interleaved = []
+const queues = Object.entries(grouped).map(([category, urls]) => ({ category, urls, index: 0 }))
+let progress = true
+while (progress) {
+  progress = false
+  for (const q of queues) {
+    if (q.index < q.urls.length) {
+      interleaved.push({ src: q.urls[q.index], category: q.category })
+      q.index += 1
+      progress = true
+    }
+  }
+}
+
+export const GALLERY_IMAGES = interleaved
