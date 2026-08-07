@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ROOMS } from '../data/rooms'
 import ScrollReveal from '../components/ui/ScrollReveal'
 
-const CATEGORIES = ['all', 'standard', 'deluxe', 'suite', 'presidential']
+const CATEGORIES = ['all', 'classic', 'deluxe', 'executive', 'suite', 'presidential']
 
 export default function Rooms() {
   const [filter, setFilter] = useState('all')

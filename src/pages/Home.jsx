@@ -272,7 +272,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/10 to-transparent" />
                     <div className="absolute inset-0 bg-gold-400/0 group-hover:bg-gold-400/10 transition-colors duration-500" />
                     <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <span className="text-xs font-semibold tracking-widest uppercase text-gold-400 block mb-1">{room.type}</span>
+                      <span className="text-xs font-semibold tracking-widest uppercase text-gold-400 block mb-1">{room.type === 'presidential' ? 'Presidential Suite' : room.type.charAt(0).toUpperCase() + room.type.slice(1)}</span>
                       <h3 className="font-display text-lg font-semibold text-white group-hover:text-gold-400 transition-colors duration-300">{room.name}</h3>
                     </div>
                   </div>
