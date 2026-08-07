@@ -12,12 +12,28 @@ const heroBgVariants = {
 
 export default function Pool() {
   const [slideIndex, setSlideIndex] = useState(0)
+  const [lightbox, setLightbox] = useState(null)
 
   useEffect(() => {
     if (POOL_IMAGES.length < 2) return
     const t = setInterval(() => setSlideIndex(i => (i + 1) % POOL_IMAGES.length), 4500)
     return () => clearInterval(t)
   }, [POOL_IMAGES.length])
+
+  useEffect(() => {
+    if (lightbox === null) return
+    const onKey = e => {
+      if (e.key === 'Escape') setLightbox(null)
+      if (e.key === 'ArrowRight') setLightbox(i => (i + 1) % POOL_IMAGES.length)
+      if (e.key === 'ArrowLeft') setLightbox(i => (i - 1 + POOL_IMAGES.length) % POOL_IMAGES.length)
+    }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [lightbox])
 
   return (
     <>
@@ -49,9 +65,7 @@ export default function Pool() {
           className="relative z-10 px-4"
         >
           <span className="text-xs font-semibold tracking-[0.28em] uppercase text-gold-400 mb-3 block">Beechnut Hotel Effurun</span>
-          <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">
-            The <em className="italic text-gold-400 not-italic">Pool</em>
-          </h1>
+          <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">Pool</h1>
           <nav className="flex items-center justify-center gap-2 text-sm text-white/50" aria-label="Breadcrumb">
             <Link to="/" className="text-white/70 hover:text-gold-400 transition-colors">Home</Link>
             <span className="text-gold-400/60">›</span>
@@ -81,10 +95,12 @@ export default function Pool() {
             >
               {POOL_IMAGES.map((img, i) => (
                 <ScrollReveal key={img} delay={0.05 * i}>
-                  <motion.figure
-                    className="relative overflow-hidden rounded-lg aspect-[16/10] group bg-navy-950"
+                  <motion.button
+                    onClick={() => setLightbox(i)}
                     whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(0,0,0,0.12)' }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="relative overflow-hidden rounded-lg aspect-[16/10] group bg-navy-950 w-full block cursor-zoom-in"
+                    aria-label={`Swimming Pool photo ${i + 1} of ${POOL_IMAGES.length} — enlarge`}
                   >
                     <img
                       src={img}
@@ -92,14 +108,14 @@ export default function Pool() {
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <figcaption className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                      <span className="text-xs font-semibold tracking-widest uppercase text-gold-400">Swimming Pool</span>
-                      <span className="text-[0.65rem] font-medium tracking-wider uppercase text-white/70 block">
-                        Photo {i + 1} of {POOL_IMAGES.length}
-                      </span>
-                    </figcaption>
-                  </motion.figure>
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <span className="absolute bottom-3 left-3 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-[0.65rem] font-medium tracking-wider uppercase text-white/80">
+                      Photo {i + 1} of {POOL_IMAGES.length}
+                    </span>
+                    <span className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-2 rounded-full bg-navy-950/60 text-white" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>
+                    </span>
+                  </motion.button>
                 </ScrollReveal>
               ))}
             </motion.div>
@@ -108,6 +124,57 @@ export default function Pool() {
           )}
         </div>
       </section>
+
+      <AnimatePresence>
+        {lightbox !== null && POOL_IMAGES.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/90 backdrop-blur-sm p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Swimming Pool photo ${lightbox + 1} of ${POOL_IMAGES.length}`}
+            onClick={() => setLightbox(null)}
+          >
+            <button className="absolute top-5 right-5 p-2 rounded-full bg-white/10 text-white hover:bg-gold-400 hover:text-navy-900 transition-colors" onClick={() => setLightbox(null)} aria-label="Close">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
+            </button>
+            <button
+              className="absolute left-3 lg:left-8 p-3 rounded-full bg-white/10 text-white hover:bg-gold-400 hover:text-navy-900 transition-colors"
+              onClick={e => { e.stopPropagation(); setLightbox(i => (i - 1 + POOL_IMAGES.length) % POOL_IMAGES.length) }}
+              aria-label="Previous photo"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
+            </button>
+            <figure className="max-h-[85vh] max-w-[90vw]" onClick={e => e.stopPropagation()}>
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={lightbox}
+                  src={POOL_IMAGES[lightbox]}
+                  alt={`Swimming Pool — photo ${lightbox + 1} of ${POOL_IMAGES.length}`}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
+                />
+              </AnimatePresence>
+              <figcaption className="text-center text-sm text-white/70 mt-4">
+                Swimming Pool — Photo {lightbox + 1} of {POOL_IMAGES.length}
+              </figcaption>
+            </figure>
+            <button
+              className="absolute right-3 lg:right-8 p-3 rounded-full bg-white/10 text-white hover:bg-gold-400 hover:text-navy-900 transition-colors"
+              onClick={e => { e.stopPropagation(); setLightbox(i => (i + 1) % POOL_IMAGES.length) }}
+              aria-label="Next photo"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
