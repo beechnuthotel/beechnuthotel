@@ -1,15 +1,10 @@
-export const ROOMS = [
+import { ROOM_IMAGES } from './roomImages'
+
+const ROOM_DEFS = [
   {
     id: 'classic',
     name: 'Classic Room',
     type: 'classic',
-    image: '/images/rooms/classic/classic-1.jpeg',
-    images: [
-      '/images/rooms/classic/classic-1.jpeg',
-      '/images/rooms/classic/classic-2.jpeg',
-      '/images/rooms/classic/classic-3.jpeg',
-      '/images/rooms/classic/classic-4.jpeg',
-    ],
     description: 'A comfortable and elegantly appointed room with modern amenities, perfect for the budget-conscious traveller seeking quality and comfort.',
     longDescription: 'Thoughtfully designed with your comfort in mind, the Classic Room offers a cozy retreat with essential amenities. Features a queen-sized bed, en-suite bathroom, work desk, and complimentary Wi-Fi.',
     maxOccupancy: 2,
@@ -23,13 +18,6 @@ export const ROOMS = [
     id: 'deluxe',
     name: 'Deluxe Room',
     type: 'deluxe',
-    image: '/images/rooms/deluxe/deluxe-1.jpeg',
-    images: [
-      '/images/rooms/deluxe/deluxe-1.jpeg',
-      '/images/rooms/deluxe/deluxe-2.jpeg',
-      '/images/rooms/deluxe/deluxe-3.jpeg',
-      '/images/rooms/deluxe/deluxe-4.jpeg',
-    ],
     description: 'Spacious and refined, the Deluxe Room offers enhanced comfort with premium furnishings and upgraded amenities for a superior stay.',
     longDescription: 'Elevated comfort meets modern elegance. The Deluxe Room features a king-sized bed, premium toiletries, minibar, and city views. Perfect for discerning travellers who appreciate the finer details.',
     maxOccupancy: 2,
@@ -43,12 +31,6 @@ export const ROOMS = [
     id: 'executive',
     name: 'Executive Room',
     type: 'executive',
-    image: '/images/rooms/executive/executive-1.jpeg',
-    images: [
-      '/images/rooms/executive/executive-1.jpeg',
-      '/images/rooms/executive/executive-2.jpeg',
-      '/images/rooms/executive/executive-3.jpeg',
-    ],
     description: 'Designed for the business traveller, the Executive Room combines workspace luxury with relaxation, featuring a separate seating area and lounge access.',
     longDescription: 'A perfect blend of business and leisure. The Executive Room offers a king bed, separate seating area, executive lounge access, and premium bath amenities. Ideal for the corporate traveller.',
     maxOccupancy: 2,
@@ -62,16 +44,6 @@ export const ROOMS = [
     id: 'diplomat',
     name: 'Diplomatic Suite',
     type: 'diplomat',
-    image: '/images/rooms/diplomat/diplomat-1.jpeg',
-    images: [
-      '/images/rooms/diplomat/diplomat-1.jpeg',
-      '/images/rooms/diplomat/diplomat-2.jpeg',
-      '/images/rooms/diplomat/diplomat-3.jpeg',
-      '/images/rooms/diplomat/diplomat-4.jpeg',
-      '/images/rooms/diplomat/diplomat-5.jpeg',
-      '/images/rooms/diplomat/diplomat-6.jpeg',
-      '/images/rooms/diplomat/diplomat-7.jpeg',
-    ],
     description: 'A luxurious suite with a separate living and dining area, offering an elevated experience for guests who demand space and sophistication.',
     longDescription: 'Sophistication redefined. The Diplomatic Suite boasts a spacious living room, separate dining area, king bed, marble bathroom with soaking tub, and priority concierge service.',
     maxOccupancy: 3,
@@ -85,16 +57,6 @@ export const ROOMS = [
     id: 'royal',
     name: 'Royal Suite',
     type: 'royal',
-    image: '/images/rooms/royal/royal-1.jpeg',
-    images: [
-      '/images/rooms/royal/royal-1.jpeg',
-      '/images/rooms/royal/royal-2.jpeg',
-      '/images/rooms/royal/royal-3.jpeg',
-      '/images/rooms/royal/royal-4.jpeg',
-      '/images/rooms/royal/royal-5.jpeg',
-      '/images/rooms/royal/royal-6.jpeg',
-      '/images/rooms/royal/royal-7.jpeg',
-    ],
     description: 'Our crown jewel — a palatial suite with panoramic views, private butler service, and the finest amenities Beechnut has to offer.',
     longDescription: 'The ultimate expression of luxury. The Royal Suite features a grand living room, private dining, walk-in wardrobe, jacuzzi, panoramic city views, and dedicated butler service. Reserved for those who accept nothing less than extraordinary.',
     maxOccupancy: 4,
@@ -105,3 +67,9 @@ export const ROOMS = [
     badge: 'Premium',
   },
 ]
+
+export const ROOMS = ROOM_DEFS.map(room => ({
+  ...room,
+  image: ROOM_IMAGES[room.type]?.[0] ?? '',
+  images: ROOM_IMAGES[room.type] ?? [],
+}))

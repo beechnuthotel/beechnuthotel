@@ -364,7 +364,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src="/images/rooms/diplomat/diplomat-1.jpeg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src={ROOMS.find(r => r.type === 'diplomat')?.image} alt="" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>

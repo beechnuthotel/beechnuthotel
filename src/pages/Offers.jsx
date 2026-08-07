@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import { ROOM_IMAGES } from '../data/roomImages'
 
 function CountdownTimer() {
   const target = new Date('August 16, 2026 00:00:00 GMT+0100').getTime()
@@ -57,7 +58,7 @@ const OFFERS = [
   {
     title: 'Weekend Getaway',
     subtitle: 'Escape the everyday',
-    image: '/images/rooms/classic/classic-1.jpeg',
+    image: ROOM_IMAGES.classic?.[0] ?? '',
     desc: 'Book 2 nights and get the 3rd night free. Includes complimentary breakfast and late checkout until 3pm.',
     price: 'From ₦90,000',
     tag: 'Limited Time',
@@ -65,7 +66,7 @@ const OFFERS = [
   {
     title: 'Honeymoon Suite',
     subtitle: 'Celebrate your love',
-    image: '/images/rooms/diplomat/diplomat-1.jpeg',
+    image: ROOM_IMAGES.diplomat?.[0] ?? '',
     desc: 'Champagne on arrival, couples massage, candlelit dinner, and turndown service with rose petals.',
     price: 'From ₦250,000',
     tag: 'Romantic',
@@ -73,7 +74,7 @@ const OFFERS = [
   {
     title: 'Corporate Long-Stay',
     subtitle: 'Business, elevated',
-    image: '/images/rooms/executive/executive-1.jpeg',
+    image: ROOM_IMAGES.executive?.[0] ?? '',
     desc: 'Stay 7+ nights and receive 20% off, daily breakfast, airport transfers, and executive lounge access.',
     price: 'From ₦36,000/night',
     tag: 'Business',
