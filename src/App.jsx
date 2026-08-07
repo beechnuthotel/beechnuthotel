@@ -8,7 +8,6 @@ const Rooms = lazy(() => import('./pages/Rooms'))
 const RoomDetail = lazy(() => import('./pages/RoomDetail'))
 const Booking = lazy(() => import('./pages/Booking'))
 const Dining = lazy(() => import('./pages/Dining'))
-const Events = lazy(() => import('./pages/Events'))
 const Contact = lazy(() => import('./pages/Contact'))
 const About = lazy(() => import('./pages/About'))
 const Gallery = lazy(() => import('./pages/Gallery'))
@@ -57,7 +56,6 @@ export default function App() {
           <Route path="rooms/:id" element={<RoomDetail />} />
           <Route path="booking" element={<Booking />} />
           <Route path="dining" element={<Dining />} />
-          <Route path="events" element={<Events />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="gallery" element={<Gallery />} />

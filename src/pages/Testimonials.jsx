@@ -63,16 +63,6 @@ const TESTIMONIAL_VIDEOS = [
     photo: '/staff/front-office/fom-headshot.svg',
     quote: 'Nothing makes our day like a guest who arrives as a stranger and leaves as a friend.',
   },
-  {
-    id: 6,
-    name: 'Events Team',
-    role: 'Staff Reaction',
-    category: 'staff',
-    department: 'Events',
-    poster: '/staff/events/events-poster.svg',
-    photo: '/staff/events/events-headshot.svg',
-    quote: 'Seeing a celebration come together \u2014 that is why we love what we do every single day.',
-  },
 ]
 
 export default function Testimonials() {

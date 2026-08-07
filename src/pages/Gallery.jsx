@@ -5,7 +5,7 @@ import ScrollReveal from '../components/ui/ScrollReveal'
 import { DINING_IMAGES } from '../data/diningImages'
 import { ROOM_IMAGES } from '../data/roomImages'
 
-const CATEGORIES = ['all', 'rooms', 'dining', 'events', 'facilities', 'team']
+const CATEGORIES = ['all', 'rooms', 'dining', 'facilities', 'team']
 
 const GALLERY_ITEMS = [
   { id: 1, category: 'rooms', image: ROOM_IMAGES.executive?.[0] ?? '', caption: 'Executive Suite Living Area' },

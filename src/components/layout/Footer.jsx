@@ -25,7 +25,6 @@ const SOCIAL_LINKS = [
 const QUICK_LINKS = [
   { label: 'Rooms & Suites', to: '/rooms' },
   { label: 'Dining', to: '/dining' },
-  { label: 'Events & Conferences', to: '/events' },
   { label: 'Photo Gallery', to: '/gallery' },
   { label: 'Video Testimonials', to: '/testimonials' },
   { label: 'About Beechnut', to: '/about' },
@@ -36,7 +35,6 @@ const QUICK_LINKS = [
 const GUEST_LINKS = [
   { label: 'Make a Reservation', to: '/booking' },
   { label: 'Restaurant Reservations', to: '/dining#reservations' },
-  { label: 'Corporate Packages', to: '/events#corporate' },
   { label: 'Contact & Directions', to: '/contact' },
 ]
 
