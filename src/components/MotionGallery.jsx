@@ -90,7 +90,7 @@ export default function MotionGallery() {
               <div className="absolute inset-0 z-[2] bg-[radial-gradient(ellipse_at_center,rgba(6,16,35,0.05)_0%,rgba(6,16,35,0.18)_100%)]" />
 
               <div className="absolute inset-0 z-[3] flex items-center justify-center">
-                <div className="w-[min(46vw,620px)] max-w-[90%] aspect-[4/3]">
+                <div className="w-full aspect-[4/3] sm:w-[min(46vw,620px)] sm:max-w-[90%]">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={stage.cursor}
