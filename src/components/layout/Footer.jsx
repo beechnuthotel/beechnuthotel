@@ -25,6 +25,7 @@ const SOCIAL_LINKS = [
 const QUICK_LINKS = [
   { label: 'Rooms & Suites', to: '/rooms' },
   { label: 'Dining', to: '/dining' },
+  { label: 'Swimming Pool', to: '/pool' },
   { label: 'Photo Gallery', to: '/gallery' },
   { label: 'Video Testimonials', to: '/testimonials' },
   { label: 'About Beechnut', to: '/about' },

@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { to: '/about', label: 'About' },
   { to: '/rooms', label: 'Rooms & Suites' },
   { to: '/dining', label: 'Dining' },
+  { to: '/pool', label: 'Pool' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/testimonials', label: 'Testimonials' },
   { to: '/contact', label: 'Contact' },
