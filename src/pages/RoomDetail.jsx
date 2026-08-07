@@ -83,7 +83,7 @@ export default function RoomDetail() {
 
             <div className="flex flex-col justify-center">
               <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 mb-2">
-                {room.type === 'presidential' ? 'Presidential Suite' : room.type.charAt(0).toUpperCase() + room.type.slice(1)}
+                {room.type.charAt(0).toUpperCase() + room.type.slice(1)}
               </span>
               <h2 className="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-4">{room.name}</h2>
               <p className="text-gray-600 leading-relaxed mb-6">{room.longDescription}</p>

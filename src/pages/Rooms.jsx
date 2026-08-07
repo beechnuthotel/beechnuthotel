@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ROOMS } from '../data/rooms'
 import ScrollReveal from '../components/ui/ScrollReveal'
 
-const CATEGORIES = ['all', 'classic', 'deluxe', 'executive', 'suite', 'presidential']
+const CATEGORIES = ['all', 'classic', 'deluxe', 'executive', 'diplomatic', 'royal']
 
 export default function Rooms() {
   const [filter, setFilter] = useState('all')
@@ -113,7 +113,7 @@ export default function Rooms() {
                       )}
                     </div>
                     <div className="p-5 flex flex-col flex-1">
-                      <span className="text-xs font-semibold tracking-widest uppercase text-gold-500 mb-1">{room.type === 'presidential' ? 'Presidential Suite' : room.type.charAt(0).toUpperCase() + room.type.slice(1)}</span>
+                      <span className="text-xs font-semibold tracking-widest uppercase text-gold-500 mb-1">{room.type.charAt(0).toUpperCase() + room.type.slice(1)}</span>
                       <h3 className="font-display text-xl font-semibold text-navy-900 mb-2">{room.name}</h3>
                       <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-3">{room.description}</p>
                       <div className="flex flex-wrap gap-1.5 mb-4">
