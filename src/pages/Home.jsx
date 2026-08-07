@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { TESTIMONIALS, STATS } from '../data/testimonials'
+import { HOME_TESTIMONIALS, STATS } from '../data/testimonials'
 import { ROOMS } from '../data/rooms'
 import { DINING_IMAGES } from '../data/diningImages'
 import { EXTERIOR_IMAGES } from '../data/exteriorImages'
@@ -26,7 +26,7 @@ function TestimonialCarousel() {
   const timerRef = useRef(null)
 
   const next = useCallback(() => {
-    setIndex(i => Math.min(i + 1, TESTIMONIALS.length - 1))
+    setIndex(i => Math.min(i + 1, HOME_TESTIMONIALS.length - 1))
   }, [])
 
   const prev = useCallback(() => {
@@ -36,7 +36,7 @@ function TestimonialCarousel() {
   const resetAuto = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current)
     timerRef.current = setInterval(() => {
-      setIndex(i => (i + 1) % TESTIMONIALS.length)
+      setIndex(i => (i + 1) % HOME_TESTIMONIALS.length)
     }, 5000)
   }, [])
 
@@ -53,7 +53,7 @@ function TestimonialCarousel() {
           animate={{ x: `-${index * 100}%` }}
           transition={{ type: 'spring', stiffness: 200, damping: 28 }}
         >
-          {TESTIMONIALS.map((t) => (
+          {HOME_TESTIMONIALS.map((t) => (
             <div key={t.id} className="min-w-full sm:min-w-[calc(50%-0.5rem)] lg:min-w-[calc(33.333%-0.667rem)] shrink-0">
               <motion.div
                 className="bg-white rounded-sm p-6 shadow-sm border-l-3 border-gold-400"
