@@ -39,3 +39,18 @@ while (progress) {
 }
 
 export const GALLERY_IMAGES = interleaved
+
+const FOLDER_IMAGES = import.meta.glob('/src/assets/gallery/**/*.{jpeg,jpg,png}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+
+export const GALLERY_FOLDER_IMAGES = Object.entries(FOLDER_IMAGES)
+  .map(([key, url]) => {
+    const filename = key.split('/').pop()
+    const order = parseInt(filename.match(/(\d+)/)?.[1] ?? '0', 10)
+    return { url, order }
+  })
+  .sort((a, b) => a.order - b.order)
+  .map(item => item.url)
