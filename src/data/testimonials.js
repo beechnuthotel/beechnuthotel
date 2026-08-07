@@ -24,14 +24,6 @@ export const TESTIMONIALS = [
     source: 'Google',
   },
   {
-    slug: 'boulevard-beechnut-hotel',
-    name: 'Boulevard Beechnut Hotel',
-    rating: 5,
-    date: '4 months ago',
-    text: 'Very good hotel 🤩🤩🤩',
-    source: 'Google',
-  },
-  {
     slug: 'chinedu-victory',
     name: 'Chinedu Victory',
     rating: 5,
