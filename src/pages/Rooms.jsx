@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ROOMS } from '../data/rooms'
 import ScrollReveal from '../components/ui/ScrollReveal'
-import StaffVideoCard from '../components/ui/StaffVideoCard'
-import { TEAM_MEMBERS } from '../data/staff'
 
 const CATEGORIES = ['all', 'standard', 'deluxe', 'suite', 'presidential']
 
@@ -49,7 +47,9 @@ export default function Rooms() {
 
           <ScrollReveal delay={0.1}>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mb-10">
-              <StaffVideoCard member={TEAM_MEMBERS.find(m => m.id === 'front-office')} compact short showQuote={false} />
+              <div className="h-full min-h-[280px] overflow-hidden rounded-lg">
+                <img src="/images/front-desk.jpeg" alt="Beechnut Hotel Front Desk" className="w-full h-full object-cover" loading="lazy" />
+              </div>
               <div className="lg:col-span-2">
                 <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">At the Front Desk</span>
                 <h3 className="font-display text-2xl lg:text-3xl font-bold text-navy-900 mb-3">Your Sanctuary Awaits</h3>
