@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { TESTIMONIALS, STATS } from '../data/testimonials'
 import { ROOMS } from '../data/rooms'
+import { DINING_IMAGES } from '../data/diningImages'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import StaffVideoCard from '../components/ui/StaffVideoCard'
 import { GM_WELCOME } from '../data/staff'
@@ -312,7 +313,7 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             className="min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src="/images/dining/gold-restaurant.jpeg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src={DINING_IMAGES.dining?.[0] ?? ''} alt="" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
 
@@ -338,7 +339,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-1 lg:order-2 min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src="/images/gallery/facilities/gallery-facility-3.jpeg" alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src={DINING_IMAGES['indoor-bar']?.[0] ?? ''} alt="" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
 
@@ -377,7 +378,7 @@ export default function Home() {
         id="dining"
         aria-labelledby="dining-heading"
       >
-        <img src="/images/dining/poolside-grill.jpeg" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <img src={DINING_IMAGES['pool-bar']?.[0] ?? ''} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-navy-950/70 z-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <motion.div

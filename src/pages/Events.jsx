@@ -3,33 +3,34 @@ import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import StaffVideoCard from '../components/ui/StaffVideoCard'
 import { TEAM_MEMBERS } from '../data/staff'
+import { DINING_IMAGES } from '../data/diningImages'
 
 const EVENT_SPACES = [
   {
     name: 'The Grand Ballroom',
     capacity: 'Up to 500 guests',
-    image: '/images/gallery/dining/gallery-dining-1.jpeg',
+    image: DINING_IMAGES['indoor-bar']?.[0] ?? '',
     description: 'Our flagship venue with soaring ceilings, crystal chandeliers, and a fully flexible floor plan. Perfect for weddings, galas, and award ceremonies.',
     features: ['500 banquet / 700 cocktail', 'HD projection & sound', 'Chandelier lighting', 'Dedicated bridal suite'],
   },
   {
     name: 'Executive Boardroom',
     capacity: 'Up to 16 guests',
-    image: '/images/gallery/facilities/gallery-facility-1.jpeg',
+    image: DINING_IMAGES.lounge?.[0] ?? '',
     description: 'A refined, private space for high-stakes meetings and board sessions. Equipped with video-conferencing, digital whiteboards, and secure Wi-Fi.',
     features: ['Video-conferencing', 'Digital whiteboard', 'Catering available', 'Natural daylight'],
   },
   {
     name: 'Riverside Terrace',
     capacity: 'Up to 120 guests',
-    image: '/images/gallery/dining/gallery-dining-3.jpeg',
+    image: DINING_IMAGES['vip-bar']?.[0] ?? '',
     description: 'An intimate outdoor setting for evening cocktail parties and sundowner events, with the Effurun skyline as a breathtaking backdrop.',
     features: ['Outdoor covered terrace', 'Built-in BBQ & bar', 'Skyline views', 'Evening events'],
   },
   {
     name: 'Conference Hall',
     capacity: 'Up to 250 delegates',
-    image: '/images/gallery/facilities/gallery-facility-2.jpeg',
+    image: DINING_IMAGES['pool-bar']?.[0] ?? '',
     description: 'A versatile conference space divisible into three breakout rooms. Ideal for corporate conferences, product launches, and training sessions.',
     features: ['Breakout rooms (×3)', 'PA system & microphones', 'Live streaming capable', 'Exhibition space'],
   },

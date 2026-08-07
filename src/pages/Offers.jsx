@@ -82,7 +82,7 @@ const OFFERS = [
   {
     title: 'Family Fun Package',
     subtitle: 'Memories for all ages',
-    image: '/images/gallery/rooms/gallery-room-1.jpeg',
+    image: ROOM_IMAGES.deluxe?.[0] ?? '',
     desc: 'Interconnecting rooms, kids-eat-free dining, pool passes, and a guided city tour for the whole family.',
     price: 'From ₦150,000',
     tag: 'Family',

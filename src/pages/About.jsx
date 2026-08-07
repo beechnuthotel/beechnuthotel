@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import { DINING_IMAGES } from '../data/diningImages'
 
 const CORE_VALUES = [
   'Excellence', 'Integrity', 'Hospitality', 'Professionalism',
@@ -199,7 +200,7 @@ export default function About() {
           <ScrollReveal delay={0.1}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
               <motion.div className="h-[400px] overflow-hidden rounded-lg">
-                <img src="/images/gallery/facilities/gallery-facility-1.jpeg" alt="Beechnut Hotel Lounge" className="w-full h-full object-cover" loading="lazy" />
+                <img src={DINING_IMAGES.lounge?.[0] ?? ''} alt="Beechnut Hotel Lounge" className="w-full h-full object-cover" loading="lazy" />
               </motion.div>
               <motion.div>
                 <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">Service Philosophy</span>

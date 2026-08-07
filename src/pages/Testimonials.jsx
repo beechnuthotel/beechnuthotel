@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import StaffVideoCard from '../components/ui/StaffVideoCard'
+import { DINING_IMAGES } from '../data/diningImages'
+import { ROOM_IMAGES } from '../data/roomImages'
 
 const CATEGORIES = [
   { key: 'all', label: 'All Videos' },
@@ -17,8 +19,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Business Traveller',
     category: 'guest',
     department: 'Guest',
-    poster: '/images/gallery/rooms/gallery-room-1.jpeg',
-    photo: '/images/gallery/rooms/gallery-room-1.jpeg',
+    poster: ROOM_IMAGES.executive?.[0] ?? '',
+    photo: ROOM_IMAGES.executive?.[0] ?? '',
     quote: 'The room was immaculate, the staff remembered my name every single day, and the breakfast spread was extraordinary.',
   },
   {
@@ -27,8 +29,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Corporate Client',
     category: 'guest',
     department: 'Guest',
-    poster: '/images/gallery/facilities/gallery-facility-2.jpeg',
-    photo: '/images/gallery/facilities/gallery-facility-2.jpeg',
+    poster: DINING_IMAGES['pool-bar']?.[0] ?? '',
+    photo: DINING_IMAGES['pool-bar']?.[0] ?? '',
     quote: 'We hosted our company\u2019s annual conference here and the event team was flawless from start to finish.',
   },
   {
@@ -37,8 +39,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Leisure Guests',
     category: 'guest',
     department: 'Guest',
-    poster: '/images/dining/gold-restaurant.jpeg',
-    photo: '/images/dining/gold-restaurant.jpeg',
+    poster: DINING_IMAGES.dining?.[0] ?? '',
+    photo: DINING_IMAGES.dining?.[0] ?? '',
     quote: 'The Presidential Suite on our anniversary was beyond anything we imagined \u2014 Beechnut made our celebration unforgettable.',
   },
   {
