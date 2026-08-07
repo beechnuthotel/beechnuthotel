@@ -110,12 +110,34 @@ export default function MeetTheTeam() {
         </div>
       </section>
 
+      {TEAM_IMAGES['all-staff']?.length > 0 && (
+        <section className="py-16 lg:py-24 bg-surface" aria-label="The whole team at Beechnut Hotel">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">The Whole Team</span>
+                <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-navy-900 leading-tight">One Team, One <em className="text-gold-500 not-italic">Welcome</em></h2>
+                <div className="w-12 h-0.5 bg-gold-400 mx-auto mt-4" />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <img
+                src={TEAM_IMAGES['all-staff'][0]}
+                alt="The full Beechnut Hotel team"
+                className="w-full max-w-6xl mx-auto aspect-[16/9] object-cover rounded-xl border border-navy-900/10 shadow-sm"
+                loading="lazy"
+              />
+            </ScrollReveal>
+          </div>
+        </section>
+      )}
+
       {DEPARTMENTS.map((folder, i) => {
         const images = TEAM_IMAGES[folder] ?? []
         if (images.length === 0) return null
         const label = departmentLabel(folder)
         return (
-          <section key={folder} className={`py-16 lg:py-24 ${i % 2 === 1 ? 'bg-white' : 'bg-surface'}`} aria-label={`${label} team`}>
+          <section key={folder} className={`py-16 lg:py-24 ${i % 2 === 0 ? 'bg-white' : 'bg-surface'}`} aria-label={`${label} team`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <ScrollReveal>
                 <div className="text-center mb-12">
