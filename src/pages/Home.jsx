@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { TESTIMONIALS, STATS } from '../data/testimonials'
 import { ROOMS } from '../data/rooms'
 import { DINING_IMAGES } from '../data/diningImages'
+import { EXTERIOR_IMAGES } from '../data/exteriorImages'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import StaffVideoCard from '../components/ui/StaffVideoCard'
 import { GM_WELCOME } from '../data/staff'
@@ -117,7 +118,7 @@ const statVariants = {
 
 export default function Home() {
   const [slideIndex, setSlideIndex] = useState(0)
-  const heroSlides = Array.from({ length: 6 }, (_, i) => `/images/hero-slide-${i + 1}.jpeg`)
+  const heroSlides = EXTERIOR_IMAGES
 
   useEffect(() => {
     const t = setInterval(() => setSlideIndex(i => (i + 1) % heroSlides.length), 5000)
