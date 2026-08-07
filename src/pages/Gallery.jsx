@@ -6,8 +6,8 @@ import ScrollReveal from '../components/ui/ScrollReveal'
 const CATEGORIES = ['all', 'rooms', 'dining', 'events', 'facilities', 'team']
 
 const GALLERY_ITEMS = [
-  { id: 1, category: 'rooms', image: '/images/rooms/executive-2.jpeg', caption: 'Executive Suite Living Area' },
-  { id: 2, category: 'rooms', image: '/images/rooms/deluxe-1.jpeg', caption: 'Premium Guest Room' },
+  { id: 1, category: 'rooms', image: '/images/gallery/rooms/gallery-room-1.jpeg', caption: 'Executive Suite Living Area' },
+  { id: 2, category: 'rooms', image: '/images/gallery/rooms/gallery-room-2.jpeg', caption: 'Premium Guest Room' },
   { id: 3, category: 'dining', image: '/images/gallery/dining/gallery-dining-1.jpeg', caption: 'Bar & Lounge Area' },
   { id: 4, category: 'dining', image: '/images/gallery/dining/gallery-dining-2.jpeg', caption: 'Dining Experience' },
   { id: 5, category: 'dining', image: '/images/gallery/dining/gallery-dining-3.jpeg', caption: 'Outdoor Patio Dining' },
