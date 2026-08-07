@@ -45,47 +45,56 @@ export default function StaffVideoCard({
       className={`bg-white rounded-lg overflow-hidden shadow-sm border border-navy-900/5 ${compact ? '' : 'flex flex-col h-full'} ${className}`}
     >
       <div className="relative aspect-video bg-navy-950 overflow-hidden">
-        {autoplayOnView || playing ? (
-          <video
-            ref={autoplayOnView ? videoRef : undefined}
-            src={src}
-            poster={poster || photo}
-            controls
-            autoPlay={playing}
-            loop={autoplayOnView}
-            playsInline
-            preload="metadata"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <track kind="captions" label="English" srcLang="en" />
-          </video>
+        {src ? (
+          autoplayOnView || playing ? (
+            <video
+              ref={autoplayOnView ? videoRef : undefined}
+              src={src}
+              poster={poster || photo}
+              controls
+              autoPlay={playing}
+              loop={autoplayOnView}
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <track kind="captions" label="English" srcLang="en" />
+            </video>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setPlaying(true)}
+              className="absolute inset-0 w-full h-full group cursor-pointer"
+              aria-label={`Play video: ${name}, ${role}`}
+            >
+              <img
+                src={poster || photo}
+                alt={`${name} — ${role} — video preview`}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <span className="absolute inset-0 bg-navy-950/30 group-hover:bg-navy-950/45 transition-colors duration-300" />
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gold-400 text-navy-900 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </span>
+              {duration && (
+                <span className="absolute bottom-3 right-3 text-[0.65rem] font-semibold tracking-wider uppercase bg-navy-950/80 text-white/90 px-2 py-1 rounded-sm">
+                  {duration}
+                </span>
+              )}
+            </button>
+          )
         ) : (
-          <button
-            type="button"
-            onClick={() => setPlaying(true)}
-            className="absolute inset-0 w-full h-full group cursor-pointer"
-            aria-label={`Play video: ${name}, ${role}`}
-          >
-            <img
-              src={poster || photo}
-              alt={`${name} — ${role} — video preview`}
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <span className="absolute inset-0 bg-navy-950/30 group-hover:bg-navy-950/45 transition-colors duration-300" />
-            <span className="absolute inset-0 flex items-center justify-center">
-              <span className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gold-400 text-navy-900 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </span>
-            </span>
-            {duration && (
-              <span className="absolute bottom-3 right-3 text-[0.65rem] font-semibold tracking-wider uppercase bg-navy-950/80 text-white/90 px-2 py-1 rounded-sm">
-                {duration}
-              </span>
-            )}
-          </button>
+          <img
+            src={poster || photo}
+            alt={`${name} — ${role}`}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         )}
       </div>
 

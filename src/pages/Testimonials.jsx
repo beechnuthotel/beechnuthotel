@@ -17,10 +17,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Business Traveller',
     category: 'guest',
     department: 'Guest',
-    src: '/videos/guest-1.mp4',
     poster: '/images/gallery/rooms/gallery-room-1.jpeg',
     photo: '/images/gallery/rooms/gallery-room-1.jpeg',
-    duration: '0:30',
     quote: 'The room was immaculate, the staff remembered my name every single day, and the breakfast spread was extraordinary.',
   },
   {
@@ -29,10 +27,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Corporate Client',
     category: 'guest',
     department: 'Guest',
-    src: '/videos/guest-2.mp4',
     poster: '/images/gallery/facilities/gallery-facility-2.jpeg',
     photo: '/images/gallery/facilities/gallery-facility-2.jpeg',
-    duration: '0:25',
     quote: 'We hosted our company\u2019s annual conference here and the event team was flawless from start to finish.',
   },
   {
@@ -41,10 +37,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Leisure Guests',
     category: 'guest',
     department: 'Guest',
-    src: '/videos/guest-3.mp4',
     poster: '/images/dining/gold-restaurant.jpeg',
     photo: '/images/dining/gold-restaurant.jpeg',
-    duration: '0:35',
     quote: 'The Presidential Suite on our anniversary was beyond anything we imagined \u2014 Beechnut made our celebration unforgettable.',
   },
   {
@@ -53,10 +47,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Staff Reaction',
     category: 'staff',
     department: 'Kitchen',
-    src: '/staff/kitchen/kitchen-reaction.mp4',
     poster: '/staff/kitchen/chef-poster.svg',
     photo: '/staff/kitchen/chef-headshot.svg',
-    duration: '0:20',
     quote: 'We take pride in every plate that leaves our kitchen \u2014 cooking for our guests feels like cooking for family.',
   },
   {
@@ -65,10 +57,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Staff Reaction',
     category: 'staff',
     department: 'Front Office',
-    src: '/staff/front-office/front-desk-reaction.mp4',
     poster: '/staff/front-office/fom-poster.svg',
     photo: '/staff/front-office/fom-headshot.svg',
-    duration: '0:20',
     quote: 'Nothing makes our day like a guest who arrives as a stranger and leaves as a friend.',
   },
   {
@@ -77,10 +67,8 @@ const TESTIMONIAL_VIDEOS = [
     role: 'Staff Reaction',
     category: 'staff',
     department: 'Events',
-    src: '/staff/events/events-reaction.mp4',
     poster: '/staff/events/events-poster.svg',
     photo: '/staff/events/events-headshot.svg',
-    duration: '0:20',
     quote: 'Seeing a celebration come together \u2014 that is why we love what we do every single day.',
   },
 ]
@@ -160,8 +148,6 @@ export default function Testimonials() {
                       department: video.department,
                       photo: video.photo,
                       poster: video.poster,
-                      video: video.src,
-                      duration: video.duration,
                       quote: video.quote,
                     }}
                     showTranscript={false}

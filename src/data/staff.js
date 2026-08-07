@@ -24,8 +24,6 @@ export const TEAM_MEMBERS = [
     department: 'Kitchen & Dining',
     photo: '/staff/kitchen/chef-headshot.svg',
     poster: '/staff/kitchen/chef-poster.svg',
-    video: '/staff/kitchen/chef-introduction.mp4',
-    shortVideo: '/staff/kitchen/chef-short.mp4',
     duration: '0:45',
     quote:
       'Every dish we serve is a celebration of Nigeria\u2019s extraordinary culinary heritage.',
@@ -41,8 +39,6 @@ export const TEAM_MEMBERS = [
     department: 'Rooms & Guest Arrival',
     photo: '/staff/front-office/fom-headshot.svg',
     poster: '/staff/front-office/fom-poster.svg',
-    video: '/staff/front-office/fom-introduction.mp4',
-    shortVideo: '/staff/front-office/fom-short.mp4',
     duration: '0:40',
     quote:
       'Your room is your sanctuary — we make sure it feels like home from the moment you arrive.',
@@ -58,8 +54,6 @@ export const TEAM_MEMBERS = [
     department: 'Events & Conferences',
     photo: '/staff/events/events-headshot.svg',
     poster: '/staff/events/events-poster.svg',
-    video: '/staff/events/events-introduction.mp4',
-    shortVideo: '/staff/events/events-short.mp4',
     duration: '0:40',
     quote:
       'From black-tie galas to board meetings — we turn every occasion into a memory that lasts.',
@@ -75,8 +69,6 @@ export const TEAM_MEMBERS = [
     department: 'Guest Relations',
     photo: '/staff/guest-services/gsm-headshot.svg',
     poster: '/staff/guest-services/gsm-poster.svg',
-    video: '/staff/guest-services/gsm-introduction.mp4',
-    shortVideo: '/staff/guest-services/gsm-short.mp4',
     duration: '0:35',
     quote:
       'Whatever you need — a transfer, a tour, a table — we are only a call away.',
@@ -92,8 +84,6 @@ export const TEAM_MEMBERS = [
     department: 'Housekeeping & Comfort',
     photo: '/staff/housekeeping/hkm-headshot.svg',
     poster: '/staff/housekeeping/hkm-poster.svg',
-    video: '/staff/housekeeping/hkm-introduction.mp4',
-    shortVideo: '/staff/housekeeping/hkm-short.mp4',
     duration: '0:35',
     quote:
       'Clean, comfortable, and secure — the quiet standard behind every memorable stay.',

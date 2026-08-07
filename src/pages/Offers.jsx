@@ -57,7 +57,7 @@ const OFFERS = [
   {
     title: 'Weekend Getaway',
     subtitle: 'Escape the everyday',
-    image: '/images/rooms/classic-1.jpeg',
+    image: '/images/rooms/classic/classic-1.jpeg',
     desc: 'Book 2 nights and get the 3rd night free. Includes complimentary breakfast and late checkout until 3pm.',
     price: 'From ₦90,000',
     tag: 'Limited Time',
@@ -65,7 +65,7 @@ const OFFERS = [
   {
     title: 'Honeymoon Suite',
     subtitle: 'Celebrate your love',
-    image: '/images/rooms/diplomat-1.jpeg',
+    image: '/images/rooms/diplomat/diplomat-1.jpeg',
     desc: 'Champagne on arrival, couples massage, candlelit dinner, and turndown service with rose petals.',
     price: 'From ₦250,000',
     tag: 'Romantic',
@@ -73,7 +73,7 @@ const OFFERS = [
   {
     title: 'Corporate Long-Stay',
     subtitle: 'Business, elevated',
-    image: '/images/rooms/executive-1.jpeg',
+    image: '/images/rooms/executive/executive-1.jpeg',
     desc: 'Stay 7+ nights and receive 20% off, daily breakfast, airport transfers, and executive lounge access.',
     price: 'From ₦36,000/night',
     tag: 'Business',
