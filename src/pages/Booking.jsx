@@ -550,16 +550,16 @@ export default function Booking() {
                   <span className="text-xs font-semibold tracking-wider uppercase text-amber-700">Payment Details</span>
                 </div>
                 <div className="space-y-2 text-sm mb-3">
-                  <div className="flex justify-between"><span className="text-amber-800/70">Bank:</span><span className="font-semibold text-amber-900">[Bank Name]</span></div>
-                  <div className="flex justify-between"><span className="text-amber-800/70">Account Name:</span><span className="font-semibold text-amber-900">[Account Name]</span></div>
-                  <div className="flex justify-between"><span className="text-amber-800/70">Account Number:</span><span className="font-semibold text-amber-900">[Account Number]</span></div>
+                  <div className="flex justify-between"><span className="text-amber-800/70">Bank:</span><span className="font-semibold text-amber-900">Money Point</span></div>
+                  <div className="flex justify-between"><span className="text-amber-800/70">Account Name:</span><span className="font-semibold text-amber-900">Beechnut Hotel Ltd</span></div>
+                  <div className="flex justify-between"><span className="text-amber-800/70">Account Number:</span><span className="font-semibold text-amber-900">5879859592</span></div>
                   <div className="flex justify-between pt-1 border-t border-amber-200/60"><span className="text-amber-800/70 font-medium">Amount Due:</span><span className="font-display text-xl font-bold text-amber-900">&#8358;{total.toLocaleString('en-NG')}</span></div>
                 </div>
                 <p className="text-[0.65rem] text-amber-600 italic flex items-center gap-1">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                     <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Placeholder — update with real bank details when available.
+                  Kindly use the booking reference as your payment narration.
                 </p>
               </div>
 
