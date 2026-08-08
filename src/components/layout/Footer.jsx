@@ -7,12 +7,12 @@ const PHONE = '2348055000822'
 const SOCIAL_LINKS = [
   {
     label: 'Facebook',
-    href: 'https://facebook.com/beechnuthoteleffurun',
+    href: 'https://www.facebook.com/share/19FgdhN5Pw/',
     path: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z',
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com/beechnuthoteleffurun',
+    href: 'https://www.instagram.com/beechnut.hotels.ltd',
     path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z',
   },
   {
