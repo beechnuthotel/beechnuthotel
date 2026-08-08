@@ -75,6 +75,8 @@ export default function MotionGallery() {
                         key={idx}
                         src={img.src}
                         alt=""
+                        width="640"
+                        height="480"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -96,6 +98,8 @@ export default function MotionGallery() {
                       key={stage.cursor}
                       src={GALLERY_IMAGES[stage.cursor].src}
                       alt={GALLERY_IMAGES[stage.cursor].category.replace('-', ' ')}
+                      width="1200"
+                      height="900"
                       fetchPriority={stage.cursor === 0 ? 'high' : 'auto'}
                       initial={{ opacity: 0, scale: 1.08, y: 24 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}

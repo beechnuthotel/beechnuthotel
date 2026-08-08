@@ -1,4 +1,4 @@
-const MODULES = import.meta.glob('/src/assets/testimonials/photos/**/*.{jpeg,jpg,png}', {
+const MODULES = import.meta.glob('/src/assets/testimonials/photos/**/*.{jpeg,jpg,png,webp}', {
   eager: true,
   query: '?url',
   import: 'default',

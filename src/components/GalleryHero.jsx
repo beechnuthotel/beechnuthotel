@@ -27,6 +27,8 @@ export default function GalleryHero() {
               key={slideIndex}
               src={GALLERY_FOLDER_IMAGES[slideIndex]}
               alt=""
+              width="1920"
+              height="1080"
               fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
               variants={heroBgVariants}
               initial="enter"

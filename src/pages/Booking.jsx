@@ -293,7 +293,7 @@ export default function Booking() {
                             onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedRoom(isSelected ? null : room) } }}
                           >
                             <div className="relative h-44 overflow-hidden bg-navy-800/10">
-                              <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                              <img src={room.image} alt={room.name} width="1200" height="400" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
                               <span className="absolute top-3 left-3 z-10 text-[0.6rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-green-600/90 text-white">Available</span>
                             </div>
@@ -455,7 +455,7 @@ export default function Booking() {
                     <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm mb-6">
                       <div className="flex flex-col sm:flex-row">
                         <div className="sm:w-56 h-44 sm:h-auto bg-navy-800/10 overflow-hidden shrink-0">
-                          <img src={selectedRoom?.image} alt={selectedRoom?.name} className="w-full h-full object-cover" loading="lazy" />
+                          <img src={selectedRoom?.image} alt={selectedRoom?.name} width="800" height="600" className="w-full h-full object-cover" loading="lazy" />
                         </div>
                         <div className="p-5 flex-1">
                           <span className="text-xs font-semibold tracking-widest uppercase text-gold-500 mb-1 block">{selectedRoom?.type.charAt(0).toUpperCase() + selectedRoom?.type.slice(1)}</span>

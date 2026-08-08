@@ -68,6 +68,8 @@ export default function Testimonials() {
                 key={slideIndex}
                 src={EXTERIOR_IMAGES[slideIndex]}
                 alt=""
+                width="1920"
+                height="1080"
                 fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
                 variants={heroBgVariants}
                 initial="enter"
@@ -138,12 +140,14 @@ export default function Testimonials() {
                   )}
                   <div className="flex items-center gap-4 mb-4">
                     {t.image ? (
-                      <img
-                        src={t.image}
-                        alt={`${t.name} — guest photo`}
-                        className="w-12 h-12 rounded-full object-cover border border-navy-900/10"
-                        loading="lazy"
-                      />
+                  <img
+                    src={t.image}
+                    alt={`${t.name} — guest photo`}
+                    width="96"
+                    height="96"
+                    className="w-12 h-12 rounded-full object-cover border border-navy-900/10"
+                    loading="lazy"
+                  />
                     ) : (
                       <span className="w-12 h-12 rounded-full bg-navy-900 text-gold-400 font-display font-bold text-base flex items-center justify-center" aria-hidden="true">
                         {initialsOf(t.name)}

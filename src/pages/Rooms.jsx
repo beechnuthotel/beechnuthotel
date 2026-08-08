@@ -29,11 +29,13 @@ export default function Rooms() {
       <section className="relative h-[60vh] min-h-[420px] flex flex-col items-center justify-center text-center overflow-hidden bg-navy-950" aria-label="Rooms and Suites at Beechnut Hotel Effurun">
         <div className="absolute inset-0">
           <AnimatePresence mode="wait">
-            <motion.img
-              key={slideIndex}
-              src={heroSlides[slideIndex]}
-              alt=""
-              fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
+              <motion.img
+                key={slideIndex}
+                src={heroSlides[slideIndex]}
+                alt=""
+                width="1920"
+                height="1080"
+                fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
               variants={heroBgVariants}
               initial="enter"
               animate="center"
@@ -114,7 +116,7 @@ export default function Rooms() {
                       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     >
                       <div className="relative overflow-hidden aspect-[16/10]">
-                        <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                        <img src={room.image} alt={room.name} width="1600" height="1000" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent" />
                         {room.badge !== 'Standard' && (
                           <span className={`absolute top-3 left-3 z-10 text-[0.6rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${
@@ -165,6 +167,8 @@ export default function Rooms() {
                       <img
                         src={img}
                         alt={`${activeRoom.name} — photo ${i + 1} of ${activeRoom.images.length}`}
+                        width="1600"
+                        height="1000"
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         loading="lazy"
                       />

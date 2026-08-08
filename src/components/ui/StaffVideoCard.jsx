@@ -70,6 +70,8 @@ export default function StaffVideoCard({
               <img
                 src={poster || photo}
                 alt={`${name} — ${role} — video preview`}
+                width="1600"
+                height="1000"
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -92,6 +94,8 @@ export default function StaffVideoCard({
           <img
             src={poster || photo}
             alt={`${name} — ${role}`}
+            width="1600"
+            height="1000"
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -100,7 +104,7 @@ export default function StaffVideoCard({
 
       {compact ? (
         <div className="p-4 flex items-center gap-3">
-          <img src={photo} alt={`${name} — ${role}`} loading="lazy" className="w-11 h-11 rounded-full object-cover border border-gold-400/40 shrink-0" />
+          <img src={photo} alt={`${name} — ${role}`} width="96" height="96" loading="lazy" className="w-11 h-11 rounded-full object-cover border border-gold-400/40 shrink-0" />
           <div className="min-w-0">
             <p className="text-sm font-semibold text-navy-900 truncate">{name}</p>
             <p className="text-[0.65rem] tracking-widest uppercase text-gold-500 truncate">{role}</p>
@@ -110,7 +114,7 @@ export default function StaffVideoCard({
         <div className="p-5 flex flex-col flex-1">
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex items-center gap-3 min-w-0">
-              <img src={photo} alt={`${name} — ${role}`} loading="lazy" className="w-12 h-12 rounded-full object-cover border border-gold-400/40 shrink-0" />
+              <img src={photo} alt={`${name} — ${role}`} width="96" height="96" loading="lazy" className="w-12 h-12 rounded-full object-cover border border-gold-400/40 shrink-0" />
               <div className="min-w-0">
                 <h3 className="font-display text-lg font-semibold text-navy-900 truncate">{name}</h3>
                 <p className="text-xs font-medium text-gray-500 truncate">{role}</p>

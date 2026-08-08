@@ -139,7 +139,7 @@ export default function Offers() {
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 >
                   <div className="h-44 overflow-hidden">
-                    <img src={offer.image} alt={offer.title} className="w-full h-full object-cover" loading="lazy" />
+                    <img src={offer.image} alt={offer.title} width="1200" height="400" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="p-6">
                     <span className="text-xs font-semibold tracking-wider uppercase text-gold-500 mb-1 block">{offer.tag}</span>

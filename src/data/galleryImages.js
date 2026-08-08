@@ -1,9 +1,9 @@
 const IMAGES = import.meta.glob(
   [
-    '/src/assets/gallery/**/*.{jpeg,jpg,png}',
-    '/src/assets/exterior/**/*.{jpeg,jpg,png}',
-    '/src/assets/rooms/**/*.{jpeg,jpg,png}',
-    '/src/assets/dining/**/*.{jpeg,jpg,png}',
+    '/src/assets/gallery/**/*.{jpeg,jpg,png,webp}',
+    '/src/assets/exterior/**/*.{jpeg,jpg,png,webp}',
+    '/src/assets/rooms/**/*.{jpeg,jpg,png,webp}',
+    '/src/assets/dining/**/*.{jpeg,jpg,png,webp}',
   ],
   { eager: true, query: '?url', import: 'default' }
 )
@@ -40,7 +40,7 @@ while (progress) {
 
 export const GALLERY_IMAGES = interleaved
 
-const FOLDER_IMAGES = import.meta.glob('/src/assets/gallery/**/*.{jpeg,jpg,png}', {
+const FOLDER_IMAGES = import.meta.glob('/src/assets/gallery/**/*.{jpeg,jpg,png,webp}', {
   eager: true,
   query: '?url',
   import: 'default',

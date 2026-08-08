@@ -40,6 +40,8 @@ export default function MeetTheTeam() {
                 key={slideIndex}
                 src={heroSlides[slideIndex]}
                 alt=""
+                width="1920"
+                height="1080"
                 fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
                 variants={heroBgVariants}
                 initial="enter"
@@ -81,6 +83,8 @@ export default function MeetTheTeam() {
                   <img
                     src={GM.image}
                     alt={`${GM.name}, ${GM.title}`}
+                    width="800"
+                    height="1000"
                     className="relative w-full aspect-[4/5] object-cover rounded-xl border border-navy-900/10 shadow-[0_30px_80px_rgba(6,16,35,0.2)]"
                     loading="lazy"
                   />
@@ -124,6 +128,8 @@ export default function MeetTheTeam() {
               <img
                 src={TEAM_IMAGES['all-staff'][0]}
                 alt="The full Beechnut Hotel team"
+                width="1600"
+                height="900"
                 className="w-full max-w-6xl mx-auto aspect-[16/9] object-cover rounded-xl border border-navy-900/10 shadow-sm"
                 loading="lazy"
               />
@@ -151,6 +157,8 @@ export default function MeetTheTeam() {
                   <img
                     src={images[0]}
                     alt={`${label} team at Beechnut Hotel`}
+                    width="1600"
+                    height="1000"
                     className="w-full max-w-5xl mx-auto aspect-[16/10] object-cover rounded-xl border border-navy-900/10 shadow-sm"
                     loading="lazy"
                   />
@@ -162,6 +170,8 @@ export default function MeetTheTeam() {
                       <img
                         src={img}
                         alt={`${label} team at Beechnut Hotel`}
+                        width="1600"
+                        height="1000"
                         className="w-full aspect-[16/10] object-cover rounded-xl border border-navy-900/10 shadow-sm"
                         loading="lazy"
                       />

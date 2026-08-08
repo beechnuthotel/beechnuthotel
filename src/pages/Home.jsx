@@ -130,11 +130,13 @@ export default function Home() {
       <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden bg-navy-950" aria-label="Welcome to Beechnut Hotel Effurun">
         <div className="absolute inset-0">
           <AnimatePresence mode="wait">
-            <motion.img
-              key={slideIndex}
-              src={heroSlides[slideIndex]}
-              alt=""
-              fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
+              <motion.img
+                key={slideIndex}
+                src={heroSlides[slideIndex]}
+                alt=""
+                width="1920"
+                height="1080"
+                fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
               variants={heroBgVariants}
               initial="enter"
               animate="center"
@@ -270,7 +272,7 @@ export default function Home() {
               <ScrollReveal key={room.id} delay={0.08 * i}>
                 <Link to={`/rooms/${room.id}`} className="block group">
                   <div className="relative overflow-hidden rounded-lg aspect-[4/5] shadow-sm">
-                    <img src={room.image} alt={room.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                    <img src={room.image} alt={room.name} width="800" height="1000" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/10 to-transparent" />
                     <div className="absolute inset-0 bg-gold-400/0 group-hover:bg-gold-400/10 transition-colors duration-500" />
                     <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -314,7 +316,7 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             className="min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src={DINING_IMAGES.dining?.[0] ?? ''} alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src={DINING_IMAGES.dining?.[0] ?? ''} alt="" width="1600" height="1000" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
 
@@ -340,7 +342,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             className="order-1 lg:order-2 min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src={DINING_IMAGES['indoor-bar']?.[0] ?? ''} alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src={DINING_IMAGES['indoor-bar']?.[0] ?? ''} alt="" width="1600" height="1000" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
 
@@ -366,7 +368,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="min-h-[300px] lg:min-h-full overflow-hidden"
           >
-            <img src={ROOMS.find(r => r.type === 'diplomat')?.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+            <img src={ROOMS.find(r => r.type === 'diplomat')?.image} alt="" width="1600" height="1000" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>
@@ -379,7 +381,7 @@ export default function Home() {
         id="dining"
         aria-labelledby="dining-heading"
       >
-        <img src={DINING_IMAGES['pool-bar']?.[0] ?? ''} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <img src={DINING_IMAGES['pool-bar']?.[0] ?? ''} alt="" width="1920" height="1080" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-navy-950/70 z-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <motion.div

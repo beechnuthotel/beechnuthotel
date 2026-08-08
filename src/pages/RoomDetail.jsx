@@ -58,6 +58,8 @@ export default function RoomDetail() {
                     key={activeImage}
                     src={room.images[activeImage]}
                     alt={`${room.name} view ${activeImage + 1}`}
+                    width="1200"
+                    height="900"
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
@@ -75,7 +77,7 @@ export default function RoomDetail() {
                       activeImage === i ? 'border-gold-500 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="" className="absolute inset-0 w-full h-full object-cover" />
+                    <img src={img} alt="" width="96" height="80" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
@@ -139,7 +141,7 @@ export default function RoomDetail() {
               <ScrollReveal key={r.id}>
                 <Link to={`/rooms/${r.id}`} className="block group">
                   <div className="relative overflow-hidden rounded-lg aspect-[4/5] bg-surface shadow-sm">
-                    <img src={r.image} alt={r.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                    <img src={r.image} alt={r.name} width="800" height="1000" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/10 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <span className="text-xs font-semibold tracking-widest uppercase text-gold-400">{r.type}</span>

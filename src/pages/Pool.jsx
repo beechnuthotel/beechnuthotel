@@ -45,6 +45,8 @@ export default function Pool() {
                 key={slideIndex}
                 src={POOL_IMAGES[slideIndex]}
                 alt=""
+                width="1920"
+                height="1080"
                 fetchPriority={slideIndex === 0 ? 'high' : 'auto'}
                 variants={heroBgVariants}
                 initial="enter"
@@ -105,6 +107,8 @@ export default function Pool() {
                     <img
                       src={img}
                       alt={`Swimming Pool — photo ${i + 1} of ${POOL_IMAGES.length}`}
+                      width="1600"
+                      height="1000"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
@@ -154,6 +158,8 @@ export default function Pool() {
                   key={lightbox}
                   src={POOL_IMAGES[lightbox]}
                   alt={`Swimming Pool — photo ${lightbox + 1} of ${POOL_IMAGES.length}`}
+                  width="1920"
+                  height="1080"
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}

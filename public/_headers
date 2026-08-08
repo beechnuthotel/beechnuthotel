@@ -1,0 +1,15 @@
+# Cache policy for Cloudflare Pages
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/staff/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  Cache-Control: public, max-age=0, must-revalidate

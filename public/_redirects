@@ -1,1 +1,5 @@
+# Redirect www subdomain to apex domain (301)
+https://www.beechnuthotel.com/* https://beechnuthotel.com/:splat 301
+
+# SPA fallback for client-side routes
 /* /index.html 200

@@ -76,6 +76,8 @@ export default function About() {
                   <img
                     src="/staff/gm/gm-headshot.jpeg"
                     alt="Clement Imhandebhor — General Manager, Beechnut Hotel"
+                    width="288"
+                    height="288"
                     loading="lazy"
                     className="w-full h-full object-cover"
                   />
@@ -200,7 +202,7 @@ export default function About() {
           <ScrollReveal delay={0.1}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
               <motion.div className="h-[400px] overflow-hidden rounded-lg">
-                <img src={DINING_IMAGES.lounge?.[0] ?? ''} alt="Beechnut Hotel Lounge" className="w-full h-full object-cover" loading="lazy" />
+                <img src={DINING_IMAGES.lounge?.[0] ?? ''} alt="Beechnut Hotel Lounge" width="1600" height="1000" className="w-full h-full object-cover" loading="lazy" />
               </motion.div>
               <motion.div>
                 <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">Service Philosophy</span>
