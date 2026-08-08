@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { SITE_URL } from '../../config'
 
 const PHONE = '2348055000822'
 
@@ -56,7 +57,7 @@ export default function Footer() {
   const handleNewsletterSubmit = (e) => {
     e.preventDefault()
     if (!newsletterEmail.trim()) return
-    const msg = encodeURIComponent(`Newsletter signup — Beechnut Hotel Effurun\n\nEmail: ${newsletterEmail}\n\nSent from beechnuthotel.pages.dev`)
+    const msg = encodeURIComponent(`Newsletter signup — Beechnut Hotel Effurun\n\nEmail: ${newsletterEmail}\n\nSent from ${SITE_URL}`)
     window.open(`https://wa.me/${PHONE}?text=${msg}`, '_blank', 'noopener,noreferrer')
     setNewsletterEmail('')
   }

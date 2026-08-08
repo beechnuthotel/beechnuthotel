@@ -2,6 +2,7 @@ import { useState, useRef, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ROOMS } from '../data/rooms'
+import { SITE_URL } from '../config'
 
 const PHONE = '2348055000822'
 
@@ -149,7 +150,7 @@ export default function Booking() {
       `*Special Requests*`,
       specialRequests || 'None',
       ``,
-      `Sent from Beechnut Hotel Website — https://beechnuthotel.pages.dev`,
+      `Sent from Beechnut Hotel Website — ${SITE_URL}`,
     ]
     return encodeURIComponent(lines.join('\n'))
   }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
+import { SITE_URL } from '../config'
 
 const PHONE = '2348055000822'
 
@@ -17,7 +18,7 @@ export default function Contact() {
     if (!name.trim() || !email.trim() || !message.trim()) return
     const timestamp = new Date().toLocaleString('en-NG', { timeZone: 'Africa/Lagos', dateStyle: 'full', timeStyle: 'short' })
     const msg = encodeURIComponent(
-      `*New Contact Form Message — Beechnut Hotel Effurun*\n_Submitted: ${timestamp}_\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject || 'Not provided'}\n*Message:*\n${message}\n\nSent from beechnuthotel.pages.dev`
+      `*New Contact Form Message — Beechnut Hotel Effurun*\n_Submitted: ${timestamp}_\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject || 'Not provided'}\n*Message:*\n${message}\n\nSent from ${SITE_URL}`
     )
     window.open(`https://wa.me/${PHONE}?text=${msg}`, '_blank', 'noopener,noreferrer')
     setSubmitted(true)
