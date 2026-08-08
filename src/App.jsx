@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Layout from './components/layout/Layout'
+import Seo from './components/ui/Seo'
 import Home from './pages/Home'
 
 const Rooms = lazy(() => import('./pages/Rooms'))
@@ -50,6 +51,7 @@ function PageLoader() {
 export default function App() {
   return (
     <Suspense fallback={<PageLoader />}>
+      <Seo />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
