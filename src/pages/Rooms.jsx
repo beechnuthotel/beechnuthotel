@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ROOMS } from '../data/rooms'
 import ScrollReveal from '../components/ui/ScrollReveal'
 
-const CATEGORIES = ['all', 'classic', 'deluxe', 'executive', 'diplomat', 'royal']
+const CATEGORIES = ['all', 'classic', 'deluxe', 'executive', 'diplomatic', 'royal']
 
 const heroBgVariants = {
   enter: { opacity: 0, scale: 1.08 },

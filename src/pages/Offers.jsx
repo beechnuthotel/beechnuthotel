@@ -66,7 +66,7 @@ const OFFERS = [
   {
     title: 'Honeymoon Suite',
     subtitle: 'Celebrate your love',
-    image: ROOM_IMAGES.diplomat?.[0] ?? '',
+    image: ROOM_IMAGES.diplomatic?.[0] ?? '',
     desc: 'Champagne on arrival, couples massage, candlelit dinner, and turndown service with rose petals.',
     price: 'From ₦250,000',
     tag: 'Romantic',

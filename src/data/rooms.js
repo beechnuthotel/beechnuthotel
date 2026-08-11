@@ -41,9 +41,9 @@ const ROOM_DEFS = [
     badge: 'Executive',
   },
   {
-    id: 'diplomat',
+    id: 'diplomatic',
     name: 'Diplomatic Suite',
-    type: 'diplomat',
+    type: 'diplomatic',
     description: 'A luxurious suite with a separate living and dining area, offering an elevated experience for guests who demand space and sophistication.',
     longDescription: 'Sophistication redefined. The Diplomatic Suite boasts a spacious living room, separate dining area, king bed, marble bathroom with soaking tub, and priority concierge service.',
     maxOccupancy: 3,
