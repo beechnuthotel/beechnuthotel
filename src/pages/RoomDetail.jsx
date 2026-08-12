@@ -39,13 +39,6 @@ export default function RoomDetail() {
           <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">
             {room.name}
           </h1>
-          <nav className="flex items-center justify-center gap-2 text-sm text-white/50" aria-label="Breadcrumb">
-            <Link to="/" className="text-white/70 hover:text-gold-400 transition-colors">Home</Link>
-            <span className="text-gold-400/60">›</span>
-            <Link to="/rooms" className="text-white/70 hover:text-gold-400 transition-colors">Rooms</Link>
-            <span className="text-gold-400/60">›</span>
-            <span className="text-gold-400 font-medium">{room.name}</span>
-          </nav>
         </motion.div>
       </section>
 

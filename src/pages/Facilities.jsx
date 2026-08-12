@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
 
@@ -60,11 +59,6 @@ export default function Facilities() {
           <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">
             Our <em className="italic text-gold-400 not-italic">Facilities</em>
           </h1>
-          <nav className="flex items-center justify-center gap-2 text-sm text-white/50" aria-label="Breadcrumb">
-            <Link to="/" className="text-white/70 hover:text-gold-400 transition-colors">Home</Link>
-            <span className="text-gold-400/60">›</span>
-            <span className="text-gold-400 font-medium">Facilities</span>
-          </nav>
         </motion.div>
       </section>
 

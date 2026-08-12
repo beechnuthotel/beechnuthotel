@@ -67,6 +67,7 @@ const ROOM_DEFS = [
     price: 90000,
     amenities: ['Free Wi-Fi', 'Air Conditioning', 'Smart TV × 3', 'Panoramic Views', 'Walk-in Wardrobe', 'Butler Service', 'Jacuzzi & Rain Shower', 'Private Dining', 'Full Kitchen', 'Daily Housekeeping'],
     badge: 'Premium',
+    video: '/rooms/royal/royal-tour.mp4',
   },
 ]
 

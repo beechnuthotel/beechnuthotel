@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ROOMS } from '../data/rooms'
 import ScrollReveal from '../components/ui/ScrollReveal'
@@ -15,8 +15,6 @@ const heroBgVariants = {
 export default function Rooms() {
   const [filter, setFilter] = useState('all')
   const [slideIndex, setSlideIndex] = useState(0)
-  const location = useLocation()
-  const navigate = useNavigate()
 
   const heroSlides = ROOMS.flatMap(room => room.images)
   const activeRoom = filter === 'all' ? null : ROOMS.find(r => r.type === filter)
@@ -57,48 +55,28 @@ export default function Rooms() {
           <h1 className="font-display text-[clamp(2.8rem,6vw,4.4rem)] font-bold text-white leading-tight mb-4">
             Rooms &amp; <em className="italic text-gold-400 not-italic">Suites</em>
           </h1>
-          <nav className="flex items-center justify-center gap-2 text-sm text-white/50" aria-label="Breadcrumb">
-            <Link to="/" className="text-white/70 hover:text-gold-400 transition-colors">Home</Link>
-            <span className="text-gold-400/60">›</span>
-            <span className="text-gold-400 font-medium">Rooms</span>
-          </nav>
         </motion.div>
       </section>
 
       <section className="bg-white border-b border-navy-900/10 shadow-sm" aria-label="Room categories">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-center gap-2 flex-wrap" role="group" aria-label="Filter rooms by category">
-            {CATEGORIES.map(cat => {
-              const active = cat === 'all' ? filter === 'all' : location.pathname === `/rooms/${cat}`
-              const classes = `px-5 py-2 text-xs font-semibold tracking-wider uppercase rounded-full border transition-all duration-300 ${
-                active
-                  ? 'bg-navy-900 text-gold-400 border-navy-900 shadow-md'
-                  : 'bg-transparent text-gray-600 border-navy-900/15 hover:border-gold-400 hover:text-gold-500'
-              }`
-              return cat === 'all' ? (
-                <motion.button
-                  key={cat}
-                  onClick={() => setFilter('all')}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  aria-pressed={filter === 'all'}
-                  className={classes}
-                >
-                  All
-                </motion.button>
-              ) : (
-                <motion.button
-                  key={cat}
-                  onClick={() => navigate(`/rooms/${cat}`)}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  aria-current={location.pathname === `/rooms/${cat}` ? 'page' : undefined}
-                  className={classes}
-                >
-                  {cat.charAt(0).toUpperCase() + cat.slice(1)}
-                </motion.button>
-              )
-            })}
+            {CATEGORIES.map(cat => (
+              <motion.button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                aria-pressed={filter === cat}
+                className={`px-5 py-2 text-xs font-semibold tracking-wider uppercase rounded-full border transition-all duration-300 ${
+                  filter === cat
+                    ? 'bg-navy-900 text-gold-400 border-navy-900 shadow-md'
+                    : 'bg-transparent text-gray-600 border-navy-900/15 hover:border-gold-400 hover:text-gold-500'
+                }`}
+              >
+                {cat === 'all' ? 'All' : cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </motion.button>
+            ))}
           </div>
         </div>
       </section>
