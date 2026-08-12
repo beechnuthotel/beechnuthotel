@@ -8,6 +8,7 @@ export default function RoomDetail() {
   const { id } = useParams()
   const room = ROOMS.find(r => r.id === id)
   const [activeImage, setActiveImage] = useState(0)
+  const [showVideo, setShowVideo] = useState(false)
 
   if (!room) {
     return (
@@ -54,32 +55,63 @@ export default function RoomDetail() {
             <div className="space-y-4">
               <div className="relative overflow-hidden rounded-lg aspect-[4/3] bg-surface">
                 <AnimatePresence mode="wait">
-                  <motion.img
-                    key={activeImage}
-                    src={room.images[activeImage]}
-                    alt={`${room.name} view ${activeImage + 1}`}
-                    width="1200"
-                    height="900"
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.5 }}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                  {showVideo && room.video ? (
+                    <motion.div
+                      key="video"
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.5 }}
+                      className="absolute inset-0"
+                    >
+                      <video controls playsInline preload="metadata" poster={room.images[0]} className="absolute inset-0 w-full h-full object-cover bg-navy-950">
+                        <source src={room.video} type="video/mp4" />
+                      </video>
+                    </motion.div>
+                  ) : (
+                    <motion.img
+                      key={activeImage}
+                      src={room.images[activeImage]}
+                      alt={`${room.name} view ${activeImage + 1}`}
+                      width="1200"
+                      height="900"
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.5 }}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  )}
                 </AnimatePresence>
               </div>
               <div className="flex gap-3 overflow-x-auto pb-2">
                 {room.images.map((img, i) => (
                   <button
                     key={i}
-                    onClick={() => setActiveImage(i)}
+                    onClick={() => { setActiveImage(i); setShowVideo(false) }}
                     className={`relative shrink-0 w-24 h-20 rounded-md overflow-hidden border-2 transition-all duration-300 ${
-                      activeImage === i ? 'border-gold-500 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'
+                      !showVideo && activeImage === i ? 'border-gold-500 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
                     <img src={img} alt="" width="96" height="80" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                   </button>
                 ))}
+                {room.video && (
+                  <button
+                    onClick={() => setShowVideo(true)}
+                    className={`relative shrink-0 w-24 h-20 rounded-md overflow-hidden border-2 transition-all duration-300 ${
+                      showVideo ? 'border-gold-500 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'
+                    }`}
+                    aria-label={`Watch ${room.name} video tour`}
+                  >
+                    <img src={room.images[0]} alt="" width="96" height="80" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                    <span className="absolute inset-0 flex items-center justify-center bg-navy-950/50">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" className="text-white">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                  </button>
+                )}
               </div>
             </div>
 

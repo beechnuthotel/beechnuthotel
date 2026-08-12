@@ -39,6 +39,7 @@ const ROOM_DEFS = [
     price: 50000,
     amenities: ['Free Wi-Fi', 'Air Conditioning', 'Smart TV', 'Lounge Access', 'Minibar', 'Work Desk', 'Bathtub & Rain Shower', 'Daily Housekeeping'],
     badge: 'Executive',
+    video: '/rooms/executive/executive-tour.mp4',
   },
   {
     id: 'diplomatic',
@@ -52,6 +53,7 @@ const ROOM_DEFS = [
     price: 70000,
     amenities: ['Free Wi-Fi', 'Air Conditioning', 'Smart TV × 2', 'Separate Living Room', 'Private Dining Area', 'Minibar', 'Bathtub & Rain Shower', 'Lounge Access', 'Daily Housekeeping'],
     badge: 'Suite',
+    video: '/rooms/diplomatic/diplomatic-tour.mp4',
   },
   {
     id: 'royal',
