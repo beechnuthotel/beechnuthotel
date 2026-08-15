@@ -83,9 +83,8 @@ export default function About() {
                   <div className="w-12 h-0.5 bg-gold-400 mb-6" />
                   <div className="border-l-3 border-gold-400 pl-6">
                     <span className="font-accent text-5xl text-gold-400 leading-none block mb-3" aria-hidden="true">&ldquo;</span>
-                    <p className="font-accent text-lg lg:text-xl text-navy-900/80 leading-relaxed mb-4">Welcome to Beechnut Hotel.</p>
                     <p className="font-accent text-lg lg:text-xl text-navy-900/80 leading-relaxed mb-4">
-                      My name is Clement Imhandebhor, General Manager of Beechnut Hotel. It&rsquo;s my pleasure to welcome you to a place where comfort, quality service, and genuine hospitality come together to create an exceptional guest experience.
+                      It&rsquo;s my pleasure to welcome you to a place where comfort, quality service, and genuine hospitality come together to create an exceptional guest experience.
                     </p>
                     <p className="font-accent text-lg lg:text-xl text-navy-900/80 leading-relaxed mb-4">
                       At Beechnut Hotel, we&rsquo;re committed to making every stay memorable — from our well-appointed rooms and excellent dining, to our relaxing swimming pool and dedicated team of professionals. Whether you&rsquo;re visiting for business, leisure, or a special occasion, expect warm hospitality and outstanding service from every department.
