@@ -7,6 +7,7 @@ import { DINING_IMAGES } from '../data/diningImages'
 import { EXTERIOR_IMAGES } from '../data/exteriorImages'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import StaffVideoCard from '../components/ui/StaffVideoCard'
+import FloatingEventBanner from '../components/ui/FloatingEventBanner'
 import { GM_WELCOME } from '../data/staff'
 
 function StarRating({ count = 5 }) {
@@ -127,6 +128,7 @@ export default function Home() {
 
   return (
     <>
+      <FloatingEventBanner />
       <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden bg-navy-950" aria-label="Welcome to Beechnut Hotel Effurun">
         <div className="absolute inset-0">
           <AnimatePresence mode="wait">
