@@ -67,8 +67,9 @@
   --animate-iris: iris 6s ease-in-out infinite;
   --animate-scroll-line: scroll-line 2s ease-in-out infinite;
   --animate-wa-pulse: wa-pulse 2s ease-in-out infinite;
-  --animate-zigzag: zigzag 3s ease-in-out infinite;
-  --animate-zigzag-strong: zigzag-strong 2.8s ease-in-out infinite;
+  --animate-zigzag: zigzag 6s ease-in-out infinite;
+  --animate-zigzag-strong: zigzag-strong 7s ease-in-out infinite;
+  --animate-zigzag-slow: zigzag-slow 8s ease-in-out infinite;
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -135,12 +136,20 @@
   }
   @keyframes zigzag-strong {
     0% { transform: translate(0, 0); }
-    12% { transform: translate(18px, -14px); }
-    28% { transform: translate(-16px, -18px); }
-    44% { transform: translate(-18px, 12px); }
-    60% { transform: translate(16px, 16px); }
-    76% { transform: translate(-10px, -8px); }
-    88% { transform: translate(10px, 6px); }
+    12% { transform: translate(14px, -10px); }
+    28% { transform: translate(-12px, -14px); }
+    44% { transform: translate(-14px, 10px); }
+    60% { transform: translate(12px, 12px); }
+    76% { transform: translate(-8px, -6px); }
+    88% { transform: translate(6px, 4px); }
+    100% { transform: translate(0, 0); }
+  }
+  @keyframes zigzag-slow {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(12px, -8px); }
+    40% { transform: translate(-10px, -12px); }
+    60% { transform: translate(-12px, 8px); }
+    80% { transform: translate(10px, 10px); }
     100% { transform: translate(0, 0); }
   }
 }
