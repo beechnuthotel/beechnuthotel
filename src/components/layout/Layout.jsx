@@ -5,6 +5,7 @@ import Footer from './Footer'
 import WhatsAppFloat from '../ui/WhatsAppFloat'
 import BackToTop from '../ui/BackToTop'
 import ScrollToTop from '../ui/ScrollToTop'
+import FloatingEventBanner from '../ui/FloatingEventBanner'
 
 const pageVariants = {
   initial: { opacity: 0, y: 16 },
@@ -33,6 +34,7 @@ export default function Layout() {
         </AnimatePresence>
       </main>
       <Footer />
+      {location.pathname === '/' && <FloatingEventBanner />}
       <WhatsAppFloat />
       <BackToTop />
     </div>
