@@ -152,6 +152,13 @@ export const ROUTE_SEO = [
       'Contact Beechnut Hotel Effurun on WhatsApp or phone. 1 Justice Mosheshe Close, Off Aziza Road, Effurun, Delta State — open 24 hours.',
     keywords: ['Contact Beechnut Hotel', 'Beechnut Hotel Effurun', 'Hotel near Enerhen', 'Hotel near Warri Refinery', 'Hotels in Delta State'],
   },
+  {
+    path: '/event',
+    title: 'UNIFYSAP H3 Mega 8-in-1 Weekend — Live at Beechnut Hotel Effurun (11-13 Sept 2026)',
+    description:
+      'Live coverage of UNIFYSAP H3 Mega 8-in-1 Weekend at Beechnut Hotel Effurun — Boat Cruise 5.0 Day 1 photos, handovers, Ogogoro Festival & Tasty Grills. Updates daily.',
+    keywords: ['UNIFYSAP H3', 'Beechnut Hotel event', 'Boat Cruise 5.0 Effurun', 'Hash House Harriers Warri', 'Beechnut Hotel Effurun event'],
+  },
 ]
 
 export const FALLBACK_SEO = {

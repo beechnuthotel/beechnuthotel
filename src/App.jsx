@@ -17,6 +17,7 @@ const Testimonials = lazy(() => import('./pages/Testimonials'))
 const Facilities = lazy(() => import('./pages/Facilities'))
 const Offers = lazy(() => import('./pages/Offers'))
 const MeetTheTeam = lazy(() => import('./pages/MeetTheTeam'))
+const Event = lazy(() => import('./pages/Event'))
 
 function NotFound() {
   return (
@@ -67,6 +68,7 @@ export default function App() {
           <Route path="facilities" element={<Facilities />} />
           <Route path="offers" element={<Offers />} />
           <Route path="team" element={<MeetTheTeam />} />
+          <Route path="event" element={<Event />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

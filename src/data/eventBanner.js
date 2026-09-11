@@ -42,7 +42,7 @@ export const EVENT_BANNER = {
 
   cta: {
     label: 'Reserve Your Spot',
-    link: '/booking', // or `https://wa.me/2348055000822?text=...` for WhatsApp
+    link: '/event', // dedicated event page — showcases Day 1 Boat Cruise live
     secondaryLabel: 'View Dining',
     secondaryLink: '/dining',
   },
