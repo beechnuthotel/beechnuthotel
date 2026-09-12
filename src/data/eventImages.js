@@ -22,19 +22,22 @@ function buildAssetList() {
   for (const [key, url] of Object.entries(ASSET_IMAGES)) {
     const parts = key.split('/')
     const filename = parts[parts.length - 1]
-    const folder = parts[parts.length - 2] // e.g. 'day1', 'boat-cruise'
-    // extract day label from path if present
-    const fullPath = key
+    const folder = parts[parts.length - 2] // e.g. 'day1', 'boat-cruise', 'welcome', 'circle'
+    const fullPath = key.toLowerCase()
     let day = 'General'
-    if (fullPath.includes('/day1')) day = 'Day 1 — Boat Cruise 5.0'
+    let section = 'General'
+    if (fullPath.includes('/welcome')) { day = 'Welcome Ceremony'; section = 'welcome' }
+    else if (fullPath.includes('/circle')) { day = 'Circle'; section = 'circle' }
+    else if (fullPath.includes('/cultural')) { day = 'Cultural Display'; section = 'cultural' }
+    else if (fullPath.includes('/day1')) day = 'Day 1 — Boat Cruise 5.0'
     else if (fullPath.includes('/day2')) day = 'Day 2 — Handover & Anniversary'
     else if (fullPath.includes('/day3')) day = 'Day 3 — Grand Finale'
     else if (fullPath.includes('/boat-cruise')) day = 'Day 1 — Boat Cruise 5.0'
     const order = parseInt(filename.match(/(\d+)/)?.[1] ?? '0', 10)
-    list.push({ src: url, category: folder, day, filename, order, key })
+    list.push({ src: url, category: folder, day, section, filename, order, key })
   }
   return list.sort((a, b) => {
-    const dayOrder = { 'Day 1 — Boat Cruise 5.0': 1, 'Day 2 — Handover & Anniversary': 2, 'Day 3 — Grand Finale': 3, General: 99 }
+    const dayOrder = { 'Welcome Ceremony': 1, Circle: 2, 'Day 1 — Boat Cruise 5.0': 3, 'Cultural Display': 4, 'Day 2 — Handover & Anniversary': 5, 'Day 3 — Grand Finale': 6, General: 99 }
     const da = dayOrder[a.day] ?? 99
     const db = dayOrder[b.day] ?? 99
     if (da !== db) return da - db
@@ -61,6 +64,30 @@ export const EVENT_BY_DAY = [
     images: EVENT_ASSET_IMAGES.filter((i) => i.day.includes('Day 1')).map((i) => i.src),
   },
   {
+    id: 'welcome',
+    label: 'Day 1 • Welcoming',
+    title: 'Welcoming Ceremony',
+    date: '11 Sept 2026',
+    description: 'Arrival, welcome addresses and opening — the Hash family gathers at Beechnut.',
+    images: EVENT_ASSET_IMAGES.filter((i) => i.day === 'Welcome Ceremony').map((i) => i.src),
+  },
+  {
+    id: 'circle',
+    label: 'Day 1 • Circle',
+    title: 'Circle',
+    date: '11 Sept 2026',
+    description: 'The traditional Hash circle — announcements, songs and camaraderie.',
+    images: EVENT_ASSET_IMAGES.filter((i) => i.day === 'Circle').map((i) => i.src),
+  },
+  {
+    id: 'cultural',
+    label: 'Cultural Display',
+    title: 'Cultural Display',
+    date: '12 Sept 2026',
+    description: 'Cultural dancers and heritage showcase — second batch (upload when ready).',
+    images: EVENT_ASSET_IMAGES.filter((i) => i.day === 'Cultural Display').map((i) => i.src),
+  },
+  {
     id: 'day2',
     label: 'Day 2',
     title: 'Handover & 5th Anniversary + Collabo Night',
@@ -77,6 +104,9 @@ export const EVENT_BY_DAY = [
     images: EVENT_ASSET_IMAGES.filter((i) => i.day.includes('Day 3')).map((i) => i.src),
   },
 ]
+
+// Section helper for rendering available groups only
+export const EVENT_SECTIONS = EVENT_BY_DAY.filter((s) => s.images.length > 0)
 
 // For MotionGallery compatibility: interleaved objects {src, category}
 export const EVENT_GALLERY_ITEMS = EVENT_IMAGES.map((src, idx) => ({

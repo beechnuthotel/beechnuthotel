@@ -166,9 +166,11 @@ export default function Event() {
             <span className="text-white/20">/</span>
             <span className="text-gold-400 font-semibold tracking-wider uppercase">UNIFYSAP Weekend</span>
           </div>
-          <div className="flex items-center gap-2">
-            <a href="#boat-cruise" className="text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full bg-white/10 text-white hover:bg-white/15 transition-colors border border-white/10">Day 1 Photos</a>
-            <a href="#highlights" className="text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full bg-white/10 text-white hover:bg-white/15 transition-colors border border-white/10">Highlights</a>
+          <div className="flex items-center gap-2 flex-wrap">
+            <a href="#welcome" className="text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full bg-white/10 text-white hover:bg-white/15 transition-colors border border-white/10">Welcome</a>
+            <a href="#circle" className="text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full bg-white/10 text-white hover:bg-white/15 transition-colors border border-white/10">Circle</a>
+            <a href="#cultural" className="text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full bg-white/10 text-white hover:bg-white/15 transition-colors border border-white/10">Cultural</a>
+            <a href="#boat-cruise" className="text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full bg-white/10 text-white hover:bg-white/15 transition-colors border border-white/10">Boat Cruise</a>
             <Link to="/booking" className="text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-full bg-gold-400 text-navy-900 hover:bg-gold-600 transition-colors">Reserve Room</Link>
           </div>
         </div>
@@ -227,8 +229,139 @@ export default function Event() {
         </div>
       </section>
 
+      {/* Welcoming Ceremony — FIRST SET */}
+      <section id="welcome" className="py-16 lg:py-20 bg-surface border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+              <div>
+                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">Day 1 • 11 Sept 2026 — First Set</span>
+                <h2 className="font-display text-3xl font-bold text-navy-900">Welcoming Ceremony</h2>
+                <div className="w-12 h-0.5 bg-gold-400 mt-3" />
+              </div>
+              <p className="text-sm text-gray-500 max-w-lg lg:text-right">
+                {EVENT_BY_DAY.find(s => s.id === 'welcome')?.images.length
+                  ? `${EVENT_BY_DAY.find(s => s.id === 'welcome')?.images.length} photos — arrivals & opening at Beechnut. Tap to enlarge.`
+                  : 'Upload to src/assets/event/unifysap/welcome/ — will appear here + in hero.'}
+              </p>
+            </div>
+          </ScrollReveal>
+          {(() => {
+            const sec = EVENT_BY_DAY.find(s => s.id === 'welcome')
+            const imgs = sec?.images ?? []
+            if (imgs.length === 0) {
+              return (
+                <div className="rounded-xl border border-dashed border-gray-300 bg-white p-8 text-center">
+                  <p className="text-sm text-gray-500">Welcoming Ceremony photos ready — drop webp/jpg into <code className="px-1.5 py-0.5 rounded bg-gray-100 text-navy-900 text-xs">src/assets/event/unifysap/welcome/</code> (e.g. <code className="text-xs">welcome-01.webp</code>). They auto-show here.</p>
+                  <div className="mt-4 max-w-xs mx-auto rounded-xl overflow-hidden border border-gray-200"><img src={EVENT_BANNER.event.image} alt="" className="w-full h-auto block" loading="lazy" /></div>
+                </div>
+              )
+            }
+            return (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                {imgs.map((src, i) => (
+                  <ScrollReveal key={`${src}-${i}`} delay={(i % 8) * 0.04}>
+                    <motion.button onClick={() => setLightboxSrc(src)} className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100 border border-gray-200 w-full text-left" whileHover={{ y: -2 }} aria-label="Enlarge photo">
+                      <img src={src} alt="" width="800" height="600" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500" loading="lazy" />
+                    </motion.button>
+                  </ScrollReveal>
+                ))}
+              </div>
+            )
+          })()}
+        </div>
+      </section>
+
+      {/* Circle — FIRST SET */}
+      <section id="circle" className="py-16 lg:py-20 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+              <div>
+                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">Day 1 • Circle</span>
+                <h2 className="font-display text-3xl font-bold text-navy-900">Circle</h2>
+                <div className="w-12 h-0.5 bg-gold-400 mt-3" />
+              </div>
+              <p className="text-sm text-gray-500 max-w-lg lg:text-right">
+                {EVENT_BY_DAY.find(s => s.id === 'circle')?.images.length
+                  ? `${EVENT_BY_DAY.find(s => s.id === 'circle')?.images.length} photos — the Hash circle. Tap to enlarge.`
+                  : 'Upload to src/assets/event/unifysap/circle/ — will appear here + in hero.'}
+              </p>
+            </div>
+          </ScrollReveal>
+          {(() => {
+            const sec = EVENT_BY_DAY.find(s => s.id === 'circle')
+            const imgs = sec?.images ?? []
+            if (imgs.length === 0) {
+              return (
+                <div className="rounded-xl border border-dashed border-gray-300 bg-surface p-8 text-center">
+                  <p className="text-sm text-gray-500">Circle photos ready — drop webp/jpg into <code className="px-1.5 py-0.5 rounded bg-gray-100 text-navy-900 text-xs">src/assets/event/unifysap/circle/</code></p>
+                </div>
+              )
+            }
+            return (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                {imgs.map((src, i) => (
+                  <ScrollReveal key={`${src}-${i}`} delay={(i % 8) * 0.04}>
+                    <motion.button onClick={() => setLightboxSrc(src)} className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100 border border-gray-200 w-full text-left" whileHover={{ y: -2 }} aria-label="Enlarge photo">
+                      <img src={src} alt="" width="800" height="600" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500" loading="lazy" />
+                    </motion.button>
+                  </ScrollReveal>
+                ))}
+              </div>
+            )
+          })()}
+        </div>
+      </section>
+
+      {/* Cultural Display — SECOND SET (to be uploaded) */}
+      <section id="cultural" className="py-16 lg:py-20 bg-surface border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+              <div>
+                <span className="text-xs font-semibold tracking-[0.24em] uppercase text-gold-500 block mb-2">Up Next • Cultural Display</span>
+                <h2 className="font-display text-3xl font-bold text-navy-900">Cultural Display</h2>
+                <div className="w-12 h-0.5 bg-gold-400 mt-3" />
+              </div>
+              <p className="text-sm text-gray-500 max-w-lg lg:text-right">
+                {EVENT_BY_DAY.find(s => s.id === 'cultural')?.images.length
+                  ? `${EVENT_BY_DAY.find(s => s.id === 'cultural')?.images.length} photos — heritage dancers. Tap to enlarge.`
+                  : 'Second batch — upload to src/assets/event/unifysap/cultural/ when ready. Placeholder shown until then.'}
+              </p>
+            </div>
+          </ScrollReveal>
+          {(() => {
+            const sec = EVENT_BY_DAY.find(s => s.id === 'cultural')
+            const imgs = sec?.images ?? []
+            if (imgs.length === 0) {
+              return (
+                <div className="rounded-xl border border-dashed border-amber-200 bg-amber-50 p-8 text-center">
+                  <div className="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto mb-3">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" /></svg>
+                  </div>
+                  <h3 className="font-display text-base font-bold text-navy-900">Cultural Display — awaiting upload</h3>
+                  <p className="text-sm text-amber-800/70 mt-1">Drop webp/jpg into <code className="px-1.5 py-0.5 rounded bg-white border border-amber-200 text-navy-900 text-xs">src/assets/event/unifysap/cultural/</code> (e.g. <code className="text-xs">cultural-01.webp</code>). Section auto-fills and appears in hero.</p>
+                </div>
+              )
+            }
+            return (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                {imgs.map((src, i) => (
+                  <ScrollReveal key={`${src}-${i}`} delay={(i % 8) * 0.04}>
+                    <motion.button onClick={() => setLightboxSrc(src)} className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100 border border-gray-200 w-full text-left" whileHover={{ y: -2 }} aria-label="Enlarge photo">
+                      <img src={src} alt="" width="800" height="600" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500" loading="lazy" />
+                    </motion.button>
+                  </ScrollReveal>
+                ))}
+              </div>
+            )
+          })()}
+        </div>
+      </section>
+
       {/* Day 1 — Boat Cruise */}
-      <section id="boat-cruise" className="py-16 lg:py-20 bg-surface border-t border-gray-100">
+      <section id="boat-cruise" className="py-16 lg:py-20 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
