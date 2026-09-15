@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 Beechnut/
+
+# large original video backups — do not commit
+public/testimonials/videos/originals_backup/

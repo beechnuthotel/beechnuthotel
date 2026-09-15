@@ -1,34 +1,39 @@
-// Video testimonials — UNIFYSAP H3 Mega Weekend
-// Videos live in public/testimonials/videos/ and are served as-is by Vite.
-// Each entry maps to a guest from src/data/testimonials.js (same slug).
+// Video testimonials — in-person lodger reviews (separate from Google text reviews
+// in src/data/testimonials.js). Videos live in public/testimonials/videos/.
 // Upload MP4/WebM (max 10MB, 1080p preferred) here:
 //   public/testimonials/videos/{slug}.mp4
-// e.g. public/testimonials/videos/emuoborsa.mp4
 // The glob fallback below auto-discovers files in src/assets/testimonials/videos/ (same naming).
 
 import { TESTIMONIAL_IMAGES } from './testimonialImages'
-import { TESTIMONIALS } from './testimonials'
 
-const NAME_BY_SLUG = Object.fromEntries(TESTIMONIALS.map(t => [t.slug, t.name]))
+// Video-only reviewers — not in TESTIMONIALS (Google reviews)
+const VIDEO_NAMES = {
+  'iphm-creamy-daddy': 'IPHM Creamy Daddy',
+  'dhm-calm-down': 'DHM Calm Down',
+  'hm-black-diamond': 'HM Black Diamond',
+  'sexy-dorime': 'Sexy Dorime',
+  'hm-picci-instructor': 'HM Picci Instructor',
+}
 
-// Public folder — fill in as you upload videos.
+// Public folder — one entry per video reviewer.
 // Preferred location: public/testimonials/videos/{slug}.mp4
-// e.g. public/testimonials/videos/emuoborsa.mp4
 export const VIDEO_TESTIMONIALS = [
-  // { slug: 'emuoborsa', src: '/testimonials/videos/emuoborsa.mp4' },
-  // { slug: 'ifogbe-collins', src: '/testimonials/videos/ifogbe-collins.mp4' },
-  // { slug: 'nathaniel-kenny-olie', src: '/testimonials/videos/nathaniel-kenny-olie.mp4' },
+  { slug: 'iphm-creamy-daddy', src: '/testimonials/videos/iphm-creamy-daddy.mp4' },
+  { slug: 'dhm-calm-down', src: '/testimonials/videos/dhm-calm-down.mp4' },
+  { slug: 'hm-black-diamond', src: '/testimonials/videos/hm-black-diamond.mp4' },
+  { slug: 'sexy-dorime', src: '/testimonials/videos/sexy-dorime.mp4' },
+  { slug: 'hm-picci-instructor', src: '/testimonials/videos/hm-picci-instructor.mp4' },
 ]
 
 // Auto-discovered from src/assets/testimonials/videos/ (Vite glob)
-// Matches: {slug}.mp4, {slug}.webm  — slug must match a guest in src/data/testimonials.js
+// Matches: {slug}.mp4, {slug}.webm — slug should match a key in VIDEO_NAMES
 const VIDEO_GLOB = import.meta.glob(
   '/src/assets/testimonials/videos/**/*.{mp4,webm,MP4,WEBM}',
   { eager: true, query: '?url', import: 'default' }
 )
 
 function enrich(entry) {
-  const name = NAME_BY_SLUG[entry.slug] ?? entry.slug
+  const name = entry.name ?? VIDEO_NAMES[entry.slug] ?? entry.slug
   return {
     slug: entry.slug,
     src: entry.src,
