@@ -7,7 +7,7 @@ const MODULES = import.meta.glob('/src/assets/testimonials/photos/**/*.{jpeg,jpg
 export const TESTIMONIAL_IMAGES = Object.fromEntries(
   Object.entries(MODULES).map(([key, url]) => {
     const file = key.split('/').pop()
-    const slug = file.replace(/\.(jpeg|jpg|png)$/i, '')
+    const slug = file.replace(/\.(jpeg|jpg|png|webp)$/i, '')
     return [slug, url]
   })
 )

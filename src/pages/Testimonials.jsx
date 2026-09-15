@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import { EXTERIOR_IMAGES } from '../data/exteriorImages'
 import { TESTIMONIALS_WITH_IMAGES } from '../data/testimonials'
+import { VIDEO_TESTIMONIALS_WITH_SRC } from '../data/testimonialVideos'
 
 const heroBgVariants = {
   enter: { opacity: 0, scale: 1.08 },
@@ -204,8 +205,26 @@ export default function Testimonials() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {Array.from({ length: VIDEO_SLOT_COUNT }, (_, i) => (
-              <ScrollReveal key={i} delay={0.08 * i}>
+            {VIDEO_TESTIMONIALS_WITH_SRC.map((v, i) => (
+              <ScrollReveal key={v.slug} delay={0.08 * i}>
+                <figure className="rounded-lg overflow-hidden border border-navy-900/10 bg-navy-950 shadow-sm">
+                  <video
+                    src={v.src}
+                    poster={v.poster ?? undefined}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={v.title}
+                    className="w-full aspect-video object-cover bg-navy-950"
+                  />
+                  <figcaption className="px-4 py-3 text-sm font-medium text-navy-900 bg-white border-t border-navy-900/10">
+                    {v.title}
+                  </figcaption>
+                </figure>
+              </ScrollReveal>
+            ))}
+            {Array.from({ length: Math.max(0, VIDEO_SLOT_COUNT - VIDEO_TESTIMONIALS_WITH_SRC.length) }, (_, i) => (
+              <ScrollReveal key={`placeholder-${i}`} delay={0.08 * (VIDEO_TESTIMONIALS_WITH_SRC.length + i)}>
                 <div className="relative aspect-video rounded-lg border-2 border-dashed border-navy-900/15 bg-white/60 flex flex-col items-center justify-center gap-3 p-6 text-center">
                   <span className="w-14 h-14 rounded-full bg-navy-900/5 border border-navy-900/10 flex items-center justify-center" aria-hidden="true">
                     <svg viewBox="0 0 24 24" className="w-5 h-5 text-navy-900/30 fill-current" aria-hidden="true">
@@ -213,13 +232,16 @@ export default function Testimonials() {
                     </svg>
                   </span>
                   <p className="text-sm font-medium text-gray-500">Video coming soon</p>
+                  <p className="text-[0.7rem] text-gray-400">Drop MP4 as public/testimonials/videos/*.mp4</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
-          <p className="text-center text-xs text-gray-400 mt-8">
-            We&rsquo;re gathering video stories from our guests — check back soon.
-          </p>
+          {VIDEO_TESTIMONIALS_WITH_SRC.length === 0 && (
+            <p className="text-center text-xs text-gray-400 mt-8">
+              We&rsquo;re gathering video stories from our guests — check back soon.
+            </p>
+          )}
         </div>
       </section>
 
