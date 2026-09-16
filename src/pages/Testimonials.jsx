@@ -215,7 +215,7 @@ export default function Testimonials() {
                     playsInline
                     preload="metadata"
                     aria-label={v.title}
-                    className="w-full aspect-video object-cover bg-navy-950"
+                    className="w-full aspect-video object-contain bg-navy-950"
                   />
                   <figcaption className="px-4 py-3 text-sm font-medium text-navy-900 bg-white border-t border-navy-900/10">
                     {v.title}
